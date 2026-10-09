@@ -213,6 +213,19 @@ ul.ck.x li i{color:var(--amber)}
 .hud .c{min-width:90px;text-align:right;color:var(--white);font-weight:700}
 .prog{position:absolute;left:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--em),var(--cy));transition:width .6s;z-index:31}
 .hint{position:fixed;left:50%;top:16px;transform:translateX(-50%);padding:8px 16px;border-radius:999px;background:rgba(10,15,29,.92);border:1px solid var(--line);color:#fff;font-family:var(--f);font-size:13px;transition:opacity .6s;z-index:50;pointer-events:none;white-space:nowrap}
+
+/* v2 additions */
+.role ul.ck li{font-size:21px;line-height:1.4}
+.role .h3{font-size:30px}
+.tag2{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:10px;font-size:17px;font-weight:800;letter-spacing:.04em;background:rgba(6,182,212,.14);color:var(--cy2);width:max-content}
+.tag2.amb{background:rgba(245,158,11,.15);color:var(--amber)}
+.tag2.em{background:rgba(16,185,129,.15);color:var(--em2)}
+.mech{flex:1;padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.mech .h3{font-size:25px}.mech .p{font-size:20px;line-height:1.45}
+.mech .ico{width:52px;height:52px;font-size:22px;border-radius:15px}
+.risk{display:flex;gap:18px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
+.risk:first-of-type{border-top:0}
+.risk .h3{font-size:25px}.risk .p{font-size:21px}
 @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-iteration-count:1!important} }
 </style>
 </head>
@@ -313,42 +326,45 @@ ul.ck.x li i{color:var(--amber)}
 
 <!-- 5 · 4 ROLES -->
 <section class="slide">
-  <div class="pad" style="left:110px;right:110px;top:84px;bottom:120px;display:flex;flex-direction:column;gap:40px">
+  <div class="pad" style="left:110px;right:110px;top:84px;bottom:120px;display:flex;flex-direction:column;gap:34px">
     <div class="rv" style="--d:0"><div class="eb"><b>05</b>The 4 Plug-and-Play Frontline Roles</div>
       <h2 class="t2">กำจัดขั้นตอนการสอนใน <span class="grad">4 จุดบริการหลัก</span></h2></div>
-    <div style="flex:1;display:flex;gap:22px">
+    <div style="flex:1;display:flex;gap:20px">
       <div class="gc hv role rv" style="--d:1"><div class="ico"><i class="fa-solid fa-tablet-screen-button"></i></div><div class="h3">Front Desk</div>
-        <ul class="ck"><li><i class="fa-solid fa-check"></i>Tablet Check-in สแกน Face/QR</li><li><i class="fa-solid fa-check"></i>Scriptless Reception บอกบทพูด + น้ำดื่มรหัส A</li></ul>
-        <div class="src"><i class="fa-solid fa-user-plus"></i>สาย Hospitality / แอร์โฮสเตส</div></div>
+        <ul class="ck"><li><i class="fa-solid fa-check"></i>Tablet Check-in สแกน Face/QR ดึงประวัติลูกค้าจาก AI ทันที</li><li><i class="fa-solid fa-check"></i>Scriptless Reception: บทพูดต้อนรับ + เสิร์ฟน้ำรหัส A</li><li><i class="fa-solid fa-check"></i>ไม่ต้องจำโปรโมชัน</li></ul>
+        <div class="src"><i class="fa-solid fa-user-plus"></i><span>แอร์โฮสเตสพักกะ / ฟรีแลนซ์ Hospitality ผ่านทดสอบ Soft Skills 30 นาที</span></div></div>
       <div class="gc hv role rv" style="--d:2"><div class="ico"><i class="fa-solid fa-handshake"></i></div><div class="h3">Sales Closer</div>
-        <ul class="ck"><li><i class="fa-solid fa-check"></i>AI Dossier สรุป Pain Point + สูตรปิด A/B</li><li><i class="fa-solid fa-coins"></i>คอมมิชชัน 3–5%</li></ul>
-        <div class="src"><i class="fa-solid fa-user-plus"></i>Freelance Top Spreader</div></div>
+        <ul class="ck"><li><i class="fa-solid fa-check"></i>AI Closing Dossier: Pain Point · งบ · Option A/B</li><li><i class="fa-solid fa-coins"></i>Revenue-Share คอมมิชชัน 3–5% (ไม่มีเงินเดือนประจำ)</li></ul>
+        <div class="src" style="color:var(--amber);background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.35)"><i class="fa-solid fa-scale-balanced"></i><span><b>Fair System:</b> ปิดหลุดเกณฑ์ AI จัดสรร Slot ให้คน Rating สูงกว่าอัตโนมัติ</span></div></div>
       <div class="gc hv role rv" style="--d:3"><div class="ico"><i class="fa-solid fa-user-nurse"></i></div><div class="h3">OR Nurse Hub</div>
-        <ul class="ck"><li><i class="fa-solid fa-check"></i>พยาบาลเวรนอก รพ.รัฐ/เอกชน</li><li><i class="fa-solid fa-check"></i>Pre-Set Modular Trays</li><li><i class="fa-solid fa-coins"></i>จ่ายเหมาต่อเคสผ่าตัด</li></ul>
-        <div class="src"><i class="fa-solid fa-user-plus"></i>Verified Nurse Hub</div></div>
+        <ul class="ck"><li><i class="fa-solid fa-id-card"></i><span><b style="color:var(--white)">Verified Gig Nurses:</b> มีใบประกอบวิชาชีพ + ชั่วโมงบิน OR จาก รพ.รัฐ/เอกชน</span></li><li><i class="fa-solid fa-check"></i>Pre-Set Modular Trays ตามหัตถการ</li></ul>
+        <div class="src" style="color:var(--em2);background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.35)"><i class="fa-solid fa-camera"></i><span><b>Case Closed:</b> จ่ายเหมาเคสหลังส่งรูปนับกอซ + เครื่องมือเข้าระบบ</span></div></div>
       <div class="gc hv role rv" style="--d:4"><div class="ico"><i class="fa-solid fa-spray-can-sparkles"></i></div><div class="h3">Sanitization Crew</div>
-        <ul class="ck"><li><i class="fa-solid fa-bell"></i>แจ้งเตือน Turnover Room</li><li><i class="fa-solid fa-check"></i>Checklist 12 ข้อ</li><li><i class="fa-solid fa-camera"></i>ถ่ายรูปส่ง AI อนุมัติปล่อยห้อง</li></ul>
-        <div class="src"><i class="fa-solid fa-user-plus"></i>B2B Cleaning Vendor</div></div>
+        <ul class="ck"><li><i class="fa-solid fa-bell"></i>Trigger "Turnover Room" หลังผ่าตัดเสร็จ</li><li><i class="fa-solid fa-check"></i>Checklist 12 ขั้นตอน + เคลียร์ขยะติดเชื้อถังแดง</li></ul>
+        <div class="src" style="color:var(--em2);background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.35)"><i class="fa-solid fa-camera"></i><span><b>Photo-Proof:</b> AI ตรวจความสะอาดก่อนปล่อยห้อง และตัดจ่ายเงิน</span></div></div>
     </div>
   </div>
 </section>
 
 <!-- 6 · ZERO-RECRUITMENT -->
 <section class="slide">
+  <div class="ph full" style="opacity:.22"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80" alt="High-end hospitality"><div class="ov" style="background:linear-gradient(180deg,rgba(10,15,29,.9),rgba(10,15,29,.98))"></div></div>
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>06</b>Zero-Recruitment &amp; Zero-Training Engine</div>
-    <h2 class="t2 rv" style="--d:1">3 เสาหลักกำจัดคอขวด: <span class="grad">ไม่ต้องหาคน ไม่ต้องสอนงานเอง</span></h2>
+    <div class="eb rv" style="--d:0"><b>06</b>Talent Engine &amp; Quality Control</div>
+    <h2 class="t2 rv" style="--d:1">ไม่ต้องหาคน ไม่ต้องสอนงานเอง + <span class="grad">Talent Pool หมุนเวียนตลอดเวลา</span></h2>
   </div>
-  <!-- ✏️ PHOTO: High-End Hospitality -->
-  <div class="ph box rv" style="--d:2;left:110px;top:310px;width:1700px;height:200px"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80" alt="High-end hospitality" style="object-position:center 60%"><div class="ov" style="background:linear-gradient(90deg,rgba(10,15,29,.94),rgba(10,15,29,.4))"></div>
-    <div style="position:absolute;left:36px;top:50%;transform:translateY(-50%);z-index:2"><div class="lbl" style="color:var(--gold)">Talent Source</div><div class="h3" style="font-size:34px">ดึงคนมาตรฐานงานบริการระดับ Hospitality</div></div></div>
-  <div class="pad" style="left:110px;right:110px;top:550px;display:flex;gap:24px">
-    <div class="gc hv rv" style="--d:3;flex:1;padding:30px;display:flex;flex-direction:column;gap:14px"><div class="ico"><i class="fa-solid fa-file-signature"></i></div><div class="h3">1) B2B Agency SLAs</div>
-      <ul class="ck"><li><i class="fa-solid fa-check"></i>สัญญากับ Seekster / BeNeat</li><li><i class="fa-solid fa-check"></i>เครือข่าย Nurse Hub · Event Staffing</li><li><i class="fa-solid fa-check"></i>ขาด-ลา Agency ส่งคนแทนทันที</li></ul></div>
-    <div class="gc hv rv" style="--d:4;flex:1;padding:30px;display:flex;flex-direction:column;gap:14px"><div class="ico"><i class="fa-solid fa-circle-play"></i></div><div class="h3">2) Self-Serve Onboarding</div>
-      <ul class="ck"><li><i class="fa-solid fa-check"></i>วิดีโอ 30 นาที (คลิปสั้น 2–3 นาที)</li><li><i class="fa-solid fa-check"></i>Quiz 5 ข้อ ผ่าน 100% ก่อน Check-in</li><li><i class="fa-solid fa-check"></i>Shadow Shift ครึ่งวัน</li></ul></div>
-    <div class="gc hv rv" style="--d:5;flex:1;padding:30px;display:flex;flex-direction:column;gap:14px"><div class="ico"><i class="fa-solid fa-shield-halved"></i></div><div class="h3">3) Poka-Yoke SOP</div>
-      <ul class="ck"><li><i class="fa-solid fa-check"></i>สภาพแวดล้อมบังคับให้ทำถูก 100%</li><li><i class="fa-solid fa-check"></i>ไม่ต้องใช้ทักษะความจำ</li></ul></div>
+  <div class="pad lbl rv" style="--d:2;left:110px;top:278px">3 เสาหลัก · กำจัดคอขวด</div>
+  <div class="pad" style="left:110px;right:110px;top:318px;display:flex;gap:20px">
+    <div class="gc hv rv" style="--d:2;flex:1;padding:24px 26px;display:flex;gap:18px"><div class="ico"><i class="fa-solid fa-file-signature"></i></div><div><div class="h3" style="font-size:27px">1) B2B Agency SLAs</div><div class="p" style="font-size:21px">Seekster · BeNeat · Nurse Hub ขาด-ลา ส่งคนแทนทันที</div></div></div>
+    <div class="gc hv rv" style="--d:3;flex:1;padding:24px 26px;display:flex;gap:18px"><div class="ico"><i class="fa-solid fa-circle-play"></i></div><div><div class="h3" style="font-size:27px">2) Self-Serve Onboarding</div><div class="p" style="font-size:21px">วิดีโอรวมไม่เกิน 30 นาที + Quiz 5 ข้อ 100% + Shadow Shift ครึ่งวัน</div></div></div>
+    <div class="gc hv rv" style="--d:4;flex:1;padding:24px 26px;display:flex;gap:18px"><div class="ico"><i class="fa-solid fa-shield-halved"></i></div><div><div class="h3" style="font-size:27px">3) Poka-Yoke System</div><div class="p" style="font-size:21px">Zero Memory สภาพแวดล้อมบังคับให้ทำถูก 100%</div></div></div>
+  </div>
+  <div class="pad lbl rv" style="--d:5;left:110px;top:560px;color:var(--gold)">4 กลไกหล่อเลี้ยง Talent Pool</div>
+  <div class="pad" style="left:110px;right:110px;top:600px;display:flex;gap:20px">
+    <div class="gc hv mech rv" style="--d:5"><div class="ico"><i class="fa-solid fa-graduation-cap"></i></div><div class="h3">a) BJH Academy</div><div class="p">Micro-Certification ออนไลน์ 2–3 ชม. สอบผ่านถึงได้สิทธิ์เข้า Job Pool</div></div>
+    <div class="gc hv mech rv" style="--d:6"><div class="ico" style="background:linear-gradient(140deg,#FCD34D,#F59E0B);color:#2A1A02"><i class="fa-solid fa-bolt"></i></div><div class="h3">b) Dynamic Surge Pricing</div><div class="p">ค่าจ้าง <b class="amber">1.2x–1.5x</b> วันที่เคสแน่นแต่คนรับงานน้อย</div></div>
+    <div class="gc hv mech rv" style="--d:7"><div class="ico gold"><i class="fa-solid fa-star"></i></div><div class="h3">c) Doctor &amp; Peer Rating</div><div class="p">ประเมินทันทีหลังจบเคส <b style="color:var(--gold)">4.8★</b> ขึ้นไปได้ Priority Slot High-Ticket</div></div>
+    <div class="gc hv mech rv" style="--d:8"><div class="ico"><i class="fa-solid fa-user-clock"></i></div><div class="h3">d) Standby Allowance</div><div class="p">ค่าสแตนด์บายฉุกเฉิน 1 คน/รอบ กดรับงานแทนได้ทันที</div></div>
   </div>
   <span class="credit">Photo · Unsplash</span>
 </section>
@@ -392,20 +408,21 @@ ul.ck.x li i{color:var(--amber)}
         </g>
       </svg>
     </div>
-    <div class="rv" style="--d:3;display:flex;gap:18px">
-      <div class="kit" style="background:linear-gradient(150deg,#38BDF8,#0369A1);box-shadow:0 26px 50px -24px rgba(56,189,248,.9)"><i class="fa-solid fa-eye" style="font-size:28px"></i><div class="n">สีฟ้า = ตา</div><div class="s">Modular Box</div></div>
-      <div class="kit" style="background:linear-gradient(150deg,#FDBA74,#EA580C);box-shadow:0 26px 50px -24px rgba(251,146,60,.9)"><i class="fa-solid fa-face-smile" style="font-size:28px"></i><div class="n">สีส้ม = จมูก</div><div class="s">Modular Box</div></div>
+    <div class="rv" style="--d:3;display:flex;gap:16px">
+      <div class="kit" style="background:linear-gradient(150deg,#38BDF8,#0369A1);box-shadow:0 26px 50px -24px rgba(56,189,248,.9)"><span class="s">TRAY 1 · ฟ้า</span><div class="n" style="font-size:27px">ตา / ตาสองชั้น</div></div>
+      <div class="kit" style="background:linear-gradient(150deg,#FDBA74,#EA580C);box-shadow:0 26px 50px -24px rgba(251,146,60,.9)"><span class="s">TRAY 2 · ส้ม</span><div class="n" style="font-size:27px">เสริมจมูก Open</div></div>
+      <div class="kit" style="background:linear-gradient(150deg,#6EE7B7,#059669);box-shadow:0 26px 50px -24px rgba(16,185,129,.9)"><span class="s">TRAY 3 · เขียว</span><div class="n" style="font-size:27px">ดูดไขมัน / ปรับรูปหน้า</div></div>
     </div>
   </div>
   <div class="pad" style="left:1200px;top:300px;width:610px;display:flex;flex-direction:column;gap:18px">
     <div class="lbl rv" style="--d:2">Digital Tablet</div>
     <div class="tab rv" style="--d:3">
-      <div style="display:flex;justify-content:space-between;font-size:19px;color:var(--muted);margin-bottom:14px"><b style="color:var(--white)">Single-Action Screen</b><span id="taskCnt" class="num">0 / 4</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:19px;color:var(--muted);margin-bottom:14px"><b style="color:var(--white)">Front · Welcome Guide</b><span id="taskCnt" class="num">0 / 4</span></div>
       <div id="tasks" style="display:flex;flex-direction:column;gap:8px">
-        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>อ่านบทต้อนรับบนจอ</div>
-        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>เสิร์ฟน้ำดื่มรหัส A</div>
-        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>สแกน QR ยืนยันตัวตน</div>
-        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>กดส่งต่อให้ Closer</div>
+        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>กล่าว: "สวัสดีค่ะคุณสมศรี เชิญห้องรับรอง 1 ค่ะ"</div>
+        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>นำน้ำดื่มรหัส A วางบนโต๊ะรับรอง</div>
+        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>สแกน QR ยืนยันประวัติเข้าระบบ</div>
+        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>กดปุ่ม [แจ้งเตือน Closer เข้าพบ]</div>
       </div>
       <button id="taskBtn" style="margin-top:16px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;padding:20px;border-radius:18px;font-size:28px;font-weight:800;color:#03221D;background:linear-gradient(90deg,var(--em),var(--cy))"><i class="fa-solid fa-square-check"></i>Check-off</button>
       <div style="text-align:center;margin-top:12px;font-size:18px;color:var(--muted)">คำสั่งทีละบรรทัด · แตะเพื่อติ๊กส่งงาน</div>
@@ -518,7 +535,8 @@ ul.ck.x li i{color:var(--amber)}
   <div class="pad" style="left:110px;right:110px;top:320px;bottom:150px;display:flex;gap:26px">
     <div class="gc hv rvc rv" style="--d:2"><div class="ico gold"><i class="fa-solid fa-screwdriver-wrench"></i></div><div class="lbl" style="color:var(--gold)">1 · One-Time Setup Fee</div>
       <div class="amt num"><span data-count="50000">0</span>–<span data-count="100000">0</span></div><div class="unit">บาท / สาขา</div>
-      <ul class="ck" style="margin-top:auto"><li><i class="fa-solid fa-check"></i>วางผัง Poka-Yoke</li><li><i class="fa-solid fa-check"></i>มอบ Master Kit ใน 7 วัน</li></ul></div>
+      <div style="padding:14px 16px;border-radius:14px;background:rgba(212,180,131,.12);border:1px solid rgba(212,180,131,.45);font-size:21px;font-weight:700;color:var(--gold);line-height:1.4"><i class="fa-solid fa-people-carry-box"></i>&nbsp; มีทีมเข้าไป Set-up หน้างาน พร้อมรันได้จริงใน 7 วัน</div>
+      <ul class="ck" style="margin-top:auto"><li><i class="fa-solid fa-check"></i>ส่งมอบ Master Kit กล่องสี</li><li><i class="fa-solid fa-check"></i>วางผังป้าย Poka-Yoke</li></ul></div>
     <div class="gc hv rvc rv" style="--d:3"><div class="ico"><i class="fa-solid fa-cloud"></i></div><div class="lbl">2 · Monthly SaaS Subscription</div>
       <div class="amt num"><span data-count="5000">0</span>–<span data-count="15000">0</span></div><div class="unit">บาท / เดือน</div>
       <ul class="ck" style="margin-top:auto"><li><i class="fa-solid fa-check"></i>Dashboard</li><li><i class="fa-solid fa-check"></i>AI Lead Intake</li><li><i class="fa-solid fa-check"></i>LINE Check-in</li></ul></div>
@@ -570,24 +588,30 @@ ul.ck.x li i{color:var(--amber)}
     <g class="c"><circle cx="360" cy="360" r="180" fill="none" stroke="#D4B483" stroke-opacity=".6" stroke-dasharray="6 10"/></g>
   </svg>
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>14</b>Roadmap &amp; The "Unbeatable" Pilot Offer</div>
+    <div class="eb rv" style="--d:0"><b>14</b>Roadmap, Risk Isolation &amp; Offer</div>
     <h2 class="t2 rv" style="--d:1">เริ่มต้นสัปดาห์นี้ &amp; <span class="grad">ข้อเสนอทดลอง 30 วัน</span>ที่ปฏิเสธไม่ได้</h2>
   </div>
   <!-- ✏️ ROADMAP -->
-  <div class="pad step3" style="left:110px;right:110px;top:330px">
+  <div class="pad step3" style="left:110px;right:110px;top:290px">
     <div class="gc hv rv" style="--d:2"><span class="lbl">Step 1</span><div class="h3">Pilot แม่บ้าน / Front</div><div class="p">2 สัปดาห์แรก</div></div>
     <div class="arr rv" style="--d:3"><i class="fa-solid fa-arrow-right"></i></div>
-    <div class="gc hv rv" style="--d:3"><span class="lbl">Step 2</span><div class="h3">ถ่ายวิดีโอ 5 คลิปสั้น</div><div class="p">สร้าง SOP Library กลาง</div></div>
+    <div class="gc hv rv" style="--d:3"><span class="lbl">Step 2</span><div class="h3">ถ่ายคลิปวิดีโอ 5 คลิปสั้น</div><div class="p">สร้าง SOP Library กลาง</div></div>
     <div class="arr rv" style="--d:4"><i class="fa-solid fa-arrow-right"></i></div>
-    <div class="gc hv rv" style="--d:4"><span class="lbl">Step 3</span><div class="h3">แปลงระบบเป็น Checkbox</div><div class="p">ตัดการตัดสินใจหน้างาน</div></div>
+    <div class="gc hv rv" style="--d:4"><span class="lbl">Step 3</span><div class="h3">แปลงเป็น Checkbox</div><div class="p">ตัดสิทธิ์การตัดสินใจหน้างาน</div></div>
   </div>
-  <div class="pad" style="left:110px;top:600px;width:1150px;display:flex;flex-direction:column;gap:30px">
-    <div class="gc offer rv" style="--d:5">
-      <div class="lbl amber">B2B Risk-Free Offer · Pilot Project 30 Days</div>
-      <div class="h3" style="font-size:38px;margin-top:12px">ทดลองรันคู่ขนาน 1 เดือน</div>
+  <div class="pad gc rv" style="--d:5;left:110px;top:500px;width:1010px;padding:26px 34px">
+    <div class="lbl" style="margin-bottom:6px">Strategic Risk Isolation · ทำไมเริ่มที่แม่บ้าน &amp; Front Desk</div>
+    <div class="risk"><div class="ico" style="width:52px;height:52px;font-size:22px"><i class="fa-solid fa-shield-heart"></i></div><div><div class="h3">Non-Clinical Scope</div><div class="p">ความเสี่ยงการรักษาเป็นศูนย์ ไม่กระทบเคสผ่าตัด</div></div></div>
+    <div class="risk"><div class="ico" style="width:52px;height:52px;font-size:22px"><i class="fa-solid fa-users"></i></div><div><div class="h3">High Replacement Pool</div><div class="p">ฐานแรงงานกว้างที่สุด มี SLA หาคนแทนได้ทันที</div></div></div>
+    <div class="risk"><div class="ico gold" style="width:52px;height:52px;font-size:22px"><i class="fa-solid fa-user-doctor"></i></div><div><div class="h3">Clinical Defense</div><div class="p">OR และ Closer เริ่มเฟสถัดไป หลังระบบ Tablet Checkbox นิ่งแล้ว</div></div></div>
+  </div>
+  <div class="pad" style="left:1160px;right:110px;top:500px;display:flex;flex-direction:column;gap:26px">
+    <div class="gc offer rv" style="--d:6">
+      <div class="lbl amber">B2B Risk-Free Offer</div>
+      <div class="h3" style="font-size:36px;margin-top:12px">Pilot Project 30 วัน</div>
       <div class="p" style="margin-top:10px">หากไม่ลดภาระการสอนหรือไม่ลดต้นทุน <b style="color:var(--white)">ยินดีคืนเงินค่า Setup 100%</b></div>
     </div>
-    <div class="rv" style="--d:6"><button class="cta" id="cta"><i class="fa-solid fa-rocket"></i>Deploy Aesthetic OS System</button></div>
+    <div class="rv" style="--d:7"><button class="cta" id="cta" style="font-size:28px;padding:24px 36px"><i class="fa-solid fa-rocket"></i>Deploy Aesthetic OS System</button></div>
   </div>
 </section>
 
