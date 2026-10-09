@@ -277,6 +277,46 @@ ul.ck.x li i{color:var(--amber)}
 .phase .when{display:inline-flex;width:max-content;padding:7px 14px;border-radius:999px;font-size:19px;font-weight:700;background:rgba(245,158,11,.14);color:var(--amber)}
 .phase .h3{font-size:34px}.phase .p{font-size:25px;line-height:1.5}
 .arrowc{flex:0 0 50px;display:grid;place-items:center;color:var(--cy2);font-size:30px}
+
+/* ===== Slide 1 hero upgrade ===== */
+.s1 .glowA{position:absolute;width:1100px;height:1100px;right:-260px;top:-420px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.28),transparent 62%);filter:blur(10px);z-index:0;animation:drift 22s ease-in-out infinite}
+.s1 .glowB{position:absolute;width:1000px;height:1000px;left:-380px;bottom:-460px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.24),transparent 62%);filter:blur(10px);z-index:0;animation:drift 28s ease-in-out infinite reverse}
+.s1 .pgrid{position:absolute;left:-10%;right:-10%;bottom:-120px;height:620px;z-index:0;transform:perspective(900px) rotateX(62deg);transform-origin:center bottom;
+  background-image:linear-gradient(rgba(34,211,238,.28) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.28) 1px,transparent 1px);background-size:80px 80px;
+  -webkit-mask-image:linear-gradient(to top,#000 10%,transparent 85%);mask-image:linear-gradient(to top,#000 10%,transparent 85%);animation:gridmove 6s linear infinite}
+@keyframes gridmove{to{background-position:0 80px,0 0}}
+.live{display:inline-flex;align-items:center;gap:14px}
+.live i{width:12px;height:12px;border-radius:50%;background:#34D399;animation:livep 1.8s ease-out infinite}
+@keyframes livep{0%{box-shadow:0 0 0 0 rgba(52,211,153,.7),0 0 14px #34D399}100%{box-shadow:0 0 0 14px rgba(52,211,153,0),0 0 14px #34D399}}
+.s1 .eb::after{display:none}
+.s1 h1{font-size:104px;line-height:1.02;letter-spacing:-.035em}
+.s1 h1 .l2{display:block;font-size:58px;white-space:nowrap;line-height:1.2;margin-top:10px;letter-spacing:-.015em;background:linear-gradient(90deg,#22D3EE,#34D399);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s1 .sub2{font-size:28px;max-width:1000px}
+.hub .r1{transform-origin:330px 330px;animation:spin 60s linear infinite}
+.hub .r2{transform-origin:330px 330px;animation:spin 38s linear infinite reverse}
+.hub .r3{transform-origin:330px 330px;animation:spin 22s linear infinite}
+.hub .ln{stroke-dasharray:6 10;animation:hubflow 1.6s linear infinite}
+@keyframes hubflow{to{stroke-dashoffset:-32}}
+.hub .pg{transform-box:fill-box;transform-origin:center;animation:hubpulse 2.6s ease-out infinite}
+@keyframes hubpulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+.hub .sat{transform-box:fill-box;transform-origin:center;animation:br 3.2s ease-in-out infinite}
+.anc2{position:relative;flex:1;padding:36px 38px;display:flex;gap:26px;align-items:flex-start;border-radius:26px;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid transparent;
+  background-image:linear-gradient(rgba(17,24,39,.75),rgba(17,24,39,.75)),linear-gradient(135deg,rgba(34,211,238,.75),rgba(52,211,153,.2) 45%,rgba(52,211,153,.7));
+  background-origin:border-box;background-clip:padding-box,border-box;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 24px 50px -24px rgba(0,0,0,.8);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.anc2::after{content:"";position:absolute;left:12%;right:12%;bottom:-18px;height:28px;border-radius:50%;background:radial-gradient(ellipse,rgba(34,211,238,.6),transparent 70%);filter:blur(8px);opacity:0;transition:opacity .35s}
+.anc2:hover{transform:translateY(-6px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 40px -10px rgba(34,211,238,.6),0 34px 60px -26px rgba(0,0,0,.9)}
+.anc2:hover::after{opacity:1}
+.ico3{flex:none;width:80px;height:80px;border-radius:22px;display:grid;place-items:center;font-size:32px;color:#03221D;
+  background:linear-gradient(145deg,#67E8F9 0%,#22D3EE 40%,#0E9F8E 100%);
+  box-shadow:inset 0 2px 1px rgba(255,255,255,.55),inset 0 -6px 12px rgba(0,0,0,.25),0 14px 26px -10px rgba(6,182,212,.9),0 0 0 1px rgba(255,255,255,.12);animation:icob 3.4s ease-in-out infinite}
+.ico3.gold{background:linear-gradient(145deg,#F5E3BF 0%,#D4B483 45%,#9C7442 100%);color:#2A1D0A}
+.ico3.em{background:linear-gradient(145deg,#A7F3D0 0%,#34D399 40%,#047857 100%)}
+@keyframes icob{0%,100%{filter:drop-shadow(0 0 0 rgba(34,211,238,0))}50%{filter:drop-shadow(0 0 16px rgba(34,211,238,.65))}}
+.anc2 .h3{font-size:32px}
+.anc2 .p{font-size:24px;line-height:1.5;margin-top:8px}
+.anc2 .p b{color:var(--white)}
 @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-iteration-count:1!important} }
 </style>
 </head>
@@ -285,21 +325,82 @@ ul.ck.x li i{color:var(--amber)}
 
 
 <!-- 1 · CORE IDEA -->
-<section class="slide">
+<section class="slide s1">
+  <div class="glowA"></div><div class="glowB"></div><div class="pgrid"></div>
   <svg class="particles" id="pt1" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"></svg>
-  <div class="orb" style="width:620px;height:620px;left:1250px;top:-120px;background:radial-gradient(circle,rgba(6,182,212,.35),transparent 70%)"></div>
-  <div class="orb" style="width:480px;height:480px;left:-120px;top:620px;background:radial-gradient(circle,rgba(16,185,129,.3),transparent 70%);animation-duration:24s;animation-direction:reverse"></div>
-  <div class="pad" style="left:110px;top:100px;width:1700px;display:flex;flex-direction:column;gap:26px">
-    <div class="eb rv" style="--d:0">BJH Bangkok · Strategic Transformation</div>
-    <h1 class="t1 rv" style="--d:1">The 4-Person Clinic<br><span class="grad" style="font-size:72px">Aesthetic Hub ขับเคลื่อนด้วย AI 100%</span></h1>
-    <p class="sub2 rv" style="--d:2"><b style="color:var(--amber)">รื้อโครงสร้างต้นทุนเดิม:</b> หน้างานเป็น <b style="color:var(--white)">Plug &amp; Play Contributor</b> ทำตาม Checklist โดยมีคนประจำมอนิเตอร์<b style="color:var(--white);white-space:nowrap">แค่ 3–4 คน</b></p>
+  <div class="pad" style="left:110px;top:120px;width:1060px;display:flex;flex-direction:column;gap:28px">
+    <div class="eb rv live" style="--d:0"><i></i>BJH Bangkok · Strategic Transformation</div>
+    <h1 class="t1 rv" style="--d:1">The 4-Person Clinic<span class="l2">Aesthetic Hub ขับเคลื่อนด้วย AI 100%</span></h1>
+    <p class="sub2 rv" style="--d:2"><b style="color:var(--amber)">รื้อโครงสร้างต้นทุนเดิม:</b> หน้างานใช้ระบบ <b style="color:var(--white)">Plug &amp; Play</b> ทำตาม Checklist — ทั้งคลินิกมีคนประจำมอนิเตอร์<b style="color:var(--white);white-space:nowrap">แค่ 3–4 คน</b></p>
   </div>
-  <div class="pad" style="left:110px;right:110px;top:600px;display:flex;gap:30px">
-    <div class="gc hv anc rv" style="--d:3"><div class="ico gold"><i class="fa-solid fa-user-shield"></i></div><div class="h3">Core Monitor 3–4 คน</div><div class="p">คนประจำเหลือแค่<b>ผู้บริหาร + ผู้ตรวจคุณภาพ</b></div></div>
-    <div class="gc hv anc rv" style="--d:4"><div class="ico"><i class="fa-solid fa-list-check"></i></div><div class="h3">Checklist-Driven</div><div class="p">หน้างานเดินตาม Checklist ทีละข้อ <b>ไม่ต้องจำอะไรเลย</b></div></div>
-    <div class="gc hv anc rv" style="--d:5"><div class="ico"><i class="fa-solid fa-microchip"></i></div><div class="h3">AI-Controlled 100%</div><div class="p">AI ปล่อยงาน ตรวจงาน และ<b>จ่ายตามเคสจริง</b></div></div>
+  <svg class="hub rv" style="--d:2;position:absolute;left:1180px;top:40px;z-index:2" width="660" height="660" viewBox="0 0 660 660" aria-label="Holographic hub architecture">
+    <defs>
+      <radialGradient id="hcore" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#155E75"/><stop offset=".65" stop-color="#0B1426"/><stop offset="1" stop-color="#070C18"/></radialGradient>
+      <linearGradient id="hring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/></linearGradient>
+      <radialGradient id="hhalo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#22D3EE" stop-opacity=".35"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+      <filter id="hglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <circle cx="330" cy="330" r="320" fill="url(#hhalo)"/>
+    <g class="r1"><circle cx="330" cy="330" r="300" fill="none" stroke="#22D3EE" stroke-opacity=".35" stroke-dasharray="2 12"/><circle cx="630" cy="330" r="5" fill="#22D3EE" filter="url(#hglow)"/></g>
+    <g class="r2"><circle cx="330" cy="330" r="232" fill="none" stroke="url(#hring)" stroke-width="2.5" stroke-dasharray="160 40 12 40" opacity=".85"/><circle cx="330" cy="98" r="6" fill="#34D399" filter="url(#hglow)"/></g>
+    <g class="r3"><circle cx="330" cy="330" r="160" fill="none" stroke="#D4B483" stroke-opacity=".55" stroke-dasharray="5 9"/></g>
+    <!-- connections to satellites -->
+    <g fill="none" stroke="#22D3EE" stroke-opacity=".85" stroke-width="2.5" filter="url(#hglow)">
+      <path class="ln" d="M330 330 L330 72"/><path class="ln" d="M330 330 L588 330" style="animation-delay:-.4s"/>
+      <path class="ln" d="M330 330 L330 588" style="animation-delay:-.8s"/><path class="ln" d="M330 330 L72 330" style="animation-delay:-1.2s"/>
+    </g>
+    <!-- core -->
+    <circle class="pg" cx="330" cy="330" r="96" fill="none" stroke="#22D3EE" stroke-width="3"/>
+    <circle class="pg" cx="330" cy="330" r="96" fill="none" stroke="#34D399" stroke-width="3" style="animation-delay:1.3s"/>
+    <circle cx="330" cy="330" r="100" fill="url(#hcore)" stroke="url(#hring)" stroke-width="3" filter="url(#hglow)"/>
+    <text x="330" y="322" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="46" fill="#F8FAFC">3-4</text>
+    <text x="330" y="358" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="20" letter-spacing="5" fill="#22D3EE">CORE</text>
+    <!-- satellites -->
+    <g font-family="Plus Jakarta Sans" font-weight="800" font-size="17" letter-spacing="2" text-anchor="middle">
+      <g class="sat"><circle cx="330" cy="72" r="46" fill="#0B1426" stroke="#22D3EE" stroke-width="2.5"/><text x="330" y="78" fill="#E0F7FF">FRONT</text></g>
+      <g class="sat" style="animation-delay:-.8s"><circle cx="588" cy="330" r="46" fill="#0B1426" stroke="#22D3EE" stroke-width="2.5"/><text x="588" y="336" fill="#E0F7FF">SALES</text></g>
+      <g class="sat" style="animation-delay:-1.6s"><circle cx="330" cy="588" r="46" fill="#0B1426" stroke="#34D399" stroke-width="2.5"/><text x="330" y="594" fill="#D1FAE5">OR</text></g>
+      <g class="sat" style="animation-delay:-2.4s"><circle cx="72" cy="330" r="46" fill="#0B1426" stroke="#34D399" stroke-width="2.5"/><text x="72" y="336" fill="#D1FAE5">CLEAN</text></g>
+    </g>
+    <g font-family="Plus Jakarta Sans" font-weight="700" font-size="13" letter-spacing="2" fill="#7B879A" text-anchor="middle">
+      <text x="330" y="140">PLUG &amp; PLAY</text><text x="330" y="530">PLUG &amp; PLAY</text>
+    </g>
+  </svg>
+  <div class="pad" style="left:110px;right:110px;top:700px;display:flex;gap:30px">
+    <div class="anc2 rv" style="--d:3"><div class="ico3 gold"><i class="fa-solid fa-user-shield"></i></div><div><div class="h3">Core Monitor 3–4 คน</div><div class="p">คนประจำเหลือแค่<b>ผู้บริหาร + ผู้ตรวจคุณภาพ</b></div></div></div>
+    <div class="anc2 rv" style="--d:4"><div class="ico3"><i class="fa-solid fa-list-check"></i></div><div><div class="h3">Checklist-Driven</div><div class="p">เดินตาม Checklist ทีละข้อ <b>ไม่ต้องจำอะไรเลย</b></div></div></div>
+    <div class="anc2 rv" style="--d:5"><div class="ico3 em"><i class="fa-solid fa-microchip"></i></div><div><div class="h3">AI-Controlled 100%</div><div class="p">AI ปล่อยงาน ตรวจงาน และ<b>จ่ายตามเคสจริง</b></div></div></div>
   </div>
 </section>
+
+flow{to{stroke-dashoffset:-32}}
+.hub .pg{transform-box:fill-box;transform-origin:center;animation:hubpulse 2.6s ease-out infinite}
+@keyframes hubpulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+.hub .sat{transform-box:fill-box;transform-origin:center;animation:br 3.2s ease-in-out infinite}
+/* premium anchor cards */
+.anc2{position:relative;flex:1;padding:36px 38px;display:flex;gap:26px;align-items:flex-start;border-radius:26px;
+  background:rgba(17,24,39,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid transparent;
+  background-image:linear-gradient(rgba(17,24,39,.82),rgba(17,24,39,.82)),linear-gradient(135deg,rgba(34,211,238,.75),rgba(52,211,153,.25) 45%,rgba(52,211,153,.7));
+  background-origin:border-box;background-clip:padding-box,border-box;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 24px 50px -24px rgba(0,0,0,.8);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.anc2::after{content:"";position:absolute;left:12%;right:12%;bottom:-18px;height:28px;border-radius:50%;background:radial-gradient(ellipse,rgba(34,211,238,.55),transparent 70%);filter:blur(8px);opacity:0;transition:opacity .35s}
+.anc2:hover{transform:translateY(-6px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 40px -10px rgba(34,211,238,.6),0 34px 60px -26px rgba(0,0,0,.9)}
+.anc2:hover::after{opacity:1}
+.ico3{flex:none;width:80px;height:80px;border-radius:22px;display:grid;place-items:center;font-size:32px;color:#03221D;position:relative;
+  background:linear-gradient(145deg,#67E8F9 0%,#22D3EE 40%,#0E9F8E 100%);
+  box-shadow:inset 0 2px 1px rgba(255,255,255,.55),inset 0 -6px 12px rgba(0,0,0,.25),0 14px 26px -10px rgba(6,182,212,.9),0 0 0 1px rgba(255,255,255,.12);animation:icob 3.4s ease-in-out infinite}
+.ico3.gold{background:linear-gradient(145deg,#F5E3BF 0%,#D4B483 45%,#9C7442 100%);color:#2A1D0A;box-shadow:inset 0 2px 1px rgba(255,255,255,.6),inset 0 -6px 12px rgba(0,0,0,.25),0 14px 26px -10px rgba(212,180,131,.8),0 0 0 1px rgba(255,255,255,.12)}
+.ico3.em{background:linear-gradient(145deg,#A7F3D0 0%,#34D399 40%,#047857 100%)}
+@keyframes icob{0%,100%{filter:drop-shadow(0 0 0 rgba(34,211,238,0))}50%{filter:drop-shadow(0 0 14px rgba(34,211,238,.6))}}
+.anc2 .h3{font-size:32px}
+.anc2 .p{font-size:24px;line-height:1.5;margin-top:8px}
+.anc2 .p b{color:var(--white)}
+@media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-iteration-count:1!important} }
+</style>
+</head>
+<body>
+<div class="stage"><div class="deck" id="deck">
+
 
 <!-- 2 · PAIN -->
 <section class="slide">
