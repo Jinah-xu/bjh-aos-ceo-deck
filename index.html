@@ -317,6 +317,87 @@ ul.ck.x li i{color:var(--amber)}
 .anc2 .h3{font-size:32px}
 .anc2 .p{font-size:24px;line-height:1.5;margin-top:8px}
 .anc2 .p b{color:var(--white)}
+
+/* ===== Slides 3-6 upgrade ===== */
+.tier{position:relative;display:flex;align-items:center;gap:30px;padding:26px 36px;border-radius:24px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  background:rgba(17,24,39,.72);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 24px 50px -26px rgba(0,0,0,.8)}
+.tier.t-ai{border-color:rgba(34,211,238,.7);box-shadow:0 0 0 1px rgba(34,211,238,.25),0 0 50px -14px rgba(34,211,238,.7),inset 0 1px 0 rgba(255,255,255,.06)}
+.tier.t-core{border-color:rgba(212,180,131,.7);box-shadow:0 0 0 1px rgba(212,180,131,.2),0 0 50px -16px rgba(212,180,131,.6),inset 0 1px 0 rgba(255,255,255,.06)}
+.tier.t-pool{border-color:rgba(52,211,153,.55)}
+.tier .tg{font-size:18px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.tier .h3{font-size:34px;margin-top:2px}
+.fn{display:flex;gap:12px;margin-left:auto}
+.fn span{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-size:21px;font-weight:700;color:var(--white);background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.fn span i{color:var(--cy2)}
+.conn{height:44px;display:flex;justify-content:space-around;padding:0 18%}
+.conn svg{width:6px;height:44px;overflow:visible}
+.conn line{stroke-dasharray:6 8;animation:cflow 1.2s linear infinite}
+@keyframes cflow{to{stroke-dashoffset:-28}}
+.pool{display:flex;gap:18px;margin-left:auto}
+.pnd{width:170px;padding:16px 10px;border-radius:18px;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--line);position:relative}
+.pnd .ic{width:58px;height:58px;margin:0 auto 8px;border-radius:16px;display:grid;place-items:center;font-size:24px;color:#03221D;background:linear-gradient(145deg,#A7F3D0,#34D399 45%,#047857);box-shadow:inset 0 2px 1px rgba(255,255,255,.5),0 12px 22px -10px rgba(16,185,129,.9);animation:fl 3.4s ease-in-out infinite}
+.pnd:nth-child(2) .ic{animation-delay:-.8s}.pnd:nth-child(3) .ic{animation-delay:-1.6s}.pnd:nth-child(4) .ic{animation-delay:-2.4s}
+.pnd .nm{font-size:21px;font-weight:800;color:var(--white)}
+.pnd .on{position:absolute;top:12px;right:12px;width:11px;height:11px;border-radius:50%;background:#34D399;animation:livep 1.8s ease-out infinite}
+/* slide 4 */
+.mcard{flex:1;display:flex;flex-direction:column;gap:16px;padding:26px 24px;border-radius:24px;background:rgba(17,24,39,.75);border:1px solid var(--line);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 24px 50px -26px rgba(0,0,0,.8);transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.mcard:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.65);box-shadow:0 0 0 1px rgba(34,211,238,.25),0 0 40px -10px rgba(34,211,238,.6),0 34px 60px -26px #000}
+.mcard .h3{font-size:28px;display:flex;align-items:center;gap:12px}
+.mcard .h3 i{color:var(--cy2)}
+.mock{height:250px;border-radius:18px;background:#070B13;border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:16px}
+.mcard ol.steps li{font-size:20px;padding:9px 12px}
+.mcard ol.steps li::before{width:28px;height:28px;font-size:15px}
+.mbtn{padding:12px 14px;border-radius:12px;font-size:18px;font-weight:700;color:var(--white);background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.4);margin-bottom:10px}
+.mchk{display:flex;align-items:center;gap:10px;font-size:18px;color:var(--white);padding:10px 12px;border-radius:12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.4)}
+.mchk b{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;background:var(--em);color:#03221D;font-size:13px}
+.opt{display:flex;gap:10px}
+.opt div{flex:1;padding:14px;border-radius:14px;text-align:center;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.opt div b{display:block;font-size:30px;font-weight:800;color:var(--white)}
+.opt div span{font-size:15px;color:var(--muted)}
+.opt div.rec{border-color:rgba(34,211,238,.7);background:rgba(34,211,238,.1);box-shadow:0 0 24px -6px rgba(34,211,238,.7)}
+.aibadge{display:inline-flex;align-items:center;gap:8px;margin:0 auto 12px;padding:7px 14px;border-radius:999px;font-size:15px;font-weight:800;letter-spacing:.06em;color:#03221D;background:linear-gradient(90deg,#22D3EE,#34D399)}
+.phone{width:170px;height:230px;margin:0 auto;border-radius:28px;border:6px solid #1E293B;background:#0B1220;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;position:relative}
+.phone .shot{width:120px;height:90px;border-radius:10px;background:linear-gradient(135deg,#1E3A55,#0E7490);position:relative;overflow:hidden}
+.phone .shot::after{content:"";position:absolute;left:0;right:0;height:3px;background:#34D399;box-shadow:0 0 12px #34D399;animation:scanY 2.2s ease-in-out infinite}
+@keyframes scanY{0%,100%{top:6%}50%{top:90%}}
+.phone .ok{font-size:14px;font-weight:800;color:#34D399;text-align:center;line-height:1.35}
+/* slide 5 shields */
+.shd{flex:1;position:relative;overflow:hidden;padding:40px 36px;border-radius:30px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;
+  background:rgba(17,24,39,.75);border:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 30px 60px -30px #000;transition:transform .35s,box-shadow .35s,border-color .35s}
+.shd:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.6);box-shadow:0 0 44px -10px rgba(34,211,238,.6),0 30px 60px -30px #000}
+.shd::before{content:"";position:absolute;top:-40%;left:-60%;width:60%;height:180%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);animation:sheenx 6s ease-in-out infinite}
+@keyframes sheenx{0%,60%{left:-60%}100%{left:130%}}
+.shd .vis{height:230px;display:grid;place-items:center}
+.shd .h3{font-size:32px}.shd .p{font-size:23px;line-height:1.5}
+.shd .p b{color:var(--white)}
+.ring100 .pr{stroke-dasharray:540;stroke-dashoffset:540}
+.slide.active .ring100 .pr{animation:fillring 1.8s cubic-bezier(.2,.8,.2,1) .6s forwards}
+@keyframes fillring{to{stroke-dashoffset:0}}
+.unlock{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-size:18px;font-weight:800;color:#2A1D0A;background:linear-gradient(90deg,#F5E3BF,#D4B483)}
+.scan{position:relative;width:220px;height:170px;border-radius:14px;background:linear-gradient(135deg,#132B44,#0B1426);overflow:hidden}
+.scan .cn{position:absolute;width:30px;height:30px;border:4px solid #22D3EE}
+.scan .line{position:absolute;left:0;right:0;height:3px;background:#22D3EE;box-shadow:0 0 16px 3px rgba(34,211,238,.8);animation:scanY 2.4s ease-in-out infinite}
+/* slide 6 */
+.tl6{position:absolute;display:flex;gap:40px}
+.tl6 .rail{position:absolute;left:8%;right:8%;top:44px;height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.tl6 .rail i{position:absolute;inset:0;background:linear-gradient(90deg,#34D399,#22D3EE 50%,rgba(34,211,238,.3));box-shadow:0 0 18px rgba(34,211,238,.7);transform-origin:left;transform:scaleX(0)}
+.slide.active .tl6 .rail i{animation:railx 1.8s cubic-bezier(.2,.8,.2,1) .5s forwards}
+@keyframes railx{to{transform:scaleX(1)}}
+.tl6 .runner{position:absolute;top:38px;left:8%;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 20px 6px rgba(34,211,238,.8);animation:runx 5s linear infinite;z-index:3}
+@keyframes runx{0%{left:8%;opacity:0}6%{opacity:1}94%{opacity:1}100%{left:91%;opacity:0}}
+.ph6{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:22px;position:relative;z-index:2}
+.ph6 .nd{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;font-size:34px;color:var(--muted);background:#111A2C;border:2px solid var(--line)}
+.ph6.act .nd{color:#03221D;background:linear-gradient(145deg,#A7F3D0,#34D399 50%,#047857);border-color:transparent;box-shadow:0 0 0 12px rgba(52,211,153,.14),0 0 46px rgba(52,211,153,.7)}
+.ph6 .card{width:100%;padding:34px 34px;border-radius:26px;background:rgba(17,24,39,.75);border:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;flex-direction:column;gap:14px;transition:transform .35s,box-shadow .35s}
+.ph6 .card:hover{transform:translateY(-6px)}
+.ph6.act .card{border-color:rgba(52,211,153,.7);box-shadow:0 0 0 1px rgba(52,211,153,.3),0 0 60px -14px rgba(52,211,153,.8)}
+.ph6 .pill{display:inline-flex;width:max-content;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:17px;font-weight:800;letter-spacing:.08em}
+.ph6 .h3{font-size:32px}.ph6 .p{font-size:23px;line-height:1.5}
+.zr{display:flex;align-items:center;gap:30px;padding:26px 40px;border-radius:24px;background:linear-gradient(90deg,rgba(16,185,129,.16),rgba(6,182,212,.1));border:1px solid rgba(52,211,153,.45)}
+.zr .t{font-size:28px;font-weight:800;color:var(--white);white-space:nowrap}
+.zr .it{display:flex;align-items:center;gap:12px;font-size:23px;color:var(--white)}
+.zr .it i{color:var(--em2)}
 @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-iteration-count:1!important} }
 </style>
 </head>
@@ -419,62 +500,109 @@ flow{to{stroke-dashoffset:-32}}
 
 <!-- 3 · HUB MODEL -->
 <section class="slide">
-  <div class="pad" style="left:110px;top:100px;width:1700px">
+  <div class="pad" style="left:110px;top:90px;width:1700px">
     <div class="eb rv" style="--d:0"><b>03</b>The New Hub Model</div>
-    <h2 class="t2 rv" style="--d:1">คนคุม 3–4 คน <span class="grad">+ AI + Gig Contributor</span></h2>
+    <h2 class="t2 rv" style="--d:1">3-Tier Architecture: <span class="grad">AI + คนคุม 3–4 คน + Plug &amp; Play</span></h2>
   </div>
-  <div class="pad" style="left:110px;right:110px;top:330px;display:flex;flex-direction:column;gap:24px">
-    <div class="gc hv layer rv" style="--d:2;border-color:rgba(6,182,212,.45)"><div class="ico"><i class="fa-solid fa-microchip"></i></div><div><div class="tag">1 · AI Backbone · 100% Automation</div><div class="h3">AI คุมกระบวนการ</div><div class="p">รับ Lead · จองคิว · แจก Slot งาน · ตรวจรูปภาพ</div></div></div>
-    <div class="gc hv layer rv" style="--d:3;border-color:rgba(212,180,131,.45)"><div class="ico gold"><i class="fa-solid fa-user-shield"></i></div><div><div class="tag" style="color:var(--gold)">2 · 3–4 Core Monitors · On-Site QC</div><div class="h3">คนประจำคุมคุณภาพ</div><div class="p">ดูความเรียบร้อย · ตรวจจุดสำคัญ · จัดการเคสผิดปกติ</div></div></div>
-    <div class="gc hv layer rv" style="--d:4;border-color:rgba(16,185,129,.45)"><div class="ico" style="background:linear-gradient(140deg,#6EE7B7,#059669)"><i class="fa-solid fa-people-group"></i></div><div><div class="tag" style="color:var(--em2)">3 · Plug &amp; Play Contributors · Task-based</div><div class="h3">หน้างานรับงานตาม Slot</div><div class="p">ทำตาม Checklist ทีละข้อ</div></div>
-      <div class="who"><span class="chip">Front</span><span class="chip">เซลส์</span><span class="chip">พยาบาล OR</span><span class="chip">แม่บ้าน</span></div></div>
+  <div class="pad" style="left:110px;right:110px;top:290px">
+    <div class="tier t-ai rv" style="--d:2"><div class="ico3"><i class="fa-solid fa-microchip"></i></div><div><div class="tg" style="color:var(--cy2)">Tier 1 · 100% Automation</div><div class="h3">AI Automation Backbone</div></div>
+      <div class="fn"><span><i class="fa-solid fa-filter"></i>คัดกรอง Lead</span><span><i class="fa-solid fa-calendar-check"></i>จัด Slot</span><span><i class="fa-solid fa-paper-plane"></i>จ่ายงาน</span><span><i class="fa-solid fa-camera"></i>ตรวจรูป</span></div></div>
+    <div class="conn rv" style="--d:3"><svg><line x1="3" y1="0" x2="3" y2="44" stroke="#22D3EE" stroke-width="3"/></svg><svg><line x1="3" y1="0" x2="3" y2="44" stroke="#22D3EE" stroke-width="3"/></svg><svg><line x1="3" y1="0" x2="3" y2="44" stroke="#22D3EE" stroke-width="3"/></svg></div>
+    <div class="tier t-core rv" style="--d:3"><div class="ico3 gold"><i class="fa-solid fa-tower-observation"></i></div><div><div class="tg" style="color:var(--gold)">Tier 2 · On-Site Quality Control</div><div class="h3">3–4 Core Control Tower</div></div>
+      <div class="fn"><span><i class="fa-solid fa-eye" style="color:var(--gold)"></i>Monitoring หน้างาน</span><span><i class="fa-solid fa-clipboard-check" style="color:var(--gold)"></i>Audit จุดสำคัญ</span><span><i class="fa-solid fa-triangle-exclamation" style="color:var(--gold)"></i>จัดการเคสผิดปกติ</span></div></div>
+    <div class="conn rv" style="--d:4"><svg><line x1="3" y1="0" x2="3" y2="44" stroke="#34D399" stroke-width="3"/></svg><svg><line x1="3" y1="0" x2="3" y2="44" stroke="#34D399" stroke-width="3"/></svg><svg><line x1="3" y1="0" x2="3" y2="44" stroke="#34D399" stroke-width="3"/></svg></div>
+    <div class="tier t-pool rv" style="--d:4"><div class="ico3 em"><i class="fa-solid fa-people-group"></i></div><div><div class="tg" style="color:var(--em2)">Tier 3 · Task-based</div><div class="h3">Plug &amp; Play Frontline Pool</div><div class="p" style="font-size:21px;margin-top:4px">รับงานตาม Slot · ทำตาม Checklist</div></div>
+      <div class="pool">
+        <div class="pnd"><i class="on"></i><div class="ic"><i class="fa-solid fa-tablet-screen-button"></i></div><div class="nm">Front</div></div>
+        <div class="pnd"><i class="on"></i><div class="ic"><i class="fa-solid fa-handshake"></i></div><div class="nm">Closer</div></div>
+        <div class="pnd"><i class="on"></i><div class="ic"><i class="fa-solid fa-user-nurse"></i></div><div class="nm">OR</div></div>
+        <div class="pnd"><i class="on"></i><div class="ic"><i class="fa-solid fa-spray-can-sparkles"></i></div><div class="nm">Clean</div></div>
+      </div></div>
   </div>
 </section>
 
 <!-- 4 · CHECKLIST -->
 <section class="slide" data-k="steps">
-  <div class="pad" style="left:110px;top:100px;width:1700px">
+  <div class="pad" style="left:110px;top:90px;width:1700px">
     <div class="eb rv" style="--d:0"><b>04</b>Checklist Execution</div>
     <h2 class="t2 rv" style="--d:1">ทุกตำแหน่งทำงานผ่าน <span class="grad">"Checklist บังคับทำถูก"</span></h2>
   </div>
-  <div class="pad" style="left:110px;right:110px;top:320px;display:flex;gap:22px">
-    <div class="gc flowc rv" style="--d:2"><div class="h3"><i class="fa-solid fa-tablet-screen-button" style="color:var(--cy2)"></i>&nbsp; Front Desk</div>
+  <div class="pad" style="left:110px;right:110px;top:290px;display:flex;gap:22px">
+    <div class="mcard rv" style="--d:2"><div class="h3"><i class="fa-solid fa-tablet-screen-button"></i>Front Desk</div>
+      <div class="mock"><div class="mbtn"><i class="fa-solid fa-comment"></i>&nbsp; "สวัสดีค่ะ เชิญห้องรับรองค่ะ"</div><div class="mchk"><b>✓</b>เสิร์ฟน้ำรหัส A</div><div class="mchk" style="margin-top:10px;opacity:.55;background:rgba(255,255,255,.04);border-color:var(--line)"><b style="background:rgba(255,255,255,.12)"></b>สแกนรับลูกค้า</div></div>
       <ol class="steps"><li>เปิดจอ</li><li>อ่านคำทักทาย</li><li>เสิร์ฟน้ำรหัส A</li><li>สแกนรับลูกค้า</li></ol></div>
-    <div class="gc flowc rv" style="--d:3"><div class="h3"><i class="fa-solid fa-handshake" style="color:var(--cy2)"></i>&nbsp; Sales</div>
-      <ol class="steps"><li>AI สรุปความต้องการ + งบประมาณ</li><li>เซลส์นำเสนอ Option A/B</li></ol></div>
-    <div class="gc flowc rv" style="--d:4"><div class="h3"><i class="fa-solid fa-user-nurse" style="color:var(--cy2)"></i>&nbsp; OR Nurse</div>
-      <ol class="steps"><li>หยิบกล่องสีตามหัตถการ (ฟ้า/ส้ม/เขียว)</li><li>วางทาบตามรูปโปสเตอร์</li><li>จบงาน ถ่ายรูปนับกอซ</li></ol></div>
-    <div class="gc flowc rv" style="--d:5"><div class="h3"><i class="fa-solid fa-spray-can-sparkles" style="color:var(--cy2)"></i>&nbsp; แม่บ้าน</div>
+    <div class="mcard rv" style="--d:3"><div class="h3"><i class="fa-solid fa-handshake"></i>Sales Closer</div>
+      <div class="mock" style="align-items:center"><span class="aibadge"><i class="fa-solid fa-microchip"></i>AI Option A/B Recommendation</span>
+        <div class="opt" style="width:100%"><div class="rec"><b>A</b><span>แนะนำ · ตรงงบ</span></div><div><b>B</b><span>ทางเลือก</span></div></div></div>
+      <ol class="steps"><li>AI สรุปความต้องการ + งบ</li><li>เซลส์นำเสนอ Option A/B</li></ol></div>
+    <div class="mcard rv" style="--d:4"><div class="h3"><i class="fa-solid fa-user-nurse"></i>OR Nurse</div>
+      <div class="mock">
+        <svg viewBox="0 0 300 210" width="100%" height="218" aria-label="Modular packs and shadow board">
+          <defs><linearGradient id="st4" x1="0" x2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset=".5" stop-color="#9AA4B2"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient></defs>
+          <rect x="6" y="6" width="288" height="110" rx="14" fill="#1E293B" stroke="#94A3B8" stroke-width="2"/>
+          <g fill="none" stroke="rgba(148,163,184,.6)" stroke-width="2" stroke-dasharray="5 4"><rect x="22" y="24" width="120" height="12" rx="6"/><rect x="22" y="52" width="120" height="12" rx="6"/><circle cx="182" cy="44" r="14"/><circle cx="182" cy="84" r="14"/><rect class="slot-miss" x="222" y="24" width="56" height="76" rx="8"/></g>
+          <rect x="22" y="24" width="120" height="12" rx="6" fill="url(#st4)"/><rect x="22" y="52" width="120" height="12" rx="6" fill="url(#st4)"/>
+          <circle cx="182" cy="44" r="10" fill="none" stroke="url(#st4)" stroke-width="5"/><circle cx="182" cy="84" r="10" fill="none" stroke="url(#st4)" stroke-width="5"/>
+          <text x="22" y="98" font-family="Plus Jakarta Sans" font-weight="800" font-size="12" fill="#94A3B8">SHADOW BOARD</text>
+          <g font-family="Noto Sans Thai" font-weight="700" font-size="15" text-anchor="middle">
+            <rect x="6" y="132" width="90" height="70" rx="12" fill="#0EA5E9"/><text x="51" y="174" fill="#fff">ตา</text>
+            <rect x="105" y="132" width="90" height="70" rx="12" fill="#EA580C"/><text x="150" y="174" fill="#fff">จมูก</text>
+            <rect x="204" y="132" width="90" height="70" rx="12" fill="#059669"/><text x="249" y="174" fill="#fff">ดูดไขมัน</text>
+          </g>
+        </svg></div>
+      <ol class="steps"><li>หยิบกล่องสีตามหัตถการ</li><li>วางทาบตามโปสเตอร์</li><li>ถ่ายรูปนับกอซ</li></ol></div>
+    <div class="mcard rv" style="--d:5"><div class="h3"><i class="fa-solid fa-spray-can-sparkles"></i>Sanitization</div>
+      <div class="mock"><div class="phone"><div class="shot"></div><div class="ok"><i class="fa-solid fa-cloud-arrow-up"></i> Photo-Proof Upload<br>12-Step Sanitized ✓</div></div></div>
       <ol class="steps"><li>ทำความสะอาด 12 ขั้นตอน</li><li>ถ่ายรูปห้องส่งตรวจ</li><li>ปลดล็อกค่าจ้าง</li></ol></div>
   </div>
 </section>
 
 <!-- 5 · QUALITY -->
 <section class="slide">
-  <div class="pad" style="left:110px;top:100px;width:1700px">
+  <div class="pad" style="left:110px;top:90px;width:1700px">
     <div class="eb rv" style="--d:0"><b>05</b>Quality &amp; Reliability Control</div>
-    <h2 class="t2 rv" style="--d:1">คุมคุณภาพ<span class="grad">โดยไม่ต้องคอยประกบสอน</span></h2>
+    <h2 class="t2 rv" style="--d:1">3 Quality Shields: <span class="grad">คุมคุณภาพโดยไม่ต้องประกบสอน</span></h2>
   </div>
-  <div class="pad" style="left:110px;right:110px;top:380px;display:flex;gap:30px">
-    <div class="gc hv anc rv" style="--d:2"><div class="ico"><i class="fa-solid fa-circle-play"></i></div><div class="lbl th">ก่อนเริ่มงาน</div><div class="h3">Pre-Shift 5-Minute Quiz</div><div class="p">ดูคลิปสั้น + ทำแบบทดสอบ<b>ผ่าน 100%</b> ถึงกดรับงานได้</div></div>
-    <div class="gc hv anc rv" style="--d:3"><div class="ico gold"><i class="fa-solid fa-star"></i></div><div class="lbl th" style="color:var(--gold)">หลังจบเคส</div><div class="h3">Rating &amp; Slot Priority</div><div class="p">หมอและคนไข้ให้คะแนน คนคะแนนสูง<b>ได้เลือกเคสใหญ่ก่อน</b></div></div>
-    <div class="gc hv anc rv" style="--d:4"><div class="ico" style="background:linear-gradient(140deg,#6EE7B7,#059669)"><i class="fa-solid fa-camera"></i></div><div class="lbl th" style="color:var(--em2)">ก่อนจ่ายเงิน</div><div class="h3">Photo-Proof Verification</div><div class="p">ทุกงานต้องมี<b>ภาพถ่ายเป็นหลักฐาน</b>ก่อนตัดจ่าย</div></div>
+  <div class="pad" style="left:110px;right:110px;top:300px;display:flex;gap:30px">
+    <div class="shd rv" style="--d:2"><div class="lbl th">ก่อนเริ่มงาน</div>
+      <div class="vis"><svg class="ring100" width="210" height="210" viewBox="0 0 210 210"><circle cx="105" cy="105" r="86" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="16"/>
+        <circle class="pr" cx="105" cy="105" r="86" fill="none" stroke="url(#q1)" stroke-width="16" stroke-linecap="round" transform="rotate(-90 105 105)"/>
+        <defs><linearGradient id="q1" x1="0" x2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs>
+        <text x="105" y="112" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="48" fill="#F8FAFC">100%</text>
+        <text x="105" y="142" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="13" letter-spacing="2" fill="#22D3EE">SCORE REQUIRED</text></svg></div>
+      <div class="h3">Pre-Shift 5-Min Quiz</div><div class="p">ดูคลิปสั้น + ทำแบบทดสอบ<b>ผ่าน 100%</b> ถึงกดรับงานได้</div></div>
+    <div class="shd rv" style="--d:3"><div class="lbl th" style="color:var(--gold)">หลังจบเคส</div>
+      <div class="vis"><div style="display:flex;flex-direction:column;align-items:center;gap:16px"><div style="font-size:52px;color:var(--gold);letter-spacing:6px;filter:drop-shadow(0 0 14px rgba(212,180,131,.6))">★★★★★</div>
+        <div style="font-size:64px;font-weight:800;color:var(--white);line-height:1">4.8<span style="font-size:32px;color:var(--gold)">+</span></div><span class="unlock"><i class="fa-solid fa-lock-open"></i>High-Ticket Unlock</span></div></div>
+      <div class="h3">Rating &amp; Priority Engine</div><div class="p">หมอ + คนไข้ให้คะแนน คนคะแนนสูง<b>ได้เลือกเคสใหญ่ก่อน</b></div></div>
+    <div class="shd rv" style="--d:4"><div class="lbl th" style="color:var(--em2)">ก่อนจ่ายเงิน</div>
+      <div class="vis"><div class="scan"><span class="cn" style="left:10px;top:10px;border-right:0;border-bottom:0"></span><span class="cn" style="right:10px;top:10px;border-left:0;border-bottom:0"></span><span class="cn" style="left:10px;bottom:10px;border-right:0;border-top:0"></span><span class="cn" style="right:10px;bottom:10px;border-left:0;border-top:0"></span>
+        <span class="line"></span><i class="fa-solid fa-camera" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:44px;color:rgba(255,255,255,.35)"></i></div></div>
+      <div class="h3">AI Photo-Proof Scanner</div><div class="p">สแกนรูปตรวจงาน<b>ก่อนตัดเงินค่าจ้าง</b></div></div>
   </div>
 </section>
 
 <!-- 6 · ACTION PLAN -->
 <section class="slide">
   <svg class="particles" id="pt6" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"></svg>
-  <div class="pad" style="left:110px;top:100px;width:1700px">
+  <div class="pad" style="left:110px;top:90px;width:1700px">
     <div class="eb rv" style="--d:0"><b>06</b>Immediate Execution Plan</div>
     <h2 class="t2 rv" style="--d:1">Action Plan: <span class="grad">เริ่มเปลี่ยนทีละก้าว</span></h2>
   </div>
-  <div class="pad" style="left:110px;right:110px;top:400px;display:flex">
-    <div class="gc hv phase rv" style="--d:2;border-color:rgba(245,158,11,.5)"><span class="n">เฟส 1</span><span class="when">สัปดาห์นี้</span><div class="h3">เริ่มที่งานความเสี่ยงต่ำ</div><div class="p"><b style="color:var(--white)">แม่บ้าน / ต้อนรับ</b> เปลี่ยนเป็น Checklist รายชั่วโมง</div></div>
-    <div class="arrowc rv" style="--d:3"><i class="fa-solid fa-chevron-right"></i></div>
-    <div class="gc hv phase rv" style="--d:3"><span class="n">เฟส 2</span><span class="when" style="background:rgba(6,182,212,.14);color:var(--cy2)">ถัดไป</span><div class="h3">ถ่ายคลิปขั้นตอน 1-2-3-4</div><div class="p">เก็บเป็น <b style="color:var(--white)">Library ประจำจุด</b></div></div>
-    <div class="arrowc rv" style="--d:4"><i class="fa-solid fa-chevron-right"></i></div>
-    <div class="gc hv phase rv" style="--d:4;border-color:rgba(16,185,129,.5)"><span class="n">เฟส 3</span><span class="when" style="background:rgba(16,185,129,.14);color:var(--em2)">ขยายเต็มระบบ</span><div class="h3">OR + เซลส์ เข้าโมเดลรายเคส</div><div class="p">พร้อม <b style="color:var(--white)">Core Monitor 3–4 คน</b> ดูแลสมบูรณ์แบบ</div></div>
+  <div class="pad tl6" style="left:110px;right:110px;top:280px">
+    <div class="rail"><i></i></div><div class="runner"></div>
+    <div class="ph6 act rv" style="--d:2"><div class="nd"><i class="fa-solid fa-play"></i></div>
+      <div class="card"><span class="pill" style="background:rgba(52,211,153,.18);color:var(--em2)"><i class="fa-solid fa-circle" style="font-size:9px"></i>ACTIVE PILOT · สัปดาห์นี้</span><div class="h3">เฟส 1 · แม่บ้าน / Front</div><div class="p">เปลี่ยนเป็น <b style="color:var(--white)">Checklist รายชั่วโมง</b> เริ่มจากงานความเสี่ยงต่ำ</div></div></div>
+    <div class="ph6 rv" style="--d:3"><div class="nd"><i class="fa-solid fa-video"></i></div>
+      <div class="card"><span class="pill" style="background:rgba(34,211,238,.14);color:var(--cy2)">MILESTONE 2</span><div class="h3">เฟส 2 · Video Library</div><div class="p">ถ่ายคลิปขั้นตอน 1-2-3-4 เก็บเป็น <b style="color:var(--white)">Library ประจำจุด</b></div></div></div>
+    <div class="ph6 rv" style="--d:4"><div class="nd"><i class="fa-solid fa-user-nurse"></i></div>
+      <div class="card"><span class="pill" style="background:rgba(212,180,131,.16);color:var(--gold)">MILESTONE 3</span><div class="h3">เฟส 3 · OR / Sales Rollout</div><div class="p">เข้าโมเดลรายเคส พร้อม <b style="color:var(--white)">Core Monitor 3–4 คน</b></div></div></div>
+  </div>
+  <div class="pad zr rv" style="--d:5;left:110px;right:110px;top:810px">
+    <span class="t"><i class="fa-solid fa-shield-heart" style="color:var(--em2)"></i>&nbsp; Zero-Risk Outcome</span>
+    <span class="it"><i class="fa-solid fa-check"></i>เริ่มจากงานที่ไม่กระทบเคสผ่าตัด</span>
+    <span class="it"><i class="fa-solid fa-check"></i>วัดผลได้ทุกสัปดาห์</span>
+    <span class="it"><i class="fa-solid fa-check"></i>ปรับหรือหยุดได้ทันที</span>
   </div>
 </section>
 
