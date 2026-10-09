@@ -6,655 +6,597 @@
 <title>BJH Aesthetic OS</title>
 <!--
   =====================================================================
-  presentation.html — The Decoupled Aesthetic Hub (AOS) · 14 Slides
-  Canvas 1920×1080 (16:9) ย่อพอดีจออัตโนมัติ
-  ควบคุม: ← / → / Space / PageUp-Down · ปุ่ม Prev/Next ล่างขวา · ปัดบนมือถือ · F = เต็มจอ
-          ลิงก์ตรงไปสไลด์: เติม #7 ท้าย URL
-  ปรับแต่ง (ค้นหา ✏️): THEME · PHOTO · DATA (กราฟต้นทุน) · SURGE · MAP · ROADMAP
+  presentation.html — The Decoupled Aesthetic Hub (AOS)
+  On-Demand Hospital Infrastructure for BJH Bangkok & B2B Expansion · 14 slides
+  Canvas 1920×1080 → CSS transform scale ให้พอดีทุกจอ
+  ควบคุม: ← / → / Space · ปุ่ม Prev / Next · Slide Counter ล่างขวา · ปัดบนมือถือ · F = เต็มจอ
+  ปรับแต่ง (ค้นหา ✏️): THEME · PHOTO · DATA · MAP · ROADMAP
   =====================================================================
 -->
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* ✏️ THEME — Executive MedTech & Luxury Editorial */
+/* ✏️ THEME */
 :root{
-  --bg:#090D16; --card:#111827; --cy:#06B6D4; --cy2:#22D3EE; --em:#10B981; --em2:#34D399;
-  --ink:#F8FAFC; --body:#BAC5D6; --muted:#7C889C; --red:#F43F5E; --gold:#D4B483; --orange:#FB923C; --blue:#38BDF8;
-  --line:rgba(255,255,255,.1); --glass:rgba(17,24,39,.55);
+  --bg:#0A0F1D; --surface:#111827; --cy:#06B6D4; --cy2:#22D3EE; --em:#10B981; --em2:#34D399; --amber:#F59E0B; --white:#F8FAFC;
+  --body:#B9C4D5; --muted:#7B879A; --gold:#D4B483;
+  --line:rgba(255,255,255,.08);
   --f:'Plus Jakarta Sans','Noto Sans Thai',system-ui,sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;height:100%;overflow:hidden;background:#04060B;font-family:var(--f);color:var(--body);-webkit-font-smoothing:antialiased}
-button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+html,body{width:100%;height:100%;overflow:hidden;background:#05080F;font-family:var(--f);color:var(--body);-webkit-font-smoothing:antialiased}
 .stage{position:fixed;inset:0}
 .deck{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%);overflow:hidden;
   background:radial-gradient(1400px 900px at 90% -10%,rgba(6,182,212,.08),transparent 60%),radial-gradient(1200px 800px at -10% 110%,rgba(16,185,129,.07),transparent 60%),var(--bg)}
 .deck::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.6;background-image:linear-gradient(rgba(148,163,184,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.04) 1px,transparent 1px);background-size:64px 64px}
 
-/* slides + trigger */
-.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateX(50px);transition:opacity .75s ease,transform .95s cubic-bezier(.2,.7,.2,1),visibility 0s .75s}
+/* slides (1920×1080 each) */
+.slide{position:absolute;left:0;top:0;width:1920px;height:1080px;opacity:0;visibility:hidden;transform:translateX(50px);transition:opacity .75s ease,transform .95s cubic-bezier(.2,.7,.2,1),visibility 0s .75s}
 .slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .75s ease,transform .95s cubic-bezier(.2,.7,.2,1)}
 .slide.left{transform:translateX(-50px)}
 .rv{opacity:0}
 .slide.active .rv{animation:up .85s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--d,0) * 110ms + 200ms)}
 @keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 
-/* photos: vignette + gradient blend */
+/* photos + gradient overlay */
 .ph{position:absolute;overflow:hidden;background:#0E1626}
-.ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.1);transition:transform 8s ease-out;filter:saturate(.9)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.1);transition:transform 8s ease-out;filter:saturate(.85)}
 .slide.active .ph img{transform:scale(1)}
-.ph::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(4,6,11,.75) 100%)}
+.ph::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(5,8,15,.75) 100%)}
 .ph .ov{position:absolute;inset:0;z-index:1}
-.ph.r{top:0;right:0;bottom:0;width:38%}.ph.r .ov{background:linear-gradient(90deg,var(--bg) 0%,rgba(9,13,22,.55) 32%,rgba(9,13,22,.1) 75%)}
-.ph.l{top:0;left:0;bottom:0;width:34%}.ph.l .ov{background:linear-gradient(270deg,var(--bg) 0%,rgba(9,13,22,.55) 32%,rgba(9,13,22,.1) 75%)}
-.ph.full{inset:0}.ph.full .ov{background:linear-gradient(90deg,rgba(9,13,22,.97) 0%,rgba(9,13,22,.84) 50%,rgba(9,13,22,.4) 100%)}
-.ph.box{border-radius:26px;border:1px solid var(--line);box-shadow:0 40px 80px -40px #000}.ph.box .ov{background:linear-gradient(180deg,transparent 40%,rgba(4,6,11,.88))}
+.ph.r{top:0;right:0;bottom:0;width:36%}.ph.r .ov{background:linear-gradient(90deg,var(--bg) 0%,rgba(10,15,29,.6) 32%,rgba(10,15,29,.15) 75%)}
+.ph.full{inset:0}
+.ph.box{border-radius:26px;border:1px solid var(--line);box-shadow:0 40px 80px -40px #000}.ph.box .ov{background:linear-gradient(180deg,rgba(10,15,29,.1) 30%,rgba(10,15,29,.88))}
 .credit{position:absolute;top:14px;right:18px;z-index:6;font-size:13px;color:rgba(255,255,255,.4)}
 
 /* type */
 .pad{position:absolute;z-index:3}
-.idx{display:flex;align-items:center;gap:16px;font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cy2)}
-.idx b{color:var(--ink);font-weight:800}
-.idx .pt{color:var(--em2)}
-.idx::after{content:"";height:1px;width:110px;background:linear-gradient(90deg,var(--cy2),transparent)}
-.t1{font-size:92px;font-weight:800;line-height:1.02;letter-spacing:-.03em;color:var(--ink)}
-.t2{font-size:58px;font-weight:800;line-height:1.2;letter-spacing:-.015em;color:var(--ink);text-wrap:balance;margin-top:18px}
+.eb{display:flex;align-items:center;gap:16px;font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cy2)}
+.eb b{color:var(--white);font-weight:800}
+.eb::after{content:"";height:1px;width:110px;background:linear-gradient(90deg,var(--cy2),transparent)}
+.t1{font-size:96px;font-weight:800;line-height:1.02;letter-spacing:-.03em;color:var(--white)}
+.t2{font-size:56px;font-weight:800;line-height:1.2;letter-spacing:-.015em;color:var(--white);text-wrap:balance;margin-top:18px}
 .grad{background:linear-gradient(90deg,var(--em2),var(--cy2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:31px;line-height:1.55}
-.h3{font-size:31px;font-weight:700;line-height:1.28;color:var(--ink)}
-.p{font-size:25px;line-height:1.5}
+.amber{color:var(--amber)}
+.lead{font-size:30px;line-height:1.55}
+.h3{font-size:30px;font-weight:700;line-height:1.28;color:var(--white)}
+.p{font-size:24px;line-height:1.5}
 .lbl{font-size:18px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cy2)}
 .th{letter-spacing:0!important;text-transform:none!important}
 .mu{color:var(--muted)}
-
-/* glass cards + hover lift + glow border */
-.gc{position:relative;background:linear-gradient(160deg,rgba(17,24,39,.78),rgba(17,24,39,.5));border:1px solid var(--line);border-radius:24px;
-  backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 2px 4px rgba(0,0,0,.25),0 20px 44px -18px rgba(0,0,0,.65);
-  transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
-.gc.hv:hover{transform:translateY(-10px);border-color:rgba(6,182,212,.65);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(6,182,212,.3),0 0 44px -8px rgba(6,182,212,.55),0 40px 80px -30px #000}
-.gc.hv:hover .ico{animation:ip 1s ease-in-out infinite}
-@keyframes ip{50%{transform:scale(1.12)}}
-.ico{width:66px;height:66px;border-radius:19px;display:grid;place-items:center;font-size:28px;flex:none;color:#03221D;background:linear-gradient(140deg,var(--em2),var(--cy2));box-shadow:0 0 28px -6px rgba(6,182,212,.75)}
-.ico.red{background:linear-gradient(140deg,#FB7185,#BE123C);color:#fff;box-shadow:0 0 28px -6px rgba(244,63,94,.9)}
-.ico.gold{background:linear-gradient(140deg,#EAD3A6,#B08A55);color:#2A1D0A;box-shadow:none}
-.chip{display:inline-flex;align-items:center;gap:12px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:22px;font-weight:600;color:var(--ink)}
-.chip i{color:var(--cy2)}
-ul.ck{list-style:none;display:flex;flex-direction:column;gap:12px}
-ul.ck li{display:flex;gap:14px;font-size:24px;line-height:1.42}
-ul.ck li i{margin-top:8px;font-size:17px;color:var(--em2);flex:none}
-ul.ck.x li i{color:var(--red)}
 .num{font-variant-numeric:tabular-nums}
 
-/* keyframes */
+/* glass card: blur 16px · micro-border · 3D shadow · hover elevation */
+.gc{position:relative;background:linear-gradient(160deg,rgba(17,24,39,.82),rgba(17,24,39,.55));border:1px solid var(--line);border-radius:24px;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 2px 4px rgba(0,0,0,.3),0 18px 40px -16px rgba(0,0,0,.65),0 50px 90px -50px rgba(0,0,0,.8);
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.gc.hv:hover{transform:translateY(-10px);border-color:rgba(6,182,212,.65);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(6,182,212,.3),0 0 46px -8px rgba(6,182,212,.6),0 40px 80px -30px #000}
+.gc.hv:hover .ico{animation:ip 1s ease-in-out infinite}
+@keyframes ip{50%{transform:scale(1.12)}}
+.ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-size:27px;flex:none;color:#03221D;background:linear-gradient(140deg,var(--em2),var(--cy2));box-shadow:0 0 28px -6px rgba(6,182,212,.75)}
+.ico.gold{background:linear-gradient(140deg,#EAD3A6,#B08A55);color:#2A1D0A;box-shadow:none}
+.chip{display:inline-flex;align-items:center;gap:12px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:rgba(10,15,29,.6);font-size:22px;font-weight:600;color:var(--white)}
+.chip i{color:var(--cy2)}
+ul.ck{list-style:none;display:flex;flex-direction:column;gap:12px}
+ul.ck li{display:flex;gap:14px;font-size:23px;line-height:1.42}
+ul.ck li i{margin-top:8px;font-size:16px;color:var(--em2);flex:none}
+ul.ck.x li i{color:var(--amber)}
+
+.warn{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:24px;color:var(--amber);background:rgba(245,158,11,.14);border:1px solid rgba(245,158,11,.45);animation:wp 1.6s ease-in-out infinite}
+@keyframes wp{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.6)}50%{box-shadow:0 0 0 16px rgba(245,158,11,0)}}
+
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes flow{to{stroke-dashoffset:0}}
 @keyframes ro{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.6);opacity:0}}
 @keyframes br{0%,100%{transform:scale(.93);opacity:.65}50%{transform:scale(1.07);opacity:1}}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@keyframes blink{0%,100%{box-shadow:0 0 0 0 rgba(244,63,94,.7)}50%{box-shadow:0 0 0 14px rgba(244,63,94,0)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}33%{transform:translate(-50px,30px)}66%{transform:translate(40px,-30px)}}
+@keyframes tw{0%,100%{opacity:.12}50%{opacity:.9}}
 .ro{transform-box:fill-box;transform-origin:center;animation:ro 2.6s ease-out infinite}
 .br{transform-box:fill-box;transform-origin:center;animation:br 3s ease-in-out infinite}
-.pulse{width:20px;height:20px;border-radius:50%;background:var(--red);animation:blink 1.5s ease-in-out infinite;flex:none}
 
-/* S1 halo */
-.halo{position:absolute;right:120px;top:150px;width:720px;height:720px;z-index:3}
-.halo .a{transform-origin:360px 360px;animation:spin 50s linear infinite}
-.halo .b{transform-origin:360px 360px;animation:spin 32s linear infinite reverse}
-.halo .c{transform-origin:360px 360px;animation:spin 18s linear infinite}
+/* orbital glow + particles */
+.orbit .a{transform-origin:360px 360px;animation:spin 50s linear infinite}
+.orbit .b{transform-origin:360px 360px;animation:spin 30s linear infinite reverse}
+.orbit .c{transform-origin:360px 360px;animation:spin 16s linear infinite}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);mix-blend-mode:screen;pointer-events:none;z-index:2;animation:drift 18s ease-in-out infinite}
+.particles{position:absolute;inset:0;z-index:1;pointer-events:none}
+.particles circle{animation:tw var(--t,4s) ease-in-out infinite;animation-delay:var(--dl,0s)}
 
-/* S2 diag */
-.diag{display:flex;flex-direction:column}
-.drow{display:flex;align-items:center;gap:24px;padding:22px 30px;border-top:1px solid var(--line)}
-.drow:first-child{border-top:0}
-.drow .n{font-size:20px;font-weight:800;color:var(--red);width:40px}
-.drow .t{font-size:30px;font-weight:700;color:var(--ink)}
-.drow .s{font-size:23px;color:var(--muted);margin-top:2px}
-
-/* laser flow nodes */
-.pn{position:absolute;width:290px;margin-left:-145px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;z-index:4}
-.disc{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-size:40px;color:var(--ink);position:relative;background:radial-gradient(circle at 35% 30%,#1B3550,#0B111C);border:2px solid rgba(6,182,212,.5);box-shadow:0 20px 40px -20px #000}
+/* laser nodes */
+.pn{position:absolute;width:300px;margin-left:-150px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;z-index:4}
+.disc{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-size:40px;color:var(--white);position:relative;background:radial-gradient(circle at 35% 30%,#1B3550,#0B111C);border:2px solid rgba(6,182,212,.55);box-shadow:0 20px 40px -20px #000}
 .disc::after{content:"";position:absolute;inset:-12px;border-radius:50%;border:3px solid var(--cy2);opacity:0;animation:hit 8s linear infinite;animation-delay:var(--t)}
-@keyframes hit{0%{opacity:1;transform:scale(.92)}10%{opacity:0;transform:scale(1.3)}100%{opacity:0}}
+@keyframes hit{0%{opacity:1;transform:scale(.92);box-shadow:0 0 40px rgba(34,211,238,.8)}10%{opacity:0;transform:scale(1.3)}100%{opacity:0}}
 .pn .s{font-size:17px;font-weight:800;letter-spacing:.14em;color:var(--cy2)}
 .pn .h3{font-size:27px}
 .pn .p{font-size:21px;color:var(--muted)}
 
-/* S4 pillars */
-.pill{flex:1;padding:34px 30px;display:flex;flex-direction:column;gap:20px;animation:fl 5s ease-in-out infinite}
-.pill:nth-child(2){animation-delay:-1.2s}.pill:nth-child(3){animation-delay:-2.4s}.pill:nth-child(4){animation-delay:-3.6s}
-.pill .sec{font-size:16px;font-weight:800;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-top:6px}
-.pill ul.ck li{font-size:24px}
-.pill .h3{font-size:34px}
+/* S3 compare */
+.toggle{display:inline-flex;padding:8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);cursor:pointer;user-select:none}
+.toggle span{padding:13px 26px;border-radius:999px;font-size:22px;font-weight:700;color:var(--muted);transition:all .4s}
+.toggle span.on{background:linear-gradient(90deg,var(--em),var(--cy));color:#03221D;box-shadow:0 0 30px -6px rgba(6,182,212,.8)}
+.cmpc{flex:1;padding:34px 36px;display:flex;flex-direction:column;gap:6px;transition:opacity .5s,transform .5s,border-color .5s,box-shadow .5s}
+.cmpc.dim{opacity:.35;transform:scale(.97)}
+.cmpc.hi{border-color:rgba(6,182,212,.6);box-shadow:0 0 60px -20px rgba(6,182,212,.8)}
+.cr{display:flex;align-items:center;gap:18px;padding:16px 0;border-top:1px solid var(--line);font-size:25px;color:var(--white)}
+.cr .k{width:190px;font-size:21px;font-weight:700;color:var(--muted)}
+.cr i{width:28px;text-align:center}
 
-/* S5 flywheel */
-.fw{position:absolute;z-index:3}
-.fw .sp{transform-origin:300px 300px;animation:spin 20s linear infinite}
-.fw .ln{stroke-dasharray:18 28;stroke-dashoffset:460;animation:flow 3.4s linear infinite}
-.fwi{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;display:grid;place-items:center;font-size:28px;color:var(--cy2);z-index:4}
-.fwl{position:absolute;transform:translateX(-50%);white-space:nowrap;padding:8px 18px;border-radius:999px;background:rgba(9,13,22,.92);border:1px solid rgba(6,182,212,.45);font-size:20px;font-weight:800;color:var(--ink);z-index:4}
+/* S5 roles */
+.role{flex:1;padding:30px 28px;display:flex;flex-direction:column;gap:16px}
+.role .ico{animation:fl 4s ease-in-out infinite}
+.role:nth-child(2) .ico{animation-delay:-1s}.role:nth-child(3) .ico{animation-delay:-2s}.role:nth-child(4) .ico{animation-delay:-3s}
+.src{margin-top:auto;display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:rgba(212,180,131,.1);border:1px solid rgba(212,180,131,.3);font-size:21px;font-weight:600;color:var(--gold)}
 
-/* S6 */
+/* S7 */
 .kit{flex:1;border-radius:20px;padding:20px 22px;color:#fff;display:flex;flex-direction:column;gap:4px;transition:transform .35s}
 .kit:hover{transform:translateY(-10px)}
-.kit .n{font-size:34px;font-weight:800}.kit .s{font-size:19px;font-weight:600;opacity:.95}
+.kit .n{font-size:32px;font-weight:800}.kit .s{font-size:19px;font-weight:600;opacity:.95}
 .tab{border-radius:34px;background:#070B13;border:12px solid #1E293B;padding:24px 26px;box-shadow:0 50px 90px -40px #000}
-.pr{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;font-size:25px;color:var(--muted);transition:all .45s;opacity:.35}
-.pr .d{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:18px;background:rgba(255,255,255,.08);flex:none}
-.pr.on{opacity:1;background:rgba(6,182,212,.13);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(6,182,212,.55)}
-.pr.on .d{background:var(--cy);color:#03221D}
-.pr.done{opacity:.8}.pr.done .d{background:rgba(16,185,129,.4);color:var(--ink)}
+.task{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;font-size:24px;color:var(--muted);transition:all .4s;opacity:.4;cursor:pointer}
+.task .bx{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:18px;border:2px solid rgba(255,255,255,.2);color:transparent;flex:none;transition:all .3s}
+.task.on{opacity:1;background:rgba(6,182,212,.13);color:var(--white);box-shadow:inset 0 0 0 1px rgba(6,182,212,.55)}
+.task.done{opacity:.85;color:var(--white)}
+.task.done .bx{background:var(--em);border-color:var(--em);color:#03221D}
 .slot-miss{animation:miss 1.4s ease-in-out infinite}
-@keyframes miss{50%{stroke:#F43F5E;fill:rgba(244,63,94,.25)}}
+@keyframes miss{50%{stroke:#F59E0B;fill:rgba(245,158,11,.25)}}
 
-/* S7 surge */
-.slider{width:100%;accent-color:var(--cy)}
-input[type=range]{height:10px}
-.days{display:flex;gap:8px}
-.days span{flex:1;text-align:center;padding:10px 0;border-radius:10px;font-size:19px;font-weight:700;background:rgba(255,255,255,.05);color:var(--muted)}
-.days span.hot{background:rgba(251,146,60,.18);color:var(--orange);box-shadow:inset 0 0 0 1px rgba(251,146,60,.5)}
-.rate{display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:22px}
-.rate .stars{color:var(--gold);letter-spacing:2px}
-.rate .badge{margin-left:auto;font-size:15px;font-weight:800;letter-spacing:.06em;padding:5px 12px;border-radius:999px}
-.bar-r{height:10px;border-radius:5px;background:rgba(255,255,255,.08);overflow:hidden;width:150px}
-.bar-r i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#F5E3BF);transform-origin:left;transform:scaleX(0);transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
-
-/* S8 journey */
-.jt{position:relative;display:flex;gap:18px}
-.jt .rail{position:absolute;left:8%;right:8%;top:62px;height:4px;background:rgba(255,255,255,.1);border-radius:4px}
-.jt .run{position:absolute;top:56px;left:8%;width:16px;height:16px;border-radius:50%;background:var(--cy2);box-shadow:0 0 22px 6px rgba(6,182,212,.7);animation:run 7s linear infinite}
-@keyframes run{0%{left:8%;opacity:0}5%{opacity:1}95%{opacity:1}100%{left:91%;opacity:0}}
-.js{flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;position:relative;z-index:2}
-.js .disc{width:124px;height:124px}
-.js .card{width:100%;min-height:270px;padding:26px 20px;display:flex;flex-direction:column;gap:14px;align-items:center}
-.actor{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:18px;font-weight:700}
+/* S8 table */
+.jtab{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:24px}
+.jtab th{font-size:18px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cy2);text-align:left;padding:22px 28px;background:rgba(6,182,212,.08);border-bottom:1px solid var(--line)}
+.jtab td{font-size:25px;padding:26px 30px;border-bottom:1px solid var(--line);color:var(--body);vertical-align:middle}
+.jtab tr:last-child td{border-bottom:0}
+.jtab tbody tr{transition:background .3s,box-shadow .3s}
+.jtab tbody tr:hover{background:rgba(6,182,212,.07)}
+.jtab tbody tr.on{background:rgba(6,182,212,.1);box-shadow:inset 5px 0 0 var(--cy2)}
+.jtab .st{display:flex;align-items:center;gap:16px;color:var(--white);font-weight:700}
+.jtab .st b{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(6,182,212,.15);color:var(--cy2);font-size:20px;flex:none}
+.actor{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:19px;font-weight:700;white-space:nowrap}
 .actor.ai{background:rgba(6,182,212,.15);color:var(--cy2)}.actor.od{background:rgba(212,180,131,.16);color:var(--gold)}.actor.dr{background:rgba(52,211,153,.15);color:var(--em2)}
 
-/* S10 iso box */
-.scene{position:absolute;perspective:1600px;z-index:3}
-.cube{position:relative;width:300px;height:300px;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(38deg);animation:cubeSpin 14s ease-in-out infinite}
+/* S10 cube */
+.cube{position:relative;width:220px;height:220px;transform-style:preserve-3d;animation:cubeSpin 14s ease-in-out infinite}
 @keyframes cubeSpin{0%,100%{transform:rotateX(-24deg) rotateY(38deg)}50%{transform:rotateX(-24deg) rotateY(-52deg)}}
-.cf{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:26px;font-weight:800;color:var(--ink);
+.cf{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:24px;font-weight:800;color:var(--white);
   border:1px solid rgba(34,211,238,.55);background:linear-gradient(150deg,rgba(6,182,212,.35),rgba(16,185,129,.18));box-shadow:inset 0 0 60px rgba(6,182,212,.25)}
-.cf i{font-size:56px;color:var(--cy2)}
-.cf.f1{transform:translateZ(150px)}.cf.f2{transform:rotateY(90deg) translateZ(150px)}.cf.f3{transform:rotateY(180deg) translateZ(150px)}.cf.f4{transform:rotateY(-90deg) translateZ(150px)}
-.cf.top{transform:rotateX(90deg) translateZ(150px);background:linear-gradient(150deg,rgba(212,180,131,.45),rgba(6,182,212,.2))}
-.cf.bot{transform:rotateX(-90deg) translateZ(150px);background:rgba(0,0,0,.5)}
-.shadow-floor{position:absolute;left:50%;bottom:-120px;width:380px;height:80px;margin-left:-190px;border-radius:50%;background:radial-gradient(ellipse,rgba(6,182,212,.45),transparent 70%);filter:blur(10px);animation:br 4s ease-in-out infinite}
+.cf i{font-size:50px;color:var(--cy2)}
+.floor{position:absolute;left:50%;bottom:-110px;width:340px;height:70px;margin-left:-170px;border-radius:50%;background:radial-gradient(ellipse,rgba(6,182,212,.45),transparent 70%);filter:blur(10px);animation:br 4s ease-in-out infinite}
 
-/* S11 revenue */
-.rv-card{display:flex;align-items:center;gap:28px;padding:30px 34px}
-.rv-card .amt{margin-left:auto;text-align:right}
-.rv-card .amt b{display:block;font-size:46px;font-weight:800;color:var(--ink);line-height:1.1}
-.rv-card .amt span{font-size:20px;color:var(--muted)}
-
-/* S12 cost chart */
-.plot{position:relative;height:440px;display:flex;align-items:flex-end;gap:120px;padding:0 80px;border-bottom:2px solid rgba(255,255,255,.3)}
+/* S11 chart */
+.plot{position:relative;height:460px;display:flex;align-items:flex-end;gap:120px;padding:0 80px;border-bottom:2px solid rgba(255,255,255,.3)}
 .gl{position:absolute;left:0;right:0;border-top:1px dashed rgba(255,255,255,.08)}
 .gl span{position:absolute;right:100%;margin-right:14px;top:-12px;font-size:18px;color:var(--muted);white-space:nowrap}
-.col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative;z-index:1}
 .stack{width:240px;display:flex;flex-direction:column-reverse}
 .seg{width:100%;height:0;transition:height 1.5s cubic-bezier(.2,.8,.2,1)}
 .seg.min.old{background:#475569;border-radius:0 0 6px 6px}
 .seg.rng.old{background:repeating-linear-gradient(135deg,#64748B 0 12px,#475569 12px 24px);border-radius:18px 18px 0 0;transition-delay:.8s}
 .seg.min.aos{background:linear-gradient(180deg,var(--em2),#047857);border-radius:0 0 6px 6px;box-shadow:0 0 50px -10px rgba(16,185,129,.9)}
 .seg.rng.aos{background:repeating-linear-gradient(135deg,rgba(52,211,153,.55) 0 12px,rgba(52,211,153,.25) 12px 24px);border:2px dashed var(--em2);border-bottom:0;border-radius:18px 18px 0 0;transition-delay:.8s}
-.vtop{font-size:40px;font-weight:800;color:var(--ink);margin-bottom:14px;white-space:nowrap}
+.vtop{font-size:40px;font-weight:800;color:var(--white);margin-bottom:14px;white-space:nowrap}
 .xl{display:flex;gap:120px;padding:18px 80px 0}
-.xl div{flex:1;text-align:center;font-size:26px;font-weight:700;color:var(--ink)}
+.xl div{flex:1;text-align:center;font-size:26px;font-weight:700;color:var(--white)}
 .xl div span{display:block;font-size:20px;font-weight:600;color:var(--muted)}
 
-/* map */
+/* S12 revenue */
+.rvc{flex:1;padding:34px 32px;display:flex;flex-direction:column;gap:16px}
+.rvc .amt{font-size:52px;font-weight:800;line-height:1.05;color:var(--white)}
+.rvc .unit{font-size:22px;color:var(--muted)}
+
 .map .route{stroke-dasharray:8 10;stroke-dashoffset:180;animation:flow 2.6s linear infinite}
 .city{cursor:pointer}.city.sel .dot{fill:#fff}
 
 /* S14 */
-.rm{display:flex;align-items:center;gap:24px;padding:24px 28px}
-.rm .n{font-size:46px;font-weight:800;line-height:1;width:60px}
-.offer{padding:34px 38px;border-color:rgba(212,180,131,.55)!important;box-shadow:0 0 70px -24px rgba(212,180,131,.7)!important}
-.cta{display:inline-flex;align-items:center;gap:16px;padding:26px 44px;border-radius:22px;font-size:31px;font-weight:800;color:#03221D;
+.step3{display:flex;align-items:stretch}
+.step3 .gc{flex:1;padding:26px 28px;display:flex;flex-direction:column;gap:10px}
+.step3 .arr{flex:0 0 56px;display:grid;place-items:center;color:var(--cy2);font-size:26px}
+.offer{padding:34px 40px;border-color:rgba(245,158,11,.5)!important;box-shadow:0 0 70px -24px rgba(245,158,11,.6)!important}
+.cta{display:inline-flex;align-items:center;gap:16px;padding:26px 46px;border-radius:22px;font-size:31px;font-weight:800;color:#03221D;cursor:pointer;
   background:linear-gradient(90deg,var(--em2),var(--cy2),var(--em2));background-size:200% 100%;animation:sheen 4s linear infinite,ctag 2.2s ease-in-out infinite}
 @keyframes sheen{to{background-position:200% 0}}
 @keyframes ctag{0%,100%{box-shadow:0 0 0 0 rgba(6,182,212,.5),0 20px 60px -16px rgba(6,182,212,.9)}50%{box-shadow:0 0 0 18px rgba(6,182,212,0),0 20px 80px -10px rgba(6,182,212,1)}}
+.start{display:inline-flex;align-items:center;gap:14px;padding:20px 34px;border-radius:18px;font-size:25px;font-weight:800;color:#03221D;background:linear-gradient(90deg,var(--em2),var(--cy2));box-shadow:0 18px 50px -14px rgba(6,182,212,.9);cursor:pointer;transition:transform .3s}
+.start:hover{transform:translateY(-4px)}
 
 /* HUD */
 .hud{position:absolute;left:110px;right:110px;bottom:30px;height:56px;display:flex;align-items:center;gap:20px;z-index:30;font-size:19px;color:var(--muted)}
-.hud .b{font-weight:800;color:var(--ink);letter-spacing:.06em}
-.hud .part{color:var(--cy2);font-weight:700}
+.hud .b{font-weight:800;color:var(--white);letter-spacing:.06em}
 .hud .dots{display:flex;gap:8px;margin-left:auto}
 .hud .dots button{width:10px;height:10px;border-radius:5px;background:rgba(255,255,255,.22);transition:all .35s}
 .hud .dots button.on{width:34px;background:var(--cy2)}
-.hud .nv{display:flex;align-items:center;gap:10px;height:52px;padding:0 20px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);font-size:19px;font-weight:700;transition:border-color .3s}
+.hud .nv{display:flex;align-items:center;gap:10px;height:52px;padding:0 20px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--white);font-size:19px;font-weight:700;transition:border-color .3s}
 .hud .nv:hover{border-color:var(--cy2)}
-.hud .c{min-width:84px;text-align:right}
+.hud .c{min-width:90px;text-align:right;color:var(--white);font-weight:700}
 .prog{position:absolute;left:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--em),var(--cy));transition:width .6s;z-index:31}
-.hint{position:fixed;left:50%;top:16px;transform:translateX(-50%);padding:8px 16px;border-radius:999px;background:rgba(9,13,22,.92);border:1px solid var(--line);color:#fff;font-family:var(--f);font-size:13px;transition:opacity .6s;z-index:50;pointer-events:none;white-space:nowrap}
+.hint{position:fixed;left:50%;top:16px;transform:translateX(-50%);padding:8px 16px;border-radius:999px;background:rgba(10,15,29,.92);border:1px solid var(--line);color:#fff;font-family:var(--f);font-size:13px;transition:opacity .6s;z-index:50;pointer-events:none;white-space:nowrap}
 @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-iteration-count:1!important} }
 </style>
 </head>
 <body>
 <div class="stage"><div class="deck" id="deck">
 
-<!-- ============ PART 1 · SLIDE 1 · COVER ============ -->
-<section class="slide" data-part="Part 1 · The Core Paradigm Shift">
-  <!-- ✏️ PHOTO -->
-  <div class="ph full"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=2400&q=85&auto=format&fit=crop" alt="Luxury aesthetic clinic interior"><div class="ov"></div></div>
-  <svg class="halo rv" style="--d:2" viewBox="0 0 720 720" aria-hidden="true">
-    <defs><radialGradient id="hg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#06B6D4" stop-opacity=".45"/><stop offset=".6" stop-color="#10B981" stop-opacity=".1"/><stop offset="1" stop-color="#10B981" stop-opacity="0"/></radialGradient>
+<!-- 1 · HERO 50/50 -->
+<section class="slide">
+  <svg class="particles" id="pt1" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="pad" style="left:110px;top:0;bottom:110px;width:820px;display:flex;flex-direction:column;justify-content:center;gap:30px">
+    <div class="eb rv" style="--d:0">BJH Bangkok Innovation Deck</div>
+    <h1 class="t1 rv" style="--d:1">The Decoupled<br><span class="grad">Aesthetic Hub</span><br><span style="color:var(--gold)">(AOS)</span></h1>
+    <p class="lead rv" style="--d:2">เปลี่ยนโมเดลคลินิกความงามจาก <b class="amber">"Fixed Payroll"</b> สู่ <b style="color:var(--white)">"Plug-and-Play Cloud Hospital Infrastructure"</b></p>
+    <div class="rv" style="--d:3"><button class="start" id="startBtn"><i class="fa-solid fa-play"></i>Start Presentation</button></div>
+  </div>
+  <!-- ✏️ PHOTO: Clinic Interior -->
+  <div class="ph box rv" style="--d:1;left:1000px;top:90px;width:810px;height:860px"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80" alt="Modern clinic interior"><div class="ov" style="background:linear-gradient(180deg,rgba(10,15,29,.35),rgba(10,15,29,.78))"></div></div>
+  <div class="orb" style="width:460px;height:460px;left:1200px;top:200px;background:radial-gradient(circle,rgba(6,182,212,.5),transparent 70%)"></div>
+  <div class="orb" style="width:360px;height:360px;left:1450px;top:560px;background:radial-gradient(circle,rgba(16,185,129,.45),transparent 70%);animation-duration:24s;animation-direction:reverse"></div>
+  <svg class="orbit rv" style="--d:2;position:absolute;left:1045px;top:160px;z-index:3" width="720" height="720" viewBox="0 0 720 720" aria-hidden="true">
+    <defs><radialGradient id="hg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#06B6D4" stop-opacity=".45"/><stop offset="1" stop-color="#10B981" stop-opacity="0"/></radialGradient>
       <linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs>
-    <circle cx="360" cy="360" r="350" fill="url(#hg)" opacity=".7"/>
-    <g class="a"><circle cx="360" cy="360" r="330" fill="none" stroke="#22D3EE" stroke-opacity=".4" stroke-dasharray="2 12"/><circle cx="690" cy="360" r="7" fill="#22D3EE"/></g>
-    <g class="b"><circle cx="360" cy="360" r="260" fill="none" stroke="url(#hl)" stroke-width="3" stroke-dasharray="180 50 14 50"/><circle cx="360" cy="100" r="9" fill="#34D399"/><circle cx="360" cy="620" r="6" fill="#D4B483"/></g>
-    <g class="c"><circle cx="360" cy="360" r="185" fill="none" stroke="#D4B483" stroke-opacity=".55" stroke-dasharray="6 10"/></g>
-    <circle class="br" cx="360" cy="360" r="120" fill="url(#hg)"/>
-    <circle cx="360" cy="360" r="96" fill="rgba(9,13,22,.88)" stroke="url(#hl)" stroke-width="3"/>
-    <text x="360" y="358" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="48" fill="#F8FAFC">AOS</text>
-    <text x="360" y="392" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="15" letter-spacing="3" fill="#22D3EE">CLOUD INFRA</text>
+    <g class="a"><circle cx="360" cy="360" r="330" fill="none" stroke="#22D3EE" stroke-opacity=".5" stroke-dasharray="2 12"/><circle cx="690" cy="360" r="7" fill="#22D3EE"/></g>
+    <g class="b"><circle cx="360" cy="360" r="255" fill="none" stroke="url(#hl)" stroke-width="3" stroke-dasharray="180 50 14 50"/><circle cx="360" cy="105" r="9" fill="#34D399"/></g>
+    <g class="c"><circle cx="360" cy="360" r="180" fill="none" stroke="#D4B483" stroke-opacity=".6" stroke-dasharray="6 10"/></g>
+    <circle class="br" cx="360" cy="360" r="118" fill="url(#hg)"/>
+    <circle cx="360" cy="360" r="94" fill="rgba(10,15,29,.88)" stroke="url(#hl)" stroke-width="3"/>
+    <text x="360" y="356" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="46" fill="#F8FAFC">AOS</text>
+    <text x="360" y="390" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="14" letter-spacing="3" fill="#22D3EE">CLOUD HOSPITAL</text>
   </svg>
-  <div class="pad" style="left:110px;top:0;bottom:120px;width:1020px;display:flex;flex-direction:column;justify-content:center;gap:32px">
-    <div class="idx rv" style="--d:0"><b>BJH Bangkok</b><span class="pt">Executive Briefing</span></div>
-    <h1 class="t1 rv" style="--d:1">The Decoupled<br>Aesthetic <span class="grad">Operating System</span> <span style="color:var(--gold)">(AOS)</span></h1>
-    <p class="lead rv" style="--d:2">เปลี่ยนคลินิกความงามจาก <b style="color:var(--red)">"Fixed Payroll"</b><br>สู่ <b class="grad">"Plug-and-Play Cloud Infrastructure"</b></p>
-    <div class="rv" style="--d:3;display:flex;gap:12px;flex-wrap:wrap"><span class="chip"><i class="fa-solid fa-layer-group"></i>Part 1 · Paradigm Shift</span><span class="chip"><i class="fa-solid fa-shield-halved"></i>Part 2 · Roles &amp; Poka-Yoke</span><span class="chip"><i class="fa-solid fa-box-open"></i>Part 3 · Clinic-in-a-Box</span></div>
+  <span class="credit">Photo · Unsplash</span>
+</section>
+
+<!-- 2 · CORE PROBLEM -->
+<section class="slide">
+  <div class="ph r" style="width:30%"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80" alt="Clinic front desk"><div class="ov"></div></div>
+  <div class="pad" style="left:110px;top:84px;width:1300px">
+    <div class="eb rv" style="--d:0"><b>02</b>The Core Problem</div>
+    <h2 class="t2 rv" style="--d:1"><span class="amber">4 ปัญหาคลาสสิก</span>ที่ฉุดรั้งคลินิกความงาม</h2>
+  </div>
+  <div class="pad" style="left:110px;top:320px;width:1300px;display:grid;grid-template-columns:1fr 1fr;gap:22px">
+    <div class="gc hv rv" style="--d:2;padding:32px 32px;display:flex;gap:24px"><span class="warn"><i class="fa-solid fa-person-walking-arrow-right"></i></span><div><div class="lbl amber">01</div><div class="h3">High Turnover</div><div class="p">บุคลากรลาออกบ่อย กระทบหน้างานและการบริการไม่ต่อเนื่อง</div></div></div>
+    <div class="gc hv rv" style="--d:3;padding:32px 32px;display:flex;gap:24px"><span class="warn" style="animation-delay:.4s"><i class="fa-solid fa-hourglass-half"></i></span><div><div class="lbl amber">02</div><div class="h3">Training Bottleneck</div><div class="p">เจ้าของ/ผู้บริหารเสียเวลาสัมภาษณ์และเทรนงานซ้ำซาก</div></div></div>
+    <div class="gc hv rv" style="--d:4;padding:32px 32px;display:flex;gap:24px"><span class="warn" style="animation-delay:.8s"><i class="fa-solid fa-brain"></i></span><div><div class="lbl amber">03</div><div class="h3">Knowledge in Heads</div><div class="p">SOP ผูกติดกับตัวบุคคล คนออกความรู้หาย</div></div></div>
+    <div class="gc hv rv" style="--d:5;padding:32px 32px;display:flex;gap:24px"><span class="warn" style="animation-delay:1.2s"><i class="fa-solid fa-sack-dollar"></i></span><div><div class="lbl amber">04</div><div class="h3">Crushing Fixed Costs</div><div class="p">แบกรับเงินเดือนประจำก้อนโตแม้ในวันที่เคสเบาบาง</div></div></div>
   </div>
   <span class="credit">Photo · Unsplash</span>
 </section>
 
-<!-- ============ SLIDE 2 · CORE DILEMMA ============ -->
-<section class="slide" data-part="Part 1 · The Core Paradigm Shift">
-  <div class="ph r"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80&auto=format&fit=crop" alt="Clinic reception"><div class="ov"></div></div>
-  <div class="pad" style="left:110px;top:84px;width:1200px">
-    <div class="idx rv" style="--d:0"><b>02</b>The Core Dilemma</div>
-    <h2 class="t2 rv" style="--d:1">วิกฤตคลินิกแบบเดิม: <span style="color:var(--red)">4 ปัญหาคลาสสิก</span></h2>
-  </div>
-  <div class="pad rv" style="--d:2;left:110px;top:330px;width:1280px;display:flex;gap:0">
-    <div class="gc diag" style="flex:1.5;border-radius:24px 0 0 24px">
-      <div class="drow"><span class="pulse"></span><span class="n">01</span><div><div class="t">Turnover สูง</div><div class="s">คนลาออก วนหาคน-เทรนใหม่ไม่จบ</div></div></div>
-      <div class="drow"><span class="pulse" style="animation-delay:.3s"></span><span class="n">02</span><div><div class="t">Training Bottleneck</div><div class="s">ผู้บริหารกลายเป็นคอขวดการสอน</div></div></div>
-      <div class="drow"><span class="pulse" style="animation-delay:.6s"></span><span class="n">03</span><div><div class="t">Knowledge Trapped in Heads</div><div class="s">ความรู้ผูกติดตัวคน ออกแล้วหายตาม</div></div></div>
-      <div class="drow"><span class="pulse" style="animation-delay:.9s"></span><span class="n">04</span><div><div class="t">High Fixed Payroll</div><div class="s">จ่ายเงินเดือนเต็ม แม้ไม่มีเคส</div></div></div>
-    </div>
-    <div class="gc" style="flex:1;border-radius:0 24px 24px 0;border-left:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(160deg,rgba(76,5,25,.55),rgba(17,24,39,.6))">
-      <svg width="260" height="260" viewBox="0 0 260 260" aria-hidden="true">
-        <circle class="ro" cx="130" cy="130" r="60" fill="none" stroke="#F43F5E" stroke-width="3"/><circle class="ro" style="animation-delay:.9s" cx="130" cy="130" r="60" fill="none" stroke="#F43F5E" stroke-width="3"/><circle class="ro" style="animation-delay:1.8s" cx="130" cy="130" r="60" fill="none" stroke="#F43F5E" stroke-width="3"/>
-        <circle class="br" cx="130" cy="130" r="66" fill="#3B0A16" stroke="#F43F5E" stroke-width="3"/>
-        <path d="M130 94 V142" stroke="#fff" stroke-width="14" stroke-linecap="round"/><circle cx="130" cy="166" r="9" fill="#fff"/>
-      </svg>
-      <div class="lbl" style="color:var(--red)">Diagnosis</div>
-      <div style="font-size:64px;font-weight:800;color:var(--ink);line-height:1">4 / 4</div>
-      <div class="p th" style="text-align:center;padding:0 30px">ทุกปัญหาเกิดจากระบบที่<br><b style="color:var(--ink)">ผูกกับตัวคน</b></div>
-    </div>
-  </div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- ============ SLIDE 3 · ACH ============ -->
-<section class="slide" data-part="Part 1 · The Core Paradigm Shift">
-  <div class="pad" style="left:110px;top:84px;width:1100px">
-    <div class="idx rv" style="--d:0"><b>03</b>The Architectural Solution</div>
-    <h2 class="t2 rv" style="--d:1">โมเดล ACH: <span class="grad">Aesthetic Cloud Hub</span></h2>
-  </div>
-  <div class="pad" style="left:110px;top:330px;width:1100px;display:flex;gap:22px">
-    <div class="gc hv rv" style="--d:2;flex:1;padding:28px 30px;display:flex;gap:20px;align-items:center"><div class="ico gold"><i class="fa-solid fa-user-tie"></i></div><div><div class="lbl th" style="color:var(--gold)">คงไว้</div><div class="h3">Core Team 3–5 คน</div><div class="p mu" style="font-size:22px">Management / Auditor</div></div></div>
-    <div class="gc hv rv" style="--d:3;flex:1.3;padding:28px 30px;display:flex;gap:20px;align-items:center"><div class="ico"><i class="fa-solid fa-users-gear"></i></div><div><div class="lbl th">แปลงหน้างานเป็น</div><div class="h3">Gig-Economy</div><div class="p mu" style="font-size:22px">จ่ายรายเคส/ชั่วโมง ผ่าน BJH Platform</div></div></div>
-  </div>
-  <div class="ph box rv" style="--d:2;right:110px;top:84px;width:560px;height:420px"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80&auto=format&fit=crop" alt="Platform dashboard"><div class="ov"></div><span class="chip" style="position:absolute;left:20px;bottom:20px;z-index:2"><i class="fa-solid fa-cloud"></i>BJH Platform</span></div>
-  <svg style="position:absolute;left:0;top:0;z-index:3;pointer-events:none" width="1920" height="1080" viewBox="0 0 1920 1080" aria-hidden="true">
-    <defs><linearGradient id="lz3" x1="0" x2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset=".5" stop-color="#34D399"/><stop offset="1" stop-color="#D4B483"/></linearGradient>
-      <filter id="glz" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-    <path d="M250 650 H1670" stroke="rgba(255,255,255,.1)" stroke-width="6" stroke-linecap="round"/>
-    <path d="M250 650 H1670" stroke="url(#lz3)" stroke-width="6" stroke-linecap="round" pathLength="1000" stroke-dasharray="90 910" stroke-dashoffset="1000" filter="url(#glz)" style="animation:flow 8s linear infinite"/>
-  </svg>
-  <div class="pn rv" style="--d:4;left:250px;top:590px"><div class="disc" style="--t:0s"><i class="fa-solid fa-robot"></i></div><span class="s">STEP 1</span><div class="h3">AI Engine</div><div class="p">Lead / มัดจำ</div></div>
-  <div class="pn rv" style="--d:5;left:605px;top:590px"><div class="disc" style="--t:2s"><i class="fa-solid fa-calendar-check"></i></div><span class="s">STEP 2</span><div class="h3">Slot Allocation</div><div class="p">จัดคิว ห้อง แพทย์</div></div>
-  <div class="pn rv" style="--d:6;left:960px;top:590px"><div class="disc" style="--t:4s;border-color:var(--gold)"><i class="fa-solid fa-people-group"></i></div><span class="s" style="color:var(--gold)">STEP 3</span><div class="h3">On-Demand Talent Pool</div><div class="p">เรียกทีมตามคิว</div></div>
-  <div class="pn rv" style="--d:7;left:1315px;top:590px"><div class="disc" style="--t:6s"><i class="fa-solid fa-list-check"></i></div><span class="s">STEP 4</span><div class="h3">Smart Execution</div><div class="p">Digital SOP</div></div>
-  <div class="pn rv" style="--d:8;left:1670px;top:590px"><div class="disc" style="--t:7.9s"><i class="fa-solid fa-money-bill-transfer"></i></div><span class="s">STEP 5</span><div class="h3">Photo / System Check</div><div class="p">→ Auto Payout</div></div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- ============ PART 2 · SLIDE 4 · 4 ROLES ============ -->
-<section class="slide" data-part="Part 2 · 4 Plug-and-Play Roles &amp; Poka-Yoke">
-  <div class="ph full" style="opacity:.45"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=2400&q=80&auto=format&fit=crop" alt="Aesthetic treatment"><div class="ov" style="background:linear-gradient(180deg,rgba(9,13,22,.93),rgba(9,13,22,.99))"></div></div>
-  <div class="pad" style="left:110px;right:110px;top:84px;bottom:130px;display:flex;flex-direction:column;gap:44px">
-    <div class="rv" style="--d:0"><div class="idx"><span class="pt">Part 2</span><b>04</b>Deep Dive: 4 Frontline Roles</div>
-      <h2 class="t2">การทดแทน <span class="grad">4 ตำแหน่งหลัก</span> หน้างาน</h2></div>
-    <div style="flex:1;display:flex;gap:24px">
-      <div class="gc hv pill rv" style="--d:1"><div class="ico"><i class="fa-solid fa-tablet-screen-button"></i></div><div class="h3">Front Desk</div>
-        <div class="sec">ระบบ</div><ul class="ck"><li><i class="fa-solid fa-check"></i>Scriptless Reception ผ่าน Tablet</li><li><i class="fa-solid fa-check"></i>สแกน Face/QR ดึงประวัติ</li></ul>
-        <div class="sec">แหล่งคน</div><ul class="ck"><li><i class="fa-solid fa-user-plus"></i>Event / Hospitality / แอร์โฮสเตส</li></ul></div>
-      <div class="gc hv pill rv" style="--d:2"><div class="ico"><i class="fa-solid fa-handshake"></i></div><div class="h3">Sales Closer</div>
-        <div class="sec">ระบบ</div><ul class="ck"><li><i class="fa-solid fa-check"></i>AI Closing Dossier ชี้จุดปิดการขาย</li><li><i class="fa-solid fa-check"></i>เสนอ Option A/B</li></ul>
-        <div class="sec">ค่าตอบแทน</div><ul class="ck"><li><i class="fa-solid fa-coins"></i>คอมมิชชัน 3–5%</li><li><i class="fa-solid fa-scale-balanced"></i>Fair Allocation ตาม Conversion</li></ul></div>
-      <div class="gc hv pill rv" style="--d:3"><div class="ico"><i class="fa-solid fa-user-nurse"></i></div><div class="h3">OR Nurse Hub</div>
-        <div class="sec">แหล่งคน</div><ul class="ck"><li><i class="fa-solid fa-check"></i>Verified Gig Nurses รพ.รัฐ/เอกชน</li></ul>
-        <div class="sec">ระบบ</div><ul class="ck"><li><i class="fa-solid fa-check"></i>Pre-Set Modular Trays</li></ul>
-        <div class="sec">ค่าตอบแทน</div><ul class="ck"><li><i class="fa-solid fa-coins"></i>จ่ายเหมาเคส</li></ul></div>
-      <div class="gc hv pill rv" style="--d:4"><div class="ico"><i class="fa-solid fa-spray-can-sparkles"></i></div><div class="h3">Sanitization Crew</div>
-        <div class="sec">Trigger</div><ul class="ck"><li><i class="fa-solid fa-bell"></i>"Turnover Room"</li></ul>
-        <div class="sec">ระบบ</div><ul class="ck"><li><i class="fa-solid fa-check"></i>Checklist 12 ข้อ</li><li><i class="fa-solid fa-check"></i>Photo-Proof ผ่านระบบ AI</li></ul></div>
-    </div>
-  </div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- ============ SLIDE 5 · ZERO-RECRUITMENT ENGINE ============ -->
-<section class="slide" data-part="Part 2 · 4 Plug-and-Play Roles &amp; Poka-Yoke">
+<!-- 3 · ACH -->
+<section class="slide" data-k="cmp">
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="idx rv" style="--d:0"><b>05</b>Zero-Recruitment &amp; Zero-Training Engine</div>
-    <h2 class="t2 rv" style="--d:1">3 เสาหลักกำจัดคอขวด <span class="grad">ตัดภาระผู้บริหาร 100%</span></h2>
+    <div class="eb rv" style="--d:0"><b>03</b>The Architectural Solution</div>
+    <h2 class="t2 rv" style="--d:1">Aesthetic Cloud Hub: ลดคนประจำ สู่ <span class="grad">On-Demand Platform</span></h2>
   </div>
-  <div class="fw rv" style="--d:2;left:130px;top:330px;width:600px;height:600px">
-    <svg width="600" height="600" viewBox="0 0 600 600" style="position:absolute;inset:0" aria-label="Screening flywheel">
-      <defs><linearGradient id="fwg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs>
-      <circle cx="300" cy="300" r="200" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="28"/>
-      <circle class="ln" cx="300" cy="300" r="200" fill="none" stroke="url(#fwg)" stroke-width="6" stroke-linecap="round"/>
-      <g class="sp" fill="#22D3EE"><path d="M500 300 l-13 -18 h26z"/><path d="M500 300 l-13 -18 h26z" transform="rotate(90 300 300)"/><path d="M500 300 l-13 -18 h26z" transform="rotate(180 300 300)"/><path d="M500 300 l-13 -18 h26z" transform="rotate(270 300 300)"/></g>
-      <circle class="br" cx="300" cy="300" r="92" fill="rgba(6,182,212,.15)"/>
-      <circle cx="300" cy="300" r="74" fill="#0B111C" stroke="url(#fwg)" stroke-width="3"/>
-      <text x="300" y="294" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="22" fill="#fff">AUTO</text>
-      <text x="300" y="322" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="15" letter-spacing="2" fill="#22D3EE">SCREENING</text>
-      <g fill="#0F1C2E" stroke="#22D3EE" stroke-width="3"><circle cx="300" cy="100" r="44"/><circle cx="500" cy="300" r="44"/><circle cx="300" cy="500" r="44"/><circle cx="100" cy="300" r="44"/></g>
-      <g fill="none" stroke="#22D3EE"><circle class="ro" cx="300" cy="100" r="44"/><circle class="ro" style="animation-delay:.65s" cx="500" cy="300" r="44"/><circle class="ro" style="animation-delay:1.3s" cx="300" cy="500" r="44"/><circle class="ro" style="animation-delay:1.95s" cx="100" cy="300" r="44"/></g>
-    </svg>
-    <i class="fa-solid fa-building fwi" style="left:300px;top:100px"></i><span class="fwl" style="left:300px;top:6px">B2B Source</span>
-    <i class="fa-solid fa-circle-play fwi" style="left:500px;top:300px"></i><span class="fwl" style="left:500px;top:362px">Video + Quiz</span>
-    <i class="fa-solid fa-user-group fwi" style="left:300px;top:500px"></i><span class="fwl" style="left:300px;top:396px">Shadow Shift</span>
-    <i class="fa-solid fa-shield-halved fwi" style="left:100px;top:300px"></i><span class="fwl" style="left:100px;top:362px">Poka-Yoke</span>
+  <div class="pad rv" style="--d:2;left:110px;top:290px;display:flex;align-items:center;gap:24px">
+    <div class="toggle" id="tgl"><span data-v="old">Traditional Clinic</span><span data-v="aos" class="on">AOS Model</span></div>
+    <span style="font-size:20px;color:var(--muted)"><i class="fa-regular fa-hand-pointer"></i>&nbsp; คลิกเพื่อสลับมุมมอง</span>
   </div>
-  <div class="pad" style="left:800px;right:110px;top:320px;display:flex;flex-direction:column;gap:18px">
-    <div class="gc hv rv" style="--d:3;padding:24px 28px;display:flex;gap:22px"><div class="ico"><i class="fa-solid fa-building-user"></i></div><div><div class="h3" style="font-size:28px">1) Zero-Recruitment</div>
-      <div class="p" style="font-size:22px">B2B Facility Outsource (Seekster / BeNeat) · Nurse Agency Hub · Event Staffing Agency · Freelance Sales Network</div></div></div>
-    <div class="gc hv rv" style="--d:4;padding:24px 28px;display:flex;gap:22px"><div class="ico"><i class="fa-solid fa-mobile-screen"></i></div><div><div class="h3" style="font-size:28px">2) Self-Serve Digital Onboarding</div>
-      <div class="p" style="font-size:22px">วิดีโอรวม 30 นาที (คลิปสั้น 2–3 นาที) · Pre-Shift Quiz 5 ข้อ ต้องผ่าน 100% · Shadow Shift 1 เคส</div></div></div>
-    <div class="gc hv rv" style="--d:5;padding:24px 28px;display:flex;gap:22px"><div class="ico"><i class="fa-solid fa-shield-halved"></i></div><div><div class="h3" style="font-size:28px">3) Poka-Yoke Design</div>
-      <div class="p" style="font-size:22px">ระบบที่คนไม่ต้องใช้ความจำ — Zero Memory Required</div></div></div>
+  <div class="pad" style="left:110px;right:110px;top:390px;display:flex;gap:26px">
+    <div class="gc cmpc rv" style="--d:3" id="cOld">
+      <div class="lbl mu">Traditional Clinic</div><div class="h3" style="margin-bottom:10px">ทีมประจำทั้งหมด</div>
+      <div class="cr"><span class="k">โครงสร้าง</span><i class="fa-solid fa-people-group mu"></i>พนักงานประจำทุกตำแหน่ง</div>
+      <div class="cr"><span class="k">การจ่าย</span><i class="fa-solid fa-lock mu"></i>เงินเดือนคงที่ทุกเดือน</div>
+      <div class="cr"><span class="k">การจัดงาน</span><i class="fa-solid fa-user-tie mu"></i>หัวหน้าจัดคนเอง</div>
+      <div class="cr"><span class="k">คุณภาพ</span><i class="fa-solid fa-user mu"></i>ขึ้นกับคนเก่งไม่กี่คน</div>
+    </div>
+    <div class="gc cmpc hi rv" style="--d:4" id="cAos">
+      <div class="lbl">AOS Model</div><div class="h3" style="margin-bottom:10px">Core Team 3–5 คน + On-Demand</div>
+      <div class="cr"><span class="k">โครงสร้าง</span><i class="fa-solid fa-user-shield" style="color:var(--gold)"></i>Management &amp; Quality Auditor</div>
+      <div class="cr"><span class="k">การจ่าย</span><i class="fa-solid fa-sliders" style="color:var(--em2)"></i>Gig-Economy รายเคส/รายชั่วโมง</div>
+      <div class="cr"><span class="k">การจัดงาน</span><i class="fa-solid fa-cloud" style="color:var(--cy2)"></i>ผ่านระบบ BJH Platform</div>
+      <div class="cr"><span class="k">คุณภาพ</span><i class="fa-solid fa-shield-halved" style="color:var(--em2)"></i>Digital SOP + Poka-Yoke</div>
+    </div>
   </div>
 </section>
 
-<!-- ============ SLIDE 6 · POKA-YOKE IN ACTION ============ -->
-<section class="slide" data-k="poka" data-part="Part 2 · 4 Plug-and-Play Roles &amp; Poka-Yoke">
-  <div class="ph full" style="opacity:.5"><img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=2400&q=80&auto=format&fit=crop" alt="Surgical team with instrument table"><div class="ov" style="background:linear-gradient(90deg,rgba(9,13,22,.97),rgba(9,13,22,.9) 55%,rgba(9,13,22,.75))"></div></div>
-  <div class="pad" style="left:110px;top:84px;width:1500px">
-    <div class="idx rv" style="--d:0"><b>06</b>Poka-Yoke in Action</div>
-    <h2 class="t2 rv" style="--d:1">หลักฐานเชิงประจักษ์หน้างาน: <span class="grad">Physical + Digital</span></h2>
+<!-- 4 · 5-STAGE ENGINE -->
+<section class="slide">
+  <div class="pad" style="left:110px;top:84px;width:1150px">
+    <div class="eb rv" style="--d:0"><b>04</b>The 5-Stage Operating Engine</div>
+    <h2 class="t2 rv" style="--d:1">ลูปการทำงานอัตโนมัติจาก <span class="grad">Lead สู่ Auto Payout</span></h2>
   </div>
-  <div class="pad" style="left:110px;top:310px;width:1020px;display:flex;flex-direction:column;gap:20px">
-    <div class="lbl rv" style="--d:2">Physical Poka-Yoke</div>
-    <!-- realistic shadow board / tray -->
+  <!-- ✏️ PHOTO: Medical Tablet / Digital Tech -->
+  <div class="ph box rv" style="--d:2;right:110px;top:84px;width:520px;height:330px"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Doctor using a mobile device"><div class="ov"></div><span class="chip" style="position:absolute;left:18px;bottom:18px;z-index:2"><i class="fa-solid fa-gauge-high"></i>Hub Dashboard</span></div>
+  <svg style="position:absolute;left:0;top:0;z-index:3;pointer-events:none" width="1920" height="1080" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs><filter id="glz" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <path d="M250 560 C420 560 440 660 605 660 S790 560 960 560 S1150 660 1315 660 S1500 560 1670 560" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M250 560 C420 560 440 660 605 660 S790 560 960 560 S1150 660 1315 660 S1500 560 1670 560" fill="none" stroke="#22D3EE" stroke-width="6" stroke-linecap="round" pathLength="1000" stroke-dasharray="90 910" stroke-dashoffset="1000" filter="url(#glz)" style="animation:flow 8s linear infinite"/>
+  </svg>
+  <div class="pn rv" style="--d:3;left:250px;top:500px"><div class="disc" style="--t:0s"><i class="fa-solid fa-robot"></i></div><span class="s">STAGE 1</span><div class="h3">AI Engine</div><div class="p">กวาด Lead / Qualify / รับมัดจำ</div></div>
+  <div class="pn rv" style="--d:4;left:605px;top:600px"><div class="disc" style="--t:2s"><i class="fa-solid fa-table-cells-large"></i></div><span class="s">STAGE 2</span><div class="h3">Slot Allocation</div><div class="p">ปล่อยงานลง Hub Dashboard</div></div>
+  <div class="pn rv" style="--d:5;left:960px;top:500px"><div class="disc" style="--t:4s;border-color:var(--gold)"><i class="fa-solid fa-people-group"></i></div><span class="s" style="color:var(--gold)">STAGE 3</span><div class="h3">Talent Pool</div><div class="p">Staff เข้ารับงานตาม Slot</div></div>
+  <div class="pn rv" style="--d:6;left:1315px;top:600px"><div class="disc" style="--t:6s"><i class="fa-solid fa-list-check"></i></div><span class="s">STAGE 4</span><div class="h3">Smart Execution</div><div class="p">ทำงานตาม Digital SOP</div></div>
+  <div class="pn rv" style="--d:7;left:1670px;top:500px"><div class="disc" style="--t:7.9s;border-color:var(--em2)"><i class="fa-solid fa-money-bill-transfer"></i></div><span class="s" style="color:var(--em2)">STAGE 5</span><div class="h3">Auto Payout</div><div class="p">ตรวจงานผ่านรูปภาพ → โอนเงินทันที</div></div>
+  <span class="credit">Photo · Unsplash</span>
+</section>
+
+<!-- 5 · 4 ROLES -->
+<section class="slide">
+  <div class="pad" style="left:110px;right:110px;top:84px;bottom:120px;display:flex;flex-direction:column;gap:40px">
+    <div class="rv" style="--d:0"><div class="eb"><b>05</b>The 4 Plug-and-Play Frontline Roles</div>
+      <h2 class="t2">กำจัดขั้นตอนการสอนใน <span class="grad">4 จุดบริการหลัก</span></h2></div>
+    <div style="flex:1;display:flex;gap:22px">
+      <div class="gc hv role rv" style="--d:1"><div class="ico"><i class="fa-solid fa-tablet-screen-button"></i></div><div class="h3">Front Desk</div>
+        <ul class="ck"><li><i class="fa-solid fa-check"></i>Tablet Check-in สแกน Face/QR</li><li><i class="fa-solid fa-check"></i>Scriptless Reception บอกบทพูด + น้ำดื่มรหัส A</li></ul>
+        <div class="src"><i class="fa-solid fa-user-plus"></i>สาย Hospitality / แอร์โฮสเตส</div></div>
+      <div class="gc hv role rv" style="--d:2"><div class="ico"><i class="fa-solid fa-handshake"></i></div><div class="h3">Sales Closer</div>
+        <ul class="ck"><li><i class="fa-solid fa-check"></i>AI Dossier สรุป Pain Point + สูตรปิด A/B</li><li><i class="fa-solid fa-coins"></i>คอมมิชชัน 3–5%</li></ul>
+        <div class="src"><i class="fa-solid fa-user-plus"></i>Freelance Top Spreader</div></div>
+      <div class="gc hv role rv" style="--d:3"><div class="ico"><i class="fa-solid fa-user-nurse"></i></div><div class="h3">OR Nurse Hub</div>
+        <ul class="ck"><li><i class="fa-solid fa-check"></i>พยาบาลเวรนอก รพ.รัฐ/เอกชน</li><li><i class="fa-solid fa-check"></i>Pre-Set Modular Trays</li><li><i class="fa-solid fa-coins"></i>จ่ายเหมาต่อเคสผ่าตัด</li></ul>
+        <div class="src"><i class="fa-solid fa-user-plus"></i>Verified Nurse Hub</div></div>
+      <div class="gc hv role rv" style="--d:4"><div class="ico"><i class="fa-solid fa-spray-can-sparkles"></i></div><div class="h3">Sanitization Crew</div>
+        <ul class="ck"><li><i class="fa-solid fa-bell"></i>แจ้งเตือน Turnover Room</li><li><i class="fa-solid fa-check"></i>Checklist 12 ข้อ</li><li><i class="fa-solid fa-camera"></i>ถ่ายรูปส่ง AI อนุมัติปล่อยห้อง</li></ul>
+        <div class="src"><i class="fa-solid fa-user-plus"></i>B2B Cleaning Vendor</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · ZERO-RECRUITMENT -->
+<section class="slide">
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>06</b>Zero-Recruitment &amp; Zero-Training Engine</div>
+    <h2 class="t2 rv" style="--d:1">3 เสาหลักกำจัดคอขวด: <span class="grad">ไม่ต้องหาคน ไม่ต้องสอนงานเอง</span></h2>
+  </div>
+  <!-- ✏️ PHOTO: High-End Hospitality -->
+  <div class="ph box rv" style="--d:2;left:110px;top:310px;width:1700px;height:200px"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80" alt="High-end hospitality" style="object-position:center 60%"><div class="ov" style="background:linear-gradient(90deg,rgba(10,15,29,.94),rgba(10,15,29,.4))"></div>
+    <div style="position:absolute;left:36px;top:50%;transform:translateY(-50%);z-index:2"><div class="lbl" style="color:var(--gold)">Talent Source</div><div class="h3" style="font-size:34px">ดึงคนมาตรฐานงานบริการระดับ Hospitality</div></div></div>
+  <div class="pad" style="left:110px;right:110px;top:550px;display:flex;gap:24px">
+    <div class="gc hv rv" style="--d:3;flex:1;padding:30px;display:flex;flex-direction:column;gap:14px"><div class="ico"><i class="fa-solid fa-file-signature"></i></div><div class="h3">1) B2B Agency SLAs</div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i>สัญญากับ Seekster / BeNeat</li><li><i class="fa-solid fa-check"></i>เครือข่าย Nurse Hub · Event Staffing</li><li><i class="fa-solid fa-check"></i>ขาด-ลา Agency ส่งคนแทนทันที</li></ul></div>
+    <div class="gc hv rv" style="--d:4;flex:1;padding:30px;display:flex;flex-direction:column;gap:14px"><div class="ico"><i class="fa-solid fa-circle-play"></i></div><div class="h3">2) Self-Serve Onboarding</div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i>วิดีโอ 30 นาที (คลิปสั้น 2–3 นาที)</li><li><i class="fa-solid fa-check"></i>Quiz 5 ข้อ ผ่าน 100% ก่อน Check-in</li><li><i class="fa-solid fa-check"></i>Shadow Shift ครึ่งวัน</li></ul></div>
+    <div class="gc hv rv" style="--d:5;flex:1;padding:30px;display:flex;flex-direction:column;gap:14px"><div class="ico"><i class="fa-solid fa-shield-halved"></i></div><div class="h3">3) Poka-Yoke SOP</div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i>สภาพแวดล้อมบังคับให้ทำถูก 100%</li><li><i class="fa-solid fa-check"></i>ไม่ต้องใช้ทักษะความจำ</li></ul></div>
+  </div>
+  <span class="credit">Photo · Unsplash</span>
+</section>
+
+<!-- 7 · POKA-YOKE IN ACTION -->
+<section class="slide" data-k="poka">
+  <div class="ph full" style="opacity:.45"><img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=2000&q=80" alt="Operating theatre with instrument table"><div class="ov" style="background:linear-gradient(90deg,rgba(10,15,29,.97),rgba(10,15,29,.9) 55%,rgba(10,15,29,.8))"></div></div>
+  <div class="pad" style="left:110px;top:84px;width:1500px">
+    <div class="eb rv" style="--d:0"><b>07</b>Physical &amp; Digital Poka-Yoke in Action</div>
+    <h2 class="t2 rv" style="--d:1">ระบบที่คนไม่เคยทำก็ทำไม่ผิด <span class="grad">(Zero Memory Required)</span></h2>
+  </div>
+  <div class="pad" style="left:110px;top:300px;width:1030px;display:flex;flex-direction:column;gap:18px">
+    <div class="lbl rv" style="--d:2">Physical Kits</div>
     <div class="gc rv" style="--d:2;padding:20px">
-      <svg viewBox="0 0 980 320" width="100%" height="320" aria-label="Surgical tray with shadow board">
+      <svg viewBox="0 0 980 320" width="100%" height="320" aria-label="Sterile tray with shadow board">
         <defs>
-          <linearGradient id="st6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5E9EF"/><stop offset=".45" stop-color="#AEB7C4"/><stop offset=".55" stop-color="#C9D0DA"/><stop offset="1" stop-color="#8B95A3"/></linearGradient>
-          <linearGradient id="in6" x1="0" x2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset=".5" stop-color="#9AA4B2"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient>
-          <filter id="ds6"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity=".45"/></filter>
+          <linearGradient id="st7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5E9EF"/><stop offset=".45" stop-color="#AEB7C4"/><stop offset=".55" stop-color="#C9D0DA"/><stop offset="1" stop-color="#8B95A3"/></linearGradient>
+          <linearGradient id="in7" x1="0" x2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset=".5" stop-color="#9AA4B2"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient>
+          <filter id="ds7"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity=".45"/></filter>
         </defs>
-        <rect x="8" y="10" width="964" height="300" rx="24" fill="url(#st6)" filter="url(#ds6)"/>
+        <rect x="8" y="10" width="964" height="300" rx="24" fill="url(#st7)" filter="url(#ds7)"/>
         <rect x="26" y="28" width="928" height="264" rx="16" fill="#1E293B"/>
-        <text x="48" y="62" font-family="Plus Jakarta Sans" font-weight="800" font-size="20" fill="#94A3B8">SHADOW BOARD · OR</text>
-        <!-- silhouettes -->
+        <text x="48" y="62" font-family="Plus Jakarta Sans" font-weight="800" font-size="20" fill="#94A3B8">SHADOW BOARD · STERILE TRAY</text>
         <g fill="rgba(148,163,184,.18)" stroke="rgba(148,163,184,.5)" stroke-width="2" stroke-dasharray="6 5">
-          <rect x="60" y="96" width="250" height="20" rx="10"/>
-          <path d="M60 150 L330 136 L330 148 L60 172 Z"/>
+          <rect x="60" y="96" width="250" height="20" rx="10"/><path d="M60 150 L330 136 L330 148 L60 172 Z"/>
           <circle cx="420" cy="120" r="26"/><circle cx="420" cy="196" r="26"/>
-          <rect x="560" y="100" width="260" height="18" rx="9"/>
-          <rect class="slot-miss" x="560" y="170" width="260" height="18" rx="9"/>
+          <rect x="560" y="100" width="260" height="18" rx="9"/><rect class="slot-miss" x="560" y="170" width="260" height="18" rx="9"/>
           <rect x="860" y="96" width="70" height="90" rx="8"/>
         </g>
-        <g filter="url(#ds6)">
-          <rect x="60" y="96" width="210" height="20" rx="10" fill="url(#in6)"/><path d="M270 96 L310 106 L270 116 Z" fill="#E2E8F0"/>
-          <path d="M60 150 L330 136 L330 142 L60 162 Z" fill="url(#in6)"/><path d="M60 164 L330 144 L330 150 L60 176 Z" fill="url(#in6)"/>
-          <circle cx="420" cy="120" r="20" fill="none" stroke="url(#in6)" stroke-width="9"/><circle cx="420" cy="196" r="20" fill="none" stroke="url(#in6)" stroke-width="9"/>
-          <path d="M440 130 L520 162 M440 186 L520 156" stroke="url(#in6)" stroke-width="9" stroke-linecap="round"/>
-          <rect x="560" y="100" width="260" height="18" rx="9" fill="url(#in6)"/>
+        <g filter="url(#ds7)">
+          <rect x="60" y="96" width="210" height="20" rx="10" fill="url(#in7)"/><path d="M270 96 L310 106 L270 116 Z" fill="#E2E8F0"/>
+          <path d="M60 150 L330 136 L330 142 L60 162 Z" fill="url(#in7)"/><path d="M60 164 L330 144 L330 150 L60 176 Z" fill="url(#in7)"/>
+          <circle cx="420" cy="120" r="20" fill="none" stroke="url(#in7)" stroke-width="9"/><circle cx="420" cy="196" r="20" fill="none" stroke="url(#in7)" stroke-width="9"/>
+          <path d="M440 130 L520 162 M440 186 L520 156" stroke="url(#in7)" stroke-width="9" stroke-linecap="round"/>
+          <rect x="560" y="100" width="260" height="18" rx="9" fill="url(#in7)"/>
           <rect x="860" y="96" width="70" height="90" rx="8" fill="#F8FAFC"/><path d="M870 110 h50 M870 126 h50 M870 142 h50 M870 158 h50 M870 174 h50" stroke="#CBD5E1"/>
         </g>
         <g font-family="Noto Sans Thai" font-weight="700" font-size="20">
-          <rect x="560" y="214" width="250" height="40" rx="20" fill="#F43F5E"/><text x="685" y="241" text-anchor="middle" fill="#fff">⚠ ขาด 1 ชิ้น — เห็นทันที</text>
-          <rect x="60" y="232" width="200" height="40" rx="20" fill="#10B981"/><text x="160" y="259" text-anchor="middle" fill="#03221D">✓ ภาพทาบตรงรูป</text>
+          <rect x="560" y="214" width="250" height="40" rx="20" fill="#F59E0B"/><text x="685" y="241" text-anchor="middle" fill="#2A1A02">⚠ ขาด 1 ชิ้น — เห็นทันที</text>
+          <rect x="60" y="232" width="230" height="40" rx="20" fill="#10B981"/><text x="175" y="259" text-anchor="middle" fill="#03221D">✓ ทาบตรงจุด 100%</text>
         </g>
       </svg>
     </div>
     <div class="rv" style="--d:3;display:flex;gap:18px">
-      <div class="kit" style="background:linear-gradient(150deg,#38BDF8,#0369A1);box-shadow:0 26px 50px -24px rgba(56,189,248,.9)"><i class="fa-solid fa-eye" style="font-size:28px"></i><div class="n">กล่องฟ้า = ตา</div><div class="s">Color-Coded Modular Box</div></div>
-      <div class="kit" style="background:linear-gradient(150deg,#FDBA74,#EA580C);box-shadow:0 26px 50px -24px rgba(251,146,60,.9)"><i class="fa-solid fa-face-smile" style="font-size:28px"></i><div class="n">กล่องส้ม = จมูก</div><div class="s">หยิบผิดสี เห็นทันที</div></div>
+      <div class="kit" style="background:linear-gradient(150deg,#38BDF8,#0369A1);box-shadow:0 26px 50px -24px rgba(56,189,248,.9)"><i class="fa-solid fa-eye" style="font-size:28px"></i><div class="n">สีฟ้า = ตา</div><div class="s">Modular Box</div></div>
+      <div class="kit" style="background:linear-gradient(150deg,#FDBA74,#EA580C);box-shadow:0 26px 50px -24px rgba(251,146,60,.9)"><i class="fa-solid fa-face-smile" style="font-size:28px"></i><div class="n">สีส้ม = จมูก</div><div class="s">Modular Box</div></div>
     </div>
   </div>
-  <div class="pad" style="left:1200px;top:310px;width:610px;display:flex;flex-direction:column;gap:20px">
-    <div class="lbl rv" style="--d:2">Digital Poka-Yoke</div>
+  <div class="pad" style="left:1200px;top:300px;width:610px;display:flex;flex-direction:column;gap:18px">
+    <div class="lbl rv" style="--d:2">Digital Tablet</div>
     <div class="tab rv" style="--d:3">
-      <div style="display:flex;justify-content:space-between;font-size:19px;color:var(--muted);margin-bottom:14px"><b style="color:var(--ink)">Single-Action Tablet Guide</b><span>Front · Welcome</span></div>
-      <div id="pySteps" style="display:flex;flex-direction:column;gap:8px">
-        <div class="pr"><span class="d"><i class="fa-solid fa-comment"></i></span>อ่านประโยค: "ยินดีต้อนรับค่ะ"</div>
-        <div class="pr"><span class="d"><i class="fa-solid fa-glass-water"></i></span>หยิบน้ำรหัส A</div>
-        <div class="pr"><span class="d"><i class="fa-solid fa-share"></i></span>กดส่งต่อ</div>
+      <div style="display:flex;justify-content:space-between;font-size:19px;color:var(--muted);margin-bottom:14px"><b style="color:var(--white)">Single-Action Screen</b><span id="taskCnt" class="num">0 / 4</span></div>
+      <div id="tasks" style="display:flex;flex-direction:column;gap:8px">
+        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>อ่านบทต้อนรับบนจอ</div>
+        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>เสิร์ฟน้ำดื่มรหัส A</div>
+        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>สแกน QR ยืนยันตัวตน</div>
+        <div class="task"><span class="bx"><i class="fa-solid fa-check"></i></span>กดส่งต่อให้ Closer</div>
       </div>
-      <div style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:12px;padding:20px;border-radius:18px;font-size:28px;font-weight:800;color:#03221D;background:linear-gradient(90deg,var(--em),var(--cy))"><i class="fa-solid fa-hand-pointer"></i>ถัดไป</div>
-      <div style="text-align:center;margin-top:12px;font-size:18px;color:var(--muted)">Prompt ทีละบรรทัด · หนึ่งจอ หนึ่งปุ่ม</div>
+      <button id="taskBtn" style="margin-top:16px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;padding:20px;border-radius:18px;font-size:28px;font-weight:800;color:#03221D;background:linear-gradient(90deg,var(--em),var(--cy))"><i class="fa-solid fa-square-check"></i>Check-off</button>
+      <div style="text-align:center;margin-top:12px;font-size:18px;color:var(--muted)">คำสั่งทีละบรรทัด · แตะเพื่อติ๊กส่งงาน</div>
     </div>
   </div>
   <span class="credit">Photo · Unsplash</span>
 </section>
 
-<!-- ============ SLIDE 7 · TALENT POOL ENGINE ============ -->
-<section class="slide" data-k="surge" data-part="Part 2 · 4 Plug-and-Play Roles &amp; Poka-Yoke">
-  <div class="ph r" style="width:28%"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&q=80&auto=format&fit=crop" alt="Healthcare professional"><div class="ov"></div></div>
-  <div class="pad" style="left:110px;top:84px;width:1300px">
-    <div class="idx rv" style="--d:0"><b>07</b>Sustainable Talent Pool Engine</div>
-    <h2 class="t2 rv" style="--d:1">กลไกหล่อเลี้ยงคน<span class="grad">ต่อเนื่อง</span> 4 ตัวขับเคลื่อน</h2>
-  </div>
-  <div class="pad" style="left:110px;top:320px;width:620px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
-    <div class="gc hv rv" style="--d:2;padding:22px 24px"><div class="ico" style="width:54px;height:54px;font-size:22px"><i class="fa-solid fa-graduation-cap"></i></div><div class="h3" style="font-size:25px;margin-top:12px">BJH Academy</div><div class="p" style="font-size:21px">Micro-Certification 2–3 ชม.</div></div>
-    <div class="gc hv rv" style="--d:3;padding:22px 24px"><div class="ico" style="width:54px;height:54px;font-size:22px;background:linear-gradient(140deg,#FDBA74,#EA580C);color:#fff"><i class="fa-solid fa-bolt"></i></div><div class="h3" style="font-size:25px;margin-top:12px">Dynamic Surge Pricing</div><div class="p" style="font-size:21px">1.2x–1.5x วันเคสแน่น</div></div>
-    <div class="gc hv rv" style="--d:4;padding:22px 24px"><div class="ico gold" style="width:54px;height:54px;font-size:22px"><i class="fa-solid fa-star"></i></div><div class="h3" style="font-size:25px;margin-top:12px">Peer &amp; Doctor Rating</div><div class="p" style="font-size:21px">4.8★ ขึ้นไป ได้ Slot High-Ticket ก่อน</div></div>
-    <div class="gc hv rv" style="--d:5;padding:22px 24px"><div class="ico" style="width:54px;height:54px;font-size:22px"><i class="fa-solid fa-user-clock"></i></div><div class="h3" style="font-size:25px;margin-top:12px">Standby Allowance</div><div class="p" style="font-size:21px">จ่ายค่าสแตนด์บาย พร้อมรับงานแทนทันที</div></div>
-  </div>
-  <div class="pad" style="left:770px;top:320px;width:660px;display:flex;flex-direction:column;gap:18px">
-    <div class="gc rv" style="--d:3;padding:24px 28px" data-noadv>
-      <div style="display:flex;justify-content:space-between;align-items:center"><div class="lbl">Surge Multiplier Simulator</div><span class="chip" style="font-size:18px;padding:6px 14px"><i class="fa-solid fa-sliders"></i>ลองเลื่อน</span></div>
-      <div class="days" style="margin-top:16px"><span>จ</span><span>อ</span><span>พ</span><span>พฤ</span><span class="hot">ศ</span><span class="hot">ส</span><span class="hot">อา</span></div>
-      <!-- ✏️ SURGE: ค่าเคสฐาน (ตัวอย่าง) -->
-      <input class="slider" id="surge" type="range" min="1" max="1.5" step="0.05" value="1.3" style="margin-top:22px" aria-label="Surge multiplier">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:14px">
-        <div><div class="p mu" style="font-size:20px">Multiplier</div><div style="font-size:60px;font-weight:800;color:var(--orange);line-height:1" class="num" id="surgeX">1.30x</div></div>
-        <div style="text-align:right"><div class="p mu" style="font-size:20px">ค่าเคสฐาน 1,000 บ. (ตัวอย่าง)</div><div style="font-size:44px;font-weight:800;color:var(--ink);line-height:1.1" class="num" id="surgePay">1,300 บ.</div></div>
-      </div>
-    </div>
-    <div class="gc rv" style="--d:4;padding:20px 28px">
-      <div class="lbl" style="margin-bottom:6px">Rating Dashboard · ตัวอย่าง</div>
-      <div class="rate"><span style="width:150px;color:var(--ink)">OR Nurse A</span><span class="stars">★★★★★</span><div class="bar-r"><i data-w=".98"></i></div><span class="num" style="color:var(--ink)">4.9</span><span class="badge" style="background:rgba(212,180,131,.18);color:var(--gold)">HIGH-TICKET</span></div>
-      <div class="rate"><span style="width:150px;color:var(--ink)">Closer B</span><span class="stars">★★★★★</span><div class="bar-r"><i data-w=".96"></i></div><span class="num" style="color:var(--ink)">4.8</span><span class="badge" style="background:rgba(212,180,131,.18);color:var(--gold)">HIGH-TICKET</span></div>
-      <div class="rate"><span style="width:150px;color:var(--ink)">Front C</span><span class="stars" style="opacity:.6">★★★★☆</span><div class="bar-r"><i data-w=".9"></i></div><span class="num" style="color:var(--ink)">4.5</span><span class="badge" style="background:rgba(255,255,255,.07);color:var(--muted)">STANDARD</span></div>
-    </div>
-  </div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- ============ SLIDE 8 · JOURNEY ============ -->
-<section class="slide" data-part="Part 2 · 4 Plug-and-Play Roles &amp; Poka-Yoke">
-  <div class="pad" style="left:110px;top:84px;width:1100px">
-    <div class="idx rv" style="--d:0"><b>08</b>End-to-End Customer Journey Map</div>
-    <h2 class="t2 rv" style="--d:1">5 ขั้นตอน ใคร<span class="grad">ขับเคลื่อน</span>แต่ละจุด</h2>
-  </div>
-  <div class="ph box rv" style="--d:1;right:110px;top:84px;width:520px;height:260px"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&auto=format&fit=crop" alt="Modern clinic room"><div class="ov"></div></div>
-  <div class="pad" style="left:110px;right:110px;top:390px">
-    <div class="jt">
-      <div class="rail"></div><div class="run"></div>
-      <div class="js rv" style="--d:2"><div class="disc" style="--t:0s"><i class="fa-solid fa-robot"></i></div><div class="gc hv card"><span class="s lbl" style="font-size:16px">STEP 1</span><div class="h3" style="font-size:28px">Lead &amp; Booking</div><div class="p mu" style="font-size:21px">AI ตอบแชต รับมัดจำ</div><span class="actor ai"><i class="fa-solid fa-microchip"></i>AI</span></div></div>
-      <div class="js rv" style="--d:3"><div class="disc" style="--t:1.6s"><i class="fa-solid fa-door-open"></i></div><div class="gc hv card"><span class="s lbl" style="font-size:16px">STEP 2</span><div class="h3" style="font-size:28px">Arrival &amp; Welcome</div><div class="p mu" style="font-size:21px">สแกน Face/QR เช็กอิน</div><span class="actor od"><i class="fa-solid fa-user"></i>Front On-Demand</span></div></div>
-      <div class="js rv" style="--d:4"><div class="disc" style="--t:3.2s"><i class="fa-solid fa-comments-dollar"></i></div><div class="gc hv card"><span class="s lbl" style="font-size:16px">STEP 3</span><div class="h3" style="font-size:28px">Consult &amp; Closing</div><div class="p mu" style="font-size:21px">AI Dossier + Option A/B</div><span class="actor od"><i class="fa-solid fa-user-tie"></i>Closer On-Demand</span></div></div>
-      <div class="js rv" style="--d:5"><div class="disc" style="--t:4.8s"><i class="fa-solid fa-kit-medical"></i></div><div class="gc hv card"><span class="s lbl" style="font-size:16px">STEP 4</span><div class="h3" style="font-size:28px">Operation</div><div class="p mu" style="font-size:21px">Modular Tray พร้อมใช้</div><span class="actor dr"><i class="fa-solid fa-user-doctor"></i>OR On-Demand + ศัลยแพทย์</span></div></div>
-      <div class="js rv" style="--d:6"><div class="disc" style="--t:6.4s"><i class="fa-solid fa-broom"></i></div><div class="gc hv card"><span class="s lbl" style="font-size:16px">STEP 5</span><div class="h3" style="font-size:28px">Turnover &amp; Reset</div><div class="p mu" style="font-size:21px">Checklist 12 ข้อ + Photo-Proof</div><span class="actor od"><i class="fa-solid fa-spray-can-sparkles"></i>Cleaning Crew</span></div></div>
-    </div>
-  </div>
-  <div class="pad rv" style="--d:7;left:110px;top:880px;display:flex;gap:16px">
-    <span class="actor ai"><i class="fa-solid fa-microchip"></i>ระบบ AI</span><span class="actor od"><i class="fa-solid fa-user"></i>ทีม On-Demand</span><span class="actor dr"><i class="fa-solid fa-user-doctor"></i>แพทย์/พยาบาลวิชาชีพ</span>
-  </div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- ============ PART 3 · SLIDE 9 · PROVINCIAL DILEMMA ============ -->
-<section class="slide" data-part="Part 3 · B2B Clinic-in-a-Box Expansion">
-  <div class="ph r" style="width:30%"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=80&auto=format&fit=crop" alt="Flight over clouds"><div class="ov"></div></div>
-  <div class="pad" style="left:110px;top:84px;width:1300px">
-    <div class="idx rv" style="--d:0"><span class="pt">Part 3</span><b>09</b>The Provincial Dilemma</div>
-    <h2 class="t2 rv" style="--d:1">Pain Point ของคลินิก<span style="color:var(--red)">ต่างจังหวัด</span></h2>
-  </div>
-  <svg class="map rv" style="--d:2;position:absolute;left:120px;top:300px;z-index:3" width="400" height="680" viewBox="20 10 300 560" aria-label="Problem map">
-    <defs><pattern id="dp9" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.5" fill="#22D3EE" fill-opacity=".35"/></pattern></defs>
-    <path d="M120 20 L150 30 L165 60 L175 95 L200 110 L235 105 L265 120 L290 150 L300 190 L290 225 L270 245 L240 255 L215 250 L200 265 L195 290 L190 320 L175 330 L160 315 L150 300 L135 300 L125 320 L120 350 L112 380 L105 410 L100 440 L95 470 L105 500 L120 520 L130 545 L120 555 L105 540 L90 515 L80 485 L85 450 L92 410 L100 370 L108 335 L112 300 L105 265 L95 230 L80 200 L70 170 L60 140 L55 110 L70 80 L85 55 L100 35 Z" fill="url(#dp9)" stroke="#22D3EE" stroke-opacity=".45" stroke-width="1.4"/>
-    <g fill="none" stroke="#F43F5E" stroke-width="2"><path class="route" d="M138 288 Q85 190 92 95"/><path class="route" d="M138 288 Q210 210 232 172"/><path class="route" d="M138 288 Q75 420 114 524"/></g>
-    <g fill="#F8FAFC" font-family="Font Awesome 6 Free" font-weight="900" font-size="14" text-anchor="middle"></g>
-    <circle class="ro" cx="138" cy="288" r="9" fill="none" stroke="#D4B483"/><circle cx="138" cy="288" r="8" fill="#D4B483"/><text x="66" y="283" font-family="Noto Sans Thai" font-weight="700" font-size="13" fill="#D4B483">กทม.</text>
-    <g fill="#F43F5E"><circle class="ro" cx="92" cy="95" r="7" fill="none" stroke="#F43F5E"/><circle cx="92" cy="95" r="7"/><circle class="ro" style="animation-delay:.7s" cx="232" cy="172" r="7" fill="none" stroke="#F43F5E"/><circle cx="232" cy="172" r="7"/><circle class="ro" style="animation-delay:1.4s" cx="114" cy="524" r="7" fill="none" stroke="#F43F5E"/><circle cx="114" cy="524" r="7"/></g>
-  </svg>
-  <i class="fa-solid fa-plane" style="position:absolute;left:228px;top:520px;font-size:30px;color:#F8FAFC;z-index:4;transform:rotate(-60deg);animation:fl 3s ease-in-out infinite"></i>
-  <i class="fa-solid fa-plane" style="position:absolute;left:380px;top:560px;font-size:30px;color:#F8FAFC;z-index:4;transform:rotate(-30deg);animation:fl 3s ease-in-out infinite -1s"></i>
-  <div class="pad" style="left:600px;top:320px;width:760px;display:flex;flex-direction:column;gap:20px">
-    <div class="gc hv rv" style="--d:3;padding:26px 30px;display:flex;gap:22px"><div class="ico red"><i class="fa-solid fa-user-slash"></i></div><div><div class="h3" style="font-size:29px">1) ขาดแคลนบุคลากรชำนาญการ</div><div class="p" style="font-size:22px">พยาบาล OR และเซลส์เก่งๆ กระจุกตัวใน กทม.</div></div></div>
-    <div class="gc hv rv" style="--d:4;padding:26px 30px;display:flex;gap:22px"><div class="ico red"><i class="fa-solid fa-calendar-xmark"></i></div><div><div class="h3" style="font-size:29px">2) Fixed Cost จม</div><div class="p" style="font-size:22px">เคสแน่นแค่ ศุกร์–อาทิตย์ แต่ต้องแบกเงินเดือนทั้งเดือน</div></div></div>
-    <div class="gc hv rv" style="--d:5;padding:26px 30px;display:flex;gap:22px"><div class="ico red"><i class="fa-solid fa-plane-circle-exclamation"></i></div><div><div class="h3" style="font-size:29px">3) ปัญหา "หมอบิน" (Flying Doctors)</div><div class="p" style="font-size:22px">หมอมาถึง เครื่องมือไม่พร้อม เซ็ตช้า หมอเสียเวลา ไม่อยากบินไปลงเคส</div></div></div>
-  </div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- ============ SLIDE 10 · CLINIC-IN-A-BOX ============ -->
-<section class="slide" data-part="Part 3 · B2B Clinic-in-a-Box Expansion">
+<!-- 8 · JOURNEY TABLE -->
+<section class="slide" data-k="journey">
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="idx rv" style="--d:0"><b>10</b>Product Positioning: Clinic-in-a-Box</div>
-    <h2 class="t2 rv" style="--d:1">Aesthetic Cloud OS: <span class="grad">Zero Fixed-Cost Operation</span></h2>
+    <div class="eb rv" style="--d:0"><b>08</b>End-to-End Customer Journey Map</div>
+    <h2 class="t2 rv" style="--d:1">ตารางการประสานงานไร้รอยต่อ <span class="grad">(AI + On-Demand Staff)</span></h2>
   </div>
-  <div class="ph box rv" style="--d:2;left:110px;top:330px;width:500px;height:300px"><img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=1200&q=80&auto=format&fit=crop" alt="Tablet"><div class="ov"></div><span class="chip" style="position:absolute;left:18px;bottom:18px;z-index:2"><i class="fa-solid fa-tablet-screen-button"></i>Front iPad</span></div>
-  <div class="scene rv" style="--d:2;left:210px;top:690px;width:300px;height:300px"></div>
-  <div class="pad rv" style="--d:3;left:150px;top:640px;width:420px;height:340px;display:grid;place-items:center">
+  <div class="pad rv" style="--d:2;left:110px;right:110px;top:300px"><div class="gc" style="padding:0">
+    <table class="jtab" id="jtab">
+      <thead><tr><th style="width:32%">ขั้นตอน Customer Journey</th><th style="width:26%">ผู้ขับเคลื่อน</th><th>การทำงานในระบบ</th></tr></thead>
+      <tbody>
+        <tr><td><div class="st"><b>1</b>Lead &amp; Booking</div></td><td><span class="actor ai"><i class="fa-solid fa-robot"></i>AI Agent</span></td><td>ปิดนัดหมาย · เก็บมัดจำ · สรุป Persona</td></tr>
+        <tr><td><div class="st"><b>2</b>Arrival &amp; Welcome</div></td><td><span class="actor od"><i class="fa-solid fa-user"></i>Front On-Demand</span></td><td>สแกน QR · เสิร์ฟ Welcome Drink ตามมาตรฐานบนจอ</td></tr>
+        <tr><td><div class="st"><b>3</b>Consult &amp; Closing</div></td><td><span class="actor od"><i class="fa-solid fa-user-tie"></i>Closer On-Demand</span></td><td>เปิด AI Dossier ดู Pain Point · ปิดแพ็กเกจ A/B</td></tr>
+        <tr><td><div class="st"><b>4</b>Operation (OR)</div></td><td><span class="actor dr"><i class="fa-solid fa-user-doctor"></i>On-Demand OR + แพทย์</span></td><td>หมอมาถึงตรงเวลา · จัดเครื่องมือตาม Modular Sheet</td></tr>
+        <tr><td><div class="st"><b>5</b>Turnover &amp; Reset</div></td><td><span class="actor od"><i class="fa-solid fa-spray-can-sparkles"></i>Cleaning Crew</span></td><td>ทำความสะอาด 12 ขั้นตอน · ถ่ายรูปปลดล็อกห้อง</td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</section>
+
+<!-- 9 · PROVINCIAL DILEMMA -->
+<section class="slide">
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>09</b>The Provincial Dilemma</div>
+    <h2 class="t2 rv" style="--d:1">ทำไมคลินิก ตจว. ถึง<span class="amber">ต้องการระบบนี้มากกว่า กทม.</span>?</h2>
+  </div>
+  <svg class="map rv" style="--d:2;position:absolute;left:130px;top:290px;z-index:3" width="410" height="700" viewBox="20 10 300 560" aria-label="Flying doctor routes">
+    <defs><pattern id="dp9" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.5" fill="#22D3EE" fill-opacity=".38"/></pattern></defs>
+    <path d="M120 20 L150 30 L165 60 L175 95 L200 110 L235 105 L265 120 L290 150 L300 190 L290 225 L270 245 L240 255 L215 250 L200 265 L195 290 L190 320 L175 330 L160 315 L150 300 L135 300 L125 320 L120 350 L112 380 L105 410 L100 440 L95 470 L105 500 L120 520 L130 545 L120 555 L105 540 L90 515 L80 485 L85 450 L92 410 L100 370 L108 335 L112 300 L105 265 L95 230 L80 200 L70 170 L60 140 L55 110 L70 80 L85 55 L100 35 Z" fill="url(#dp9)" stroke="#22D3EE" stroke-opacity=".45" stroke-width="1.4"/>
+    <g fill="none" stroke="#F59E0B" stroke-width="2"><path class="route" d="M138 288 Q85 190 92 95"/><path class="route" d="M138 288 Q210 210 232 172"/><path class="route" d="M138 288 Q75 420 114 524"/></g>
+    <circle class="ro" cx="138" cy="288" r="9" fill="none" stroke="#D4B483"/><circle cx="138" cy="288" r="8" fill="#D4B483"/><text x="70" y="283" font-family="Noto Sans Thai" font-weight="700" font-size="13" fill="#D4B483">กทม.</text>
+    <g fill="#F59E0B"><circle class="ro" cx="92" cy="95" r="7" fill="none" stroke="#F59E0B"/><circle cx="92" cy="95" r="7"/><circle class="ro" style="animation-delay:.7s" cx="232" cy="172" r="7" fill="none" stroke="#F59E0B"/><circle cx="232" cy="172" r="7"/><circle class="ro" style="animation-delay:1.4s" cx="114" cy="524" r="7" fill="none" stroke="#F59E0B"/><circle cx="114" cy="524" r="7"/></g>
+  </svg>
+  <i class="fa-solid fa-plane" style="position:absolute;left:236px;top:520px;font-size:30px;color:#F8FAFC;z-index:4;transform:rotate(-60deg);animation:fl 3s ease-in-out infinite"></i>
+  <i class="fa-solid fa-plane" style="position:absolute;left:386px;top:560px;font-size:30px;color:#F8FAFC;z-index:4;transform:rotate(-30deg);animation:fl 3s ease-in-out infinite -1s"></i>
+  <div class="pad" style="left:600px;top:320px;width:760px;display:flex;flex-direction:column;gap:20px">
+    <div class="gc hv rv" style="--d:3;padding:26px 30px;display:flex;gap:22px"><span class="warn"><i class="fa-solid fa-user-slash"></i></span><div><div class="h3" style="font-size:28px">1) ขาดแคลนคนชำนาญการ</div><div class="p" style="font-size:22px">พยาบาล OR และเซลส์เก่งๆ กระจุกตัวใน กทม.</div></div></div>
+    <div class="gc hv rv" style="--d:4;padding:26px 30px;display:flex;gap:22px"><span class="warn" style="animation-delay:.5s"><i class="fa-solid fa-calendar-xmark"></i></span><div><div class="h3" style="font-size:28px">2) Fixed Cost จม</div><div class="p" style="font-size:22px">เคสผ่าตัดมีแค่ ศุกร์–อาทิตย์ แต่ต้องแบกเงินเดือนทั้งเดือน</div></div></div>
+    <div class="gc hv rv" style="--d:5;padding:26px 30px;display:flex;gap:22px"><span class="warn" style="animation-delay:1s"><i class="fa-solid fa-plane-circle-exclamation"></i></span><div><div class="h3" style="font-size:28px">3) Flying Doctors หงุดหงิด</div><div class="p" style="font-size:22px">บินจาก กทม. มาถึง เครื่องมือไม่พร้อม เซ็ตช้า หมอไม่อยากมาลงเคส</div></div></div>
+  </div>
+  <!-- ✏️ PHOTO: clinical staff -->
+  <div class="ph box rv" style="--d:4;left:1420px;top:320px;width:390px;height:540px"><img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=900&q=80" alt="Clinical staff at work"><div class="ov"></div><span class="chip" style="position:absolute;left:16px;bottom:16px;z-index:2;font-size:19px"><i class="fa-solid fa-user-nurse"></i>คนชำนาญการขาดแคลน</span></div>
+</section>
+
+<!-- 10 · CLINIC-IN-A-BOX -->
+<section class="slide">
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>10</b>Product Positioning · Clinic-in-a-Box</div>
+    <h2 class="t2 rv" style="--d:1">จากการขายซอฟต์แวร์ เป็น <span class="grad">"ระบบปฏิบัติการ + ท่อส่งคน"</span></h2>
+  </div>
+  <div class="pad rv" style="--d:2;left:160px;top:380px;width:440px;height:460px;display:grid;place-items:center">
     <div style="position:relative;perspective:1400px">
-      <div class="cube" style="width:210px;height:210px">
-        <div class="cf f1" style="transform:translateZ(105px)"><i class="fa-solid fa-microchip"></i>Software</div>
-        <div class="cf f2" style="transform:rotateY(90deg) translateZ(105px)"><i class="fa-solid fa-shield-halved"></i>Poka-Yoke</div>
-        <div class="cf f3" style="transform:rotateY(180deg) translateZ(105px)"><i class="fa-solid fa-people-group"></i>Talent</div>
-        <div class="cf f4" style="transform:rotateY(-90deg) translateZ(105px)"><i class="fa-solid fa-map"></i>Blueprint</div>
-        <div class="cf top" style="transform:rotateX(90deg) translateZ(105px)"><span style="font-size:22px">BJH · AOS</span></div>
-        <div class="cf bot" style="transform:rotateX(-90deg) translateZ(105px)"></div>
+      <div class="cube">
+        <div class="cf" style="transform:translateZ(110px)"><i class="fa-solid fa-microchip"></i>Software</div>
+        <div class="cf" style="transform:rotateY(90deg) translateZ(110px)"><i class="fa-solid fa-map"></i>Blueprint</div>
+        <div class="cf" style="transform:rotateY(180deg) translateZ(110px)"><i class="fa-solid fa-people-group"></i>Talent</div>
+        <div class="cf" style="transform:rotateY(-90deg) translateZ(110px)"><i class="fa-solid fa-shield-halved"></i>Poka-Yoke</div>
+        <div class="cf" style="transform:rotateX(90deg) translateZ(110px);background:linear-gradient(150deg,rgba(212,180,131,.45),rgba(6,182,212,.2))"><span style="font-size:22px">BJH · AOS</span></div>
+        <div class="cf" style="transform:rotateX(-90deg) translateZ(110px);background:rgba(0,0,0,.5)"></div>
       </div>
-      <div class="shadow-floor"></div>
+      <div class="floor"></div>
     </div>
   </div>
-  <div class="pad" style="left:680px;right:110px;top:330px;display:flex;flex-direction:column;gap:18px">
-    <div class="lbl rv th" style="--d:3;color:var(--muted)">ขาย 3 สิ่งในแพ็กเกจเดียว</div>
-    <div class="gc hv rv" style="--d:4;padding:24px 30px;display:flex;gap:22px"><div class="ico"><i class="fa-solid fa-microchip"></i></div><div><div class="h3" style="font-size:29px">1) The Software</div><div class="p" style="font-size:22px">Front iPad · LINE Self-Check-in · AI Sales Dossier · Hub Dashboard</div></div></div>
-    <div class="gc hv rv" style="--d:5;padding:24px 30px;display:flex;gap:22px"><div class="ico"><i class="fa-solid fa-map"></i></div><div><div class="h3" style="font-size:29px">2) The Blueprint &amp; Poka-Yoke</div><div class="p" style="font-size:22px">ผัง Modular Box (กล่องสี) · Shadow Board · Visual Labeling</div></div></div>
-    <div class="gc hv rv" style="--d:6;padding:24px 30px;display:flex;gap:22px"><div class="ico gold"><i class="fa-solid fa-people-group"></i></div><div><div class="h3" style="font-size:29px">3) The Talent Network Pool</div><div class="p" style="font-size:22px">เครือข่ายหัวหน้าพยาบาลเวรนอก · ดีลแม่บ้าน Outsource · เซลส์คอมมิชชัน</div></div></div>
+  <div class="pad" style="left:700px;right:110px;top:320px;display:flex;flex-direction:column;gap:20px">
+    <div class="lbl rv" style="--d:3;color:var(--muted)">3-in-1 Package</div>
+    <div class="gc hv rv" style="--d:4;padding:26px 30px;display:flex;gap:22px"><div class="ico"><i class="fa-solid fa-microchip"></i></div><div><div class="h3">1) The Software</div><div class="p">Front iPad · LINE Self-Check-in · AI Sales Dossier · Hub Dashboard</div></div></div>
+    <div class="gc hv rv" style="--d:5;padding:26px 30px;display:flex;gap:22px"><div class="ico"><i class="fa-solid fa-map"></i></div><div><div class="h3">2) The Blueprint</div><div class="p">ผังกล่องสี Modular Box · ป้าย Visual Labeling · ผังจัดโต๊ะ OR</div></div></div>
+    <div class="gc hv rv" style="--d:6;padding:26px 30px;display:flex;gap:22px"><div class="ico gold"><i class="fa-solid fa-people-group"></i></div><div><div class="h3">3) The Talent Network</div><div class="p">เครือข่ายหัวหน้าพยาบาลเวรนอก · ดีล Agency แม่บ้าน · เซลส์ฟรีแลนซ์</div></div></div>
   </div>
-  <span class="credit">Photo · Unsplash</span>
 </section>
 
-<!-- ============ SLIDE 11 · REVENUE STREAMS ============ -->
-<section class="slide" data-part="Part 3 · B2B Clinic-in-a-Box Expansion">
-  <div class="ph r" style="width:26%"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop" alt="Analytics"><div class="ov"></div></div>
-  <div class="pad" style="left:110px;top:84px;width:1300px">
-    <div class="idx rv" style="--d:0"><b>11</b>B2B Revenue Streams &amp; Monetization</div>
-    <h2 class="t2 rv" style="--d:1">3 โมเดล<span class="grad">การคิดเงิน</span></h2>
-  </div>
-  <div class="pad" style="left:110px;top:320px;width:1300px;display:flex;flex-direction:column;gap:20px">
-    <div class="gc hv rv-card rv" style="--d:2"><div class="ico gold"><i class="fa-solid fa-screwdriver-wrench"></i></div><div><div class="lbl">1 · One-Time Setup Fee</div><div class="h3" style="margin-top:6px">วางผัง + ป้าย + มอบ Master Kit กล่องสี</div><div class="p mu" style="font-size:22px">ส่งมอบภายใน 7 วัน</div></div>
-      <div class="amt"><b class="num"><span data-count="50000">0</span>–<span data-count="100000">0</span></b><span>บาท / สาขา</span></div></div>
-    <div class="gc hv rv-card rv" style="--d:3"><div class="ico"><i class="fa-solid fa-cloud"></i></div><div><div class="lbl">2 · Monthly SaaS Subscription</div><div class="h3" style="margin-top:6px">ระบบคลาวด์ · AI Lead · Dashboard</div><div class="p mu" style="font-size:22px">รายได้ประจำทุกเดือน</div></div>
-      <div class="amt"><b class="num"><span data-count="5000">0</span>–<span data-count="15000">0</span></b><span>บาท / เดือน</span></div></div>
-    <div class="gc hv rv-card rv" style="--d:4"><div class="ico"><i class="fa-solid fa-receipt"></i></div><div><div class="lbl">3 · Per-Case Take Rate</div><div class="h3" style="margin-top:6px">หรือ 2–3% ยอดบิล / มาร์จิ้นค่าแรง On-Demand</div><div class="p mu" style="font-size:22px">โตตามจำนวนเคสของคลินิก</div></div>
-      <div class="amt"><b class="num"><span data-count="300">0</span>–<span data-count="1000">0</span></b><span>บาท / เคส</span></div></div>
-  </div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- ============ SLIDE 12 · COST COMPARISON ============ -->
-<section class="slide" data-k="cost" data-part="Part 3 · B2B Clinic-in-a-Box Expansion">
-  <div class="pad" style="left:110px;top:84px;width:1500px">
-    <div class="idx rv" style="--d:0"><b>12</b>Cost Comparison &amp; Unit Economics</div>
-    <h2 class="t2 rv" style="--d:1">ลดต้นทุนคงที่ลง <span class="grad">40%–60%</span> ทันที</h2>
+<!-- 11 · UNIT ECONOMICS -->
+<section class="slide" data-k="cost">
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>11</b>Unit Economics &amp; Financial Transformation</div>
+    <h2 class="t2 rv" style="--d:1">เปลี่ยน Fixed เป็น Variable Cost: <span class="grad">ลดต้นทุน 40% – 60%</span></h2>
   </div>
   <div class="pad rv" style="--d:2;left:240px;top:380px;width:900px">
     <div class="plot">
       <div class="gl" style="bottom:0"><span>0</span></div><div class="gl" style="bottom:20%"><span>50,000</span></div><div class="gl" style="bottom:40%"><span>100,000</span></div><div class="gl" style="bottom:60%"><span>150,000</span></div><div class="gl" style="bottom:80%"><span>200,000</span></div><div class="gl" style="bottom:100%"><span>250,000</span></div>
-      <!-- ✏️ DATA: data-min / data-max (บาท/เดือน), axis = 250,000 -->
+      <!-- ✏️ DATA: บาท/เดือน · axis 250,000 -->
       <div class="col"><div class="vtop num"><span data-count="150000">0</span>–<span data-count="250000">0</span></div>
         <div class="stack" data-min="150000" data-max="250000" data-axis="250000"><div class="seg min old"></div><div class="seg rng old"></div></div></div>
-      <div class="col"><div class="vtop num" style="color:var(--em2)"><span data-count="60000">0</span>–<span data-count="150000">0</span></div>
-        <div class="stack" data-min="60000" data-max="150000" data-axis="250000"><div class="seg min aos"></div><div class="seg rng aos"></div></div></div>
+      <div class="col"><div class="vtop num" style="color:var(--em2)"><span data-count="60000">0</span>–<span data-count="100000">0</span></div>
+        <div class="stack" data-min="60000" data-max="100000" data-axis="250000"><div class="seg min aos"></div><div class="seg rng aos"></div></div></div>
     </div>
-    <div class="xl"><div>แบบเดิม<span>พนักงานประจำ 6–8 คน</span></div><div style="color:var(--em2)">Aesthetic OS<span>แปรผันตามเคส + ค่าระบบ</span></div></div>
+    <div class="xl"><div>แบบเดิม<span>Fixed Payroll 6–8 คน</span></div><div style="color:var(--em2)">Aesthetic OS<span>จ่ายตามเคสจริง + ระบบ</span></div></div>
   </div>
-  <div class="pad" style="left:1220px;right:110px;top:320px;display:flex;flex-direction:column;gap:18px">
-    <div class="gc hv rv" style="--d:3;padding:28px 30px"><div class="lbl th">ประหยัดได้ต่อเดือน</div><div style="font-size:54px;font-weight:800;line-height:1.1;margin-top:8px" class="grad num"><span data-count="60000">0</span>–<span data-count="150000">0</span></div><div class="p">บาท / เดือน</div></div>
-    <div class="gc rv" style="--d:4;padding:24px 30px"><ul class="ck x"><li><i class="fa-solid fa-xmark"></i>แบบเดิม: เคสน้อยก็ต้องจ่ายเต็ม</li></ul><ul class="ck" style="margin-top:12px"><li><i class="fa-solid fa-check"></i>AOS: จ่ายแปรผันตามเคสจริง</li></ul></div>
-    <div class="rv p mu" style="--d:5;font-size:19px;line-height:1.5">ช่วง AOS คำนวณจากการลด 40–60% ของ 150,000–250,000 บาท · แถบลายคือช่วงต่ำสุด–สูงสุด</div>
+  <div class="pad" style="left:1220px;right:110px;top:340px;display:flex;flex-direction:column;gap:18px">
+    <div class="gc hv rv" style="--d:3;padding:28px 30px"><div class="lbl th">ส่วนต่างที่ประหยัดได้</div><div style="font-size:52px;font-weight:800;line-height:1.1;margin-top:8px" class="grad num"><span data-count="50000">0</span>–<span data-count="190000">0</span></div><div class="p">บาท / เดือน</div></div>
+    <div class="gc rv" style="--d:4;padding:24px 30px"><ul class="ck x"><li><i class="fa-solid fa-triangle-exclamation"></i>แบบเดิม: เคสน้อยก็ต้องจ่าย</li></ul><ul class="ck" style="margin-top:12px"><li><i class="fa-solid fa-check"></i>AOS: จ่ายตามเคสจริง + ค่าระบบ</li></ul></div>
+    <div class="rv p mu" style="--d:5;font-size:19px;line-height:1.5">หน่วย: บาท/เดือน · แถบลาย = ช่วงต่ำสุด–สูงสุด<br>ส่วนต่าง = (150,000−100,000) ถึง (250,000−60,000)</div>
   </div>
 </section>
 
-<!-- ============ SLIDE 13 · GO-TO-MARKET ============ -->
-<section class="slide" data-k="gtm" data-part="Part 3 · B2B Clinic-in-a-Box Expansion">
+<!-- 12 · REVENUE STREAMS -->
+<section class="slide">
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="idx rv" style="--d:0"><b>13</b>Go-To-Market &amp; Flying Surgeon Strategy</div>
-    <h2 class="t2 rv" style="--d:1">กลยุทธ์เจาะตลาด: <span class="grad">หมอนำ ระบบตาม</span></h2>
+    <div class="eb rv" style="--d:0"><b>12</b>B2B Revenue Streams</div>
+    <h2 class="t2 rv" style="--d:1">โมเดลธุรกิจที่<span class="grad">แฟร์และสเกลได้รวดเร็ว</span></h2>
   </div>
-  <svg class="map rv" style="--d:2;position:absolute;left:130px;top:280px;z-index:3" width="420" height="720" viewBox="20 10 300 560" aria-label="Thailand target cities">
+  <div class="pad" style="left:110px;right:110px;top:320px;bottom:150px;display:flex;gap:26px">
+    <div class="gc hv rvc rv" style="--d:2"><div class="ico gold"><i class="fa-solid fa-screwdriver-wrench"></i></div><div class="lbl" style="color:var(--gold)">1 · One-Time Setup Fee</div>
+      <div class="amt num"><span data-count="50000">0</span>–<span data-count="100000">0</span></div><div class="unit">บาท / สาขา</div>
+      <ul class="ck" style="margin-top:auto"><li><i class="fa-solid fa-check"></i>วางผัง Poka-Yoke</li><li><i class="fa-solid fa-check"></i>มอบ Master Kit ใน 7 วัน</li></ul></div>
+    <div class="gc hv rvc rv" style="--d:3"><div class="ico"><i class="fa-solid fa-cloud"></i></div><div class="lbl">2 · Monthly SaaS Subscription</div>
+      <div class="amt num"><span data-count="5000">0</span>–<span data-count="15000">0</span></div><div class="unit">บาท / เดือน</div>
+      <ul class="ck" style="margin-top:auto"><li><i class="fa-solid fa-check"></i>Dashboard</li><li><i class="fa-solid fa-check"></i>AI Lead Intake</li><li><i class="fa-solid fa-check"></i>LINE Check-in</li></ul></div>
+    <div class="gc hv rvc rv" style="--d:4"><div class="ico"><i class="fa-solid fa-receipt"></i></div><div class="lbl">3 · Per-Case Fee (Take Rate)</div>
+      <div class="amt num"><span data-count="300">0</span>–<span data-count="1000">0</span></div><div class="unit">บาท / เคส</div>
+      <ul class="ck" style="margin-top:auto"><li><i class="fa-solid fa-check"></i>หรือ 2–3% ยอดบิล</li><li><i class="fa-solid fa-check"></i>+ มาร์จิ้นค่าแรง On-Demand</li></ul></div>
+  </div>
+</section>
+
+<!-- 13 · GO-TO-MARKET -->
+<section class="slide" data-k="gtm">
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>13</b>Go-To-Market &amp; Flying Doctor Strategy</div>
+    <h2 class="t2 rv" style="--d:1">กลยุทธ์เจาะตลาดผ่าน<span class="grad">แพทย์และหัวเมืองเศรษฐกิจ</span></h2>
+  </div>
+  <svg class="map rv" style="--d:2;position:absolute;left:130px;top:290px;z-index:3" width="410" height="700" viewBox="20 10 300 560" aria-label="Target cities">
     <defs><pattern id="dp13" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.5" fill="#34D399" fill-opacity=".45"/></pattern></defs>
     <path d="M120 20 L150 30 L165 60 L175 95 L200 110 L235 105 L265 120 L290 150 L300 190 L290 225 L270 245 L240 255 L215 250 L200 265 L195 290 L190 320 L175 330 L160 315 L150 300 L135 300 L125 320 L120 350 L112 380 L105 410 L100 440 L95 470 L105 500 L120 520 L130 545 L120 555 L105 540 L90 515 L80 485 L85 450 L92 410 L100 370 L108 335 L112 300 L105 265 L95 230 L80 200 L70 170 L60 140 L55 110 L70 80 L85 55 L100 35 Z" fill="url(#dp13)" stroke="#34D399" stroke-opacity=".55" stroke-width="1.4"/>
     <g fill="none" stroke="#22D3EE" stroke-width="2"><path class="route" d="M138 288 Q85 190 92 95"/><path class="route" d="M138 288 Q210 210 232 172"/><path class="route" d="M138 288 Q180 250 200 222"/><path class="route" d="M138 288 Q170 296 166 314"/><path class="route" d="M138 288 Q75 420 114 524"/></g>
     <circle class="ro" cx="138" cy="288" r="9" fill="none" stroke="#D4B483"/><circle cx="138" cy="288" r="8" fill="#D4B483"/><text x="50" y="283" font-family="Plus Jakarta Sans" font-weight="800" font-size="12" fill="#D4B483">BJH BANGKOK</text>
     <!-- ✏️ MAP -->
     <g font-family="Noto Sans Thai" font-weight="700" font-size="14" fill="#fff">
-      <g class="city" data-c="cm"><circle class="ro" cx="92" cy="95" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="92" cy="95" r="8" fill="#34D399"/><text x="106" y="92">เชียงใหม่</text></g>
-      <g class="city" data-c="kk"><circle class="ro" style="animation-delay:.5s" cx="232" cy="172" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="232" cy="172" r="8" fill="#34D399"/><text x="210" y="160">ขอนแก่น</text></g>
-      <g class="city" data-c="kr"><circle class="ro" style="animation-delay:1s" cx="200" cy="222" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="200" cy="222" r="8" fill="#34D399"/><text x="214" y="228">โคราช</text></g>
-      <g class="city" data-c="cb"><circle class="ro" style="animation-delay:1.5s" cx="166" cy="314" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="166" cy="314" r="8" fill="#34D399"/><text x="178" y="320">ชลบุรี/พัทยา</text></g>
-      <g class="city" data-c="hy"><circle class="ro" style="animation-delay:2s" cx="114" cy="524" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="114" cy="524" r="8" fill="#34D399"/><text x="130" y="530">หาดใหญ่</text></g>
+      <g class="city" data-c="kk"><circle class="ro" cx="232" cy="172" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="232" cy="172" r="8" fill="#34D399"/><text x="210" y="160">ขอนแก่น</text></g>
+      <g class="city" data-c="cm"><circle class="ro" style="animation-delay:.5s" cx="92" cy="95" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="92" cy="95" r="8" fill="#34D399"/><text x="106" y="92">เชียงใหม่</text></g>
+      <g class="city" data-c="cb"><circle class="ro" style="animation-delay:1s" cx="166" cy="314" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="166" cy="314" r="8" fill="#34D399"/><text x="178" y="320">ชลบุรี/พัทยา</text></g>
+      <g class="city" data-c="hy"><circle class="ro" style="animation-delay:1.5s" cx="114" cy="524" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="114" cy="524" r="8" fill="#34D399"/><text x="130" y="530">หาดใหญ่</text></g>
+      <g class="city" data-c="kr"><circle class="ro" style="animation-delay:2s" cx="200" cy="222" r="7" fill="none" stroke="#34D399"/><circle class="dot" cx="200" cy="222" r="8" fill="#34D399"/><text x="214" y="228">โคราช</text></g>
     </g>
   </svg>
   <div class="pad rv" style="--d:3;left:130px;top:262px;font-size:18px;color:var(--muted)"><i class="fa-regular fa-hand-pointer"></i>&nbsp; คลิกเมืองบนแผนที่</div>
-  <div class="pad" style="left:620px;top:320px;width:520px">
-    <div class="gc rv" style="--d:3;padding:30px 32px;min-height:300px;display:flex;flex-direction:column;gap:14px" id="cityInfo"></div>
-    <div class="ph box rv" style="--d:4;position:relative;height:300px;margin-top:20px"><img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1200&q=80&auto=format&fit=crop" alt="Operating room ready"><div class="ov"></div><span class="chip" style="position:absolute;left:18px;bottom:18px;z-index:2"><i class="fa-solid fa-circle-check"></i>OR พร้อมก่อนหมอมาถึง</span></div>
+  <div class="pad" style="left:600px;top:320px;width:520px">
+    <div class="gc rv" style="--d:3;padding:30px 32px;min-height:280px;display:flex;flex-direction:column;gap:14px" id="cityInfo"></div>
   </div>
-  <div class="pad" style="left:1190px;right:110px;top:320px;display:flex;flex-direction:column;gap:18px">
-    <div class="gc hv rv" style="--d:4;padding:24px 28px"><div class="ico gold" style="width:54px;height:54px;font-size:22px"><i class="fa-solid fa-plane-departure"></i></div><div class="h3" style="font-size:27px;margin-top:12px">หัวหอก Flying Surgeons</div><div class="p" style="font-size:21px">ดึงหมอศัลยกรรมชื่อดังเป็นตัวเร่ง หมอบอกให้คลินิกใช้ เพื่อมาตรฐานงาน OR ที่เป๊ะ</div></div>
-    <div class="gc hv rv" style="--d:5;padding:24px 28px"><div class="ico" style="width:54px;height:54px;font-size:22px"><i class="fa-solid fa-location-dot"></i></div><div class="h3" style="font-size:27px;margin-top:12px">หัวเมืองเป้าหมาย</div><div class="p" style="font-size:21px">ขอนแก่น · เชียงใหม่ · ชลบุรี/พัทยา · หาดใหญ่ · โคราช</div></div>
-    <div class="gc hv rv" style="--d:6;padding:24px 28px"><div class="ico" style="width:54px;height:54px;font-size:22px"><i class="fa-solid fa-trophy"></i></div><div class="h3" style="font-size:27px;margin-top:12px">Showcase จาก BJH Bangkok</div><div class="p" style="font-size:21px">ใช้ตัวเลข Proof of Concept จริงการันตี</div></div>
+  <div class="pad" style="left:1170px;right:110px;top:320px;display:flex;flex-direction:column;gap:18px">
+    <div class="gc hv rv" style="--d:4;padding:24px 28px;display:flex;gap:20px"><div class="ico gold"><i class="fa-solid fa-plane-departure"></i></div><div><div class="h3" style="font-size:27px">1) Flying Surgeons Influence</div><div class="p" style="font-size:21px">ใช้หมอ กทม. ที่บินไปรับเวร เป็นตัวผลักดันให้คลินิกซื้อระบบ</div></div></div>
+    <div class="gc hv rv" style="--d:5;padding:24px 28px;display:flex;gap:20px"><div class="ico"><i class="fa-solid fa-location-dot"></i></div><div><div class="h3" style="font-size:27px">2) หัวเมืองเป้าหมาย</div><div class="p" style="font-size:21px">ขอนแก่น · เชียงใหม่ · ชลบุรี/พัทยา · หาดใหญ่ · โคราช</div></div></div>
+    <div class="gc hv rv" style="--d:6;padding:24px 28px;display:flex;gap:20px"><div class="ico"><i class="fa-solid fa-trophy"></i></div><div><div class="h3" style="font-size:27px">3) BJH Bangkok Showcase</div><div class="p" style="font-size:21px">ใช้ตัวเลขจริง (อัตราหมุนเคสเร็วขึ้น, เซฟค่าแรงกี่ %) เป็นเครื่องพิสูจน์</div></div></div>
   </div>
 </section>
 
-<!-- ============ SLIDE 14 · ROADMAP + OFFER ============ -->
-<section class="slide" data-part="Part 3 · B2B Clinic-in-a-Box Expansion">
-  <div class="ph full"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=2400&q=80&auto=format&fit=crop" alt="Partnership"><div class="ov" style="background:linear-gradient(90deg,rgba(9,13,22,.98) 0%,rgba(9,13,22,.92) 60%,rgba(9,13,22,.7) 100%)"></div></div>
+<!-- 14 · ROADMAP + OFFER -->
+<section class="slide">
+  <svg class="particles" id="pt14" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="orb" style="width:600px;height:600px;left:1300px;top:-100px;background:radial-gradient(circle,rgba(6,182,212,.35),transparent 70%)"></div>
+  <div class="orb" style="width:500px;height:500px;left:-100px;top:600px;background:radial-gradient(circle,rgba(16,185,129,.3),transparent 70%);animation-duration:24s;animation-direction:reverse"></div>
+  <svg class="orbit" style="position:absolute;left:1340px;top:420px;z-index:2;opacity:.55" width="720" height="720" viewBox="0 0 720 720" aria-hidden="true">
+    <g class="a"><circle cx="360" cy="360" r="330" fill="none" stroke="#22D3EE" stroke-opacity=".5" stroke-dasharray="2 12"/><circle cx="690" cy="360" r="7" fill="#22D3EE"/></g>
+    <g class="b"><circle cx="360" cy="360" r="255" fill="none" stroke="#34D399" stroke-width="3" stroke-dasharray="180 50 14 50"/></g>
+    <g class="c"><circle cx="360" cy="360" r="180" fill="none" stroke="#D4B483" stroke-opacity=".6" stroke-dasharray="6 10"/></g>
+  </svg>
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="idx rv" style="--d:0"><b>14</b>Immediate Roadmap &amp; The "Unbeatable" Pilot Offer</div>
-    <h2 class="t2 rv" style="--d:1">แผนเริ่ม<span class="grad">สัปดาห์นี้</span></h2>
+    <div class="eb rv" style="--d:0"><b>14</b>Roadmap &amp; The "Unbeatable" Pilot Offer</div>
+    <h2 class="t2 rv" style="--d:1">เริ่มต้นสัปดาห์นี้ &amp; <span class="grad">ข้อเสนอทดลอง 30 วัน</span>ที่ปฏิเสธไม่ได้</h2>
   </div>
-  <div class="pad" style="left:110px;top:300px;width:880px;display:flex;flex-direction:column;gap:18px">
-    <!-- ✏️ ROADMAP -->
-    <div class="gc hv rm rv" style="--d:2"><span class="n grad">1</span><div><div class="h3" style="font-size:29px">Pilot 1 ตำแหน่ง</div><div class="p" style="font-size:22px">Outsource แม่บ้านหรือ Front ผ่าน B2B Agency 2 สัปดาห์</div></div></div>
-    <div class="gc hv rm rv" style="--d:3"><span class="n grad">2</span><div><div class="h3" style="font-size:29px">อัดวิดีโอมือถือ 5 คลิป</div><div class="p" style="font-size:22px">สร้าง SOP Library กลาง</div></div></div>
-    <div class="gc hv rm rv" style="--d:4"><span class="n grad">3</span><div><div class="h3" style="font-size:29px">แปลงเป็น Checkbox</div><div class="p" style="font-size:22px">ตัดการตัดสินใจหน้างาน 100%</div></div></div>
+  <!-- ✏️ ROADMAP -->
+  <div class="pad step3" style="left:110px;right:110px;top:330px">
+    <div class="gc hv rv" style="--d:2"><span class="lbl">Step 1</span><div class="h3">Pilot แม่บ้าน / Front</div><div class="p">2 สัปดาห์แรก</div></div>
+    <div class="arr rv" style="--d:3"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="gc hv rv" style="--d:3"><span class="lbl">Step 2</span><div class="h3">ถ่ายวิดีโอ 5 คลิปสั้น</div><div class="p">สร้าง SOP Library กลาง</div></div>
+    <div class="arr rv" style="--d:4"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="gc hv rv" style="--d:4"><span class="lbl">Step 3</span><div class="h3">แปลงระบบเป็น Checkbox</div><div class="p">ตัดการตัดสินใจหน้างาน</div></div>
   </div>
-  <div class="pad" style="left:1060px;right:110px;top:300px;display:flex;flex-direction:column;gap:30px">
-    <div class="gc offer rv" style="--d:3">
-      <div class="lbl" style="color:var(--gold)">B2B Offer · Pilot 30 Days</div>
+  <div class="pad" style="left:110px;top:600px;width:1150px;display:flex;flex-direction:column;gap:30px">
+    <div class="gc offer rv" style="--d:5">
+      <div class="lbl amber">B2B Risk-Free Offer · Pilot Project 30 Days</div>
       <div class="h3" style="font-size:38px;margin-top:12px">ทดลองรันคู่ขนาน 1 เดือน</div>
-      <div class="p" style="margin-top:12px">หากไม่ลดภาระหรือลดต้นทุน <b style="color:var(--ink)">ยินดีคืนเงินค่า Setup</b></div>
-      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap"><span class="chip"><i class="fa-solid fa-code-branch"></i>รันคู่ขนาน</span><span class="chip"><i class="fa-solid fa-rotate-left" style="color:var(--gold)"></i>คืนค่า Setup</span></div>
+      <div class="p" style="margin-top:10px">หากไม่ลดภาระการสอนหรือไม่ลดต้นทุน <b style="color:var(--white)">ยินดีคืนเงินค่า Setup 100%</b></div>
     </div>
-    <div class="rv" style="--d:5"><button class="cta" id="cta" data-noadv><i class="fa-solid fa-rocket"></i>Deploy Aesthetic OS</button></div>
+    <div class="rv" style="--d:6"><button class="cta" id="cta"><i class="fa-solid fa-rocket"></i>Deploy Aesthetic OS System</button></div>
   </div>
-  <span class="credit">Photo · Unsplash</span>
 </section>
 
 <!-- HUD -->
 <div class="hud">
-  <span class="b">BJH · AOS</span><span class="part" id="partLbl"></span>
+  <span class="b">BJH · AOS</span><span>On-Demand Hospital Infrastructure</span>
   <div class="dots" id="dots"></div>
-  <button class="nv" id="prev" data-noadv aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i>Prev</button>
-  <button class="nv" id="next" data-noadv aria-label="Next slide">Next<i class="fa-solid fa-arrow-right"></i></button>
+  <button class="nv" id="prev" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i>Prev</button>
+  <button class="nv" id="next" aria-label="Next slide">Next<i class="fa-solid fa-arrow-right"></i></button>
   <span class="c num" id="cnt">01 / 14</span>
 </div>
 <div class="prog" id="prog"></div>
@@ -668,68 +610,75 @@ input[type=range]{height:10px}
   function fit(){ const s=Math.min(innerWidth/1920,innerHeight/1080); deck.style.transform='translate(-50%,-50%) scale('+s+')'; }
   addEventListener('resize',fit); fit();
 
+  ['pt1','pt14'].forEach(id=>{ const svg=document.getElementById(id), ns='http://www.w3.org/2000/svg';
+    for(let x=60;x<1920;x+=64) for(let y=60;y<1080;y+=64){ if(Math.random()<.6) continue;
+      const c=document.createElementNS(ns,'circle'); c.setAttribute('cx',x+(Math.random()*18-9)); c.setAttribute('cy',y+(Math.random()*18-9));
+      c.setAttribute('r',Math.random()<.15?2.6:1.5); c.setAttribute('fill',Math.random()<.35?'#22D3EE':'#34D399');
+      c.style.setProperty('--t',(3+Math.random()*4)+'s'); c.style.setProperty('--dl',(-Math.random()*6)+'s'); svg.appendChild(c); } });
+
   const dots=document.getElementById('dots');
   slides.forEach((_,i)=>{ const b=document.createElement('button'); b.setAttribute('aria-label','Slide '+(i+1)); b.onclick=()=>go(i); dots.appendChild(b); });
 
-  /* count-up */
   function countUp(root){ root.querySelectorAll('[data-count]').forEach(el=>{ const end=+el.dataset.count, t0=performance.now()+550, D=1600;
     (function tick(now){ const t=Math.min(1,Math.max(0,(now-t0)/D)); el.textContent=Math.round(end*(1-Math.pow(1-t,3))).toLocaleString('en-US'); if(t<1) requestAnimationFrame(tick); })(performance.now()); }); }
 
-  /* S12 range bars */
-  function cost(s,on){ s.querySelectorAll('.stack').forEach(st=>{ const ax=+st.dataset.axis, mn=+st.dataset.min, mx=+st.dataset.max, H=440;
+  function cost(s,on){ s.querySelectorAll('.stack').forEach(st=>{ const ax=+st.dataset.axis, mn=+st.dataset.min, mx=+st.dataset.max, H=460;
     st.querySelector('.min').style.height=on?(mn/ax*H)+'px':'0'; st.querySelector('.rng').style.height=on?((mx-mn)/ax*H)+'px':'0'; }); }
 
-  /* S6 tablet prompts */
-  function poka(on){ clearInterval(T.py); const st=[...document.querySelectorAll('#pySteps .pr')]; let k=0;
-    const paint=()=>st.forEach((e,i)=>e.className='pr'+(i<k?' done':'')+(i===k?' on':'')); paint();
-    if(on) T.py=setInterval(()=>{k=(k+1)%st.length;paint()},1600); }
+  const tgl=document.getElementById('tgl');
+  function setCmp(v){ [...tgl.children].forEach(x=>x.classList.toggle('on',x.dataset.v===v));
+    const o=document.getElementById('cOld'), a=document.getElementById('cAos');
+    o.classList.toggle('dim',v==='aos'); o.classList.toggle('hi',v==='old'); a.classList.toggle('dim',v==='old'); a.classList.toggle('hi',v==='aos'); }
+  tgl.addEventListener('click',e=>{ clearTimeout(T.cmp); const s=e.target.closest('span'); if(s) setCmp(s.dataset.v); });
 
-  /* S7 surge + ratings */
-  const surge=document.getElementById('surge');
-  function paintSurge(){ const x=+surge.value; document.getElementById('surgeX').textContent=x.toFixed(2)+'x'; document.getElementById('surgePay').textContent=Math.round(1000*x).toLocaleString('en-US')+' บ.'; }
-  surge.addEventListener('input',paintSurge); ['click','pointerdown','touchstart'].forEach(ev=>surge.addEventListener(ev,e=>e.stopPropagation()));
-  function ratings(s,on){ s.querySelectorAll('.bar-r i').forEach(i=>i.style.transform=on?'scaleX('+i.dataset.w+')':'scaleX(0)'); }
+  const tasks=[...document.querySelectorAll('#tasks .task')]; let tk=0;
+  function paintTasks(){ tasks.forEach((t,i)=>t.className='task'+(i<tk?' done':'')+(i===tk?' on':'')); document.getElementById('taskCnt').textContent=tk+' / '+tasks.length; }
+  function checkOff(){ tk = tk>=tasks.length ? 0 : tk+1; paintTasks(); }
+  document.getElementById('taskBtn').addEventListener('click',()=>{ clearInterval(T.task); checkOff(); });
+  tasks.forEach((t,i)=>t.addEventListener('click',()=>{ clearInterval(T.task); if(i===tk) checkOff(); }));
+  function pokaAuto(on){ clearInterval(T.task); tk=0; paintTasks(); if(on) T.task=setInterval(checkOff,1500); }
 
-  /* S13 map — ✏️ MAP (ข้อมูลตัวอย่าง) */
-  const CITY={
-    kk:{n:'ขอนแก่น',r:'อีสานตอนบน',b:['ศูนย์กลางลูกค้าอีสาน','บินจาก กทม. ~1 ชม.']},
+  const rows=[...document.querySelectorAll('#jtab tbody tr')];
+  function journey(on){ clearInterval(T.j); let i=0; rows.forEach(r=>r.classList.remove('on')); if(!on) return;
+    rows[0].classList.add('on'); T.j=setInterval(()=>{ rows[i].classList.remove('on'); i=(i+1)%rows.length; rows[i].classList.add('on'); },1800); }
+
+  const CITY={ kk:{n:'ขอนแก่น',r:'อีสานตอนบน',b:['ศูนย์กลางลูกค้าอีสาน','บินจาก กทม. ~1 ชม.']},
     cm:{n:'เชียงใหม่',r:'ภาคเหนือ',b:['ตลาดความงามภาคเหนือ','บินจาก กทม. ~1 ชม. 15 นาที']},
-    cb:{n:'ชลบุรี/พัทยา',r:'ภาคตะวันออก',b:['ใกล้ Hub ที่สุด เหมาะนำร่อง','ขับรถจาก กทม. ~1.5–2 ชม.']},
+    cb:{n:'ชลบุรี/พัทยา',r:'ภาคตะวันออก',b:['ใกล้ BJH ที่สุด เหมาะนำร่อง','ขับรถจาก กทม. ~1.5–2 ชม.']},
     hy:{n:'หาดใหญ่',r:'ภาคใต้',b:['ฐานลูกค้าภาคใต้','บินจาก กทม. ~1 ชม. 30 นาที']},
-    kr:{n:'โคราช',r:'อีสานตอนล่าง',b:['ประตูสู่อีสาน','ขับรถจาก กทม. ~3 ชม.']}
-  };
+    kr:{n:'โคราช',r:'อีสานตอนล่าง',b:['ประตูสู่อีสาน','ขับรถจาก กทม. ~3 ชม.']} };
   const info=document.getElementById('cityInfo'), cities=[...document.querySelectorAll('.city')];
   function showCity(k){ const c=CITY[k]; cities.forEach(g=>g.classList.toggle('sel',g.dataset.c===k));
     info.innerHTML='<div class="lbl th">'+c.r+' · หัวเมืองเป้าหมาย</div><div class="h3" style="font-size:42px">'+c.n+'</div><ul class="ck">'+c.b.map(x=>'<li><i class="fa-solid fa-check"></i>'+x+'</li>').join('')+'</ul><div class="p mu" style="font-size:18px;margin-top:auto">ระยะเวลาเดินทางโดยประมาณ</div>'; }
-  cities.forEach(g=>g.addEventListener('click',e=>{e.stopPropagation();clearInterval(T.city);showCity(g.dataset.c)}));
+  cities.forEach(g=>g.addEventListener('click',()=>{clearInterval(T.city);showCity(g.dataset.c)}));
   function mapAuto(on){ clearInterval(T.city); const ks=Object.keys(CITY); let i=0; showCity(ks[0]); if(on) T.city=setInterval(()=>{i=(i+1)%ks.length;showCity(ks[i])},3000); }
 
-  document.getElementById('cta').addEventListener('click',e=>{ e.stopPropagation(); const b=e.currentTarget; b.innerHTML='<i class="fa-solid fa-circle-check"></i>Pilot Requested'; setTimeout(()=>b.innerHTML='<i class="fa-solid fa-rocket"></i>Deploy Aesthetic OS',2500); });
+  document.getElementById('startBtn').addEventListener('click',()=>go(1));
+  document.getElementById('cta').addEventListener('click',e=>{ const b=e.currentTarget; b.innerHTML='<i class="fa-solid fa-circle-check"></i>Pilot Requested'; setTimeout(()=>b.innerHTML='<i class="fa-solid fa-rocket"></i>Deploy Aesthetic OS System',2500); });
 
   function go(n){
     n=Math.max(0,Math.min(N-1,n)); if(n===cur) return; const dir=n>cur;
-    if(cur>=0){ const o=slides[cur]; o.classList.remove('active'); o.classList.toggle('left',dir); cost(o,false); ratings(o,false); }
+    if(cur>=0){ const o=slides[cur]; o.classList.remove('active'); o.classList.toggle('left',dir); cost(o,false); }
     cur=n; const s=slides[cur]; s.classList.remove('left'); s.classList.add('active');
     [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur));
     document.getElementById('cnt').textContent=String(cur+1).padStart(2,'0')+' / '+N;
-    document.getElementById('partLbl').innerHTML=s.dataset.part||'';
     document.getElementById('prog').style.width=((cur+1)/N*100)+'%';
     countUp(s); const k=s.dataset.k;
-    setTimeout(()=>{ cost(s,k==='cost'); ratings(s,k==='surge'); },450);
-    poka(k==='poka'); mapAuto(k==='gtm'); if(k==='surge'){ surge.value=1.3; paintSurge(); }
+    setTimeout(()=>cost(s,k==='cost'),450);
+    clearTimeout(T.cmp); if(k==='cmp'){ setCmp('old'); T.cmp=setTimeout(()=>setCmp('aos'),2200); }
+    pokaAuto(k==='poka'); journey(k==='journey'); mapAuto(k==='gtm');
     try{history.replaceState(null,'','#'+(cur+1))}catch(e){}
   }
-  document.getElementById('next').onclick=e=>{e.stopPropagation();go(cur+1)};
-  document.getElementById('prev').onclick=e=>{e.stopPropagation();go(cur-1)};
+  document.getElementById('next').onclick=()=>go(cur+1);
+  document.getElementById('prev').onclick=()=>go(cur-1);
   addEventListener('keydown',e=>{
-    if(e.target===surge && (e.key==='ArrowLeft'||e.key==='ArrowRight')) return;
     if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}
     else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}
     else if(e.key==='Home') go(0); else if(e.key==='End') go(N-1);
     else if(e.key==='f'||e.key==='F'){ try{ document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{}) }catch(_){} }
   });
   let tx=null;
-  addEventListener('touchstart',e=>{ if(e.target===surge) return; tx=e.touches[0].clientX },{passive:true});
+  addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
   addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; tx=null; if(Math.abs(dx)>50) go(cur+(dx<0?1:-1)); });
 
   const h=parseInt(location.hash.slice(1),10); go(isNaN(h)?0:h-1);
