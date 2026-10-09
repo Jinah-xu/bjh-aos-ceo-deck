@@ -7,7 +7,7 @@
 <!--
   =====================================================================
   presentation.html — The Decoupled Aesthetic Hub (AOS)
-  Operations Strategy · 9 slides
+  Operations Strategy · 12 slides
   Canvas 1920×1080 → CSS transform scale ให้พอดีทุกจอ
   ควบคุม: ← / → / Space · ปุ่ม Prev / Next · Slide Counter ล่างขวา · ปัดบนมือถือ · F = เต็มจอ
   ปรับแต่ง (ค้นหา ✏️): THEME · PHOTO · DATA · MAP · ROADMAP
@@ -147,14 +147,14 @@ ul.ck.x li i{color:var(--amber)}
 
 /* S8 table */
 .jtab{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:24px}
-.jtab th{font-size:17px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cy2);text-align:left;padding:16px 28px;background:rgba(6,182,212,.08);border-bottom:1px solid var(--line)}
-.jtab td{font-size:23px;padding:15px 28px;border-bottom:1px solid var(--line);color:var(--body);vertical-align:middle}
+.jtab th{font-size:19px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--cy2);text-align:left;padding:24px 32px;background:rgba(6,182,212,.08);border-bottom:1px solid var(--line)}
+.jtab td{font-size:26px;padding:28px 32px;line-height:1.5;border-bottom:1px solid var(--line);color:var(--body);vertical-align:middle}
 .jtab tr:last-child td{border-bottom:0}
 .jtab tbody tr{transition:background .3s,box-shadow .3s}
 .jtab tbody tr:hover{background:rgba(6,182,212,.07)}
 .jtab tbody tr.on{background:rgba(6,182,212,.1);box-shadow:inset 5px 0 0 var(--cy2)}
 .jtab .st{display:flex;align-items:center;gap:16px;color:var(--white);font-weight:700}
-.jtab .st b{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(6,182,212,.15);color:var(--cy2);font-size:20px;flex:none}
+.jtab .st b{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(6,182,212,.15);color:var(--cy2);font-size:20px;flex:none}
 .actor{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:19px;font-weight:700;white-space:nowrap}
 .actor.ai{background:rgba(6,182,212,.15);color:var(--cy2)}.actor.od{background:rgba(212,180,131,.16);color:var(--gold)}.actor.dr{background:rgba(52,211,153,.15);color:var(--em2)}
 
@@ -229,6 +229,23 @@ ul.ck.x li i{color:var(--amber)}
 .risk{display:flex;gap:18px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
 .risk:first-of-type{border-top:0}
 .risk .h3{font-size:25px}.risk .p{font-size:21px}
+
+/* v3 readability */
+.big2{flex:1;padding:44px 48px;display:flex;flex-direction:column;gap:26px}
+.big2 .hd{display:flex;align-items:center;gap:22px}
+.big2 .hd .ico{width:76px;height:76px;font-size:32px;border-radius:22px}
+.big2 .hd .h3{font-size:38px}
+.big2 .hd .sub{font-size:21px;font-weight:700;letter-spacing:.06em;color:var(--cy2)}
+.big2 ul.ck{gap:22px}
+.big2 ul.ck li{font-size:26px;line-height:1.5}
+.big2 ul.ck li b{color:var(--white);font-weight:700}
+.big2 .src{margin-top:auto;font-size:23px;line-height:1.45;padding:18px 20px}
+.lg ul.ck{gap:24px}.lg ul.ck li{font-size:30px;line-height:1.5;gap:16px}
+.lg ul.ck li b{color:var(--white)}
+.pr{display:flex;gap:22px;align-items:flex-start;padding:26px 0;border-top:1px solid var(--line)}
+.pr:first-child{border-top:0;padding-top:0}
+.pr .n{font-size:22px;font-weight:800;color:var(--cy2);width:48px;flex:none;padding-top:4px}
+.pr .h3{font-size:30px}.pr .p{font-size:24px;margin-top:4px}
 @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-iteration-count:1!important} }
 </style>
 </head>
@@ -239,9 +256,9 @@ ul.ck.x li i{color:var(--amber)}
 <section class="slide">
   <svg class="particles" id="pt1" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"></svg>
   <div class="pad" style="left:110px;top:0;bottom:110px;width:820px;display:flex;flex-direction:column;justify-content:center;gap:30px">
-    <div class="eb rv" style="--d:0">BJH Bangkok · Operations Strategy</div>
-    <h1 class="t1 rv" style="--d:1;font-size:84px">The Decoupled<br>Aesthetic <span class="grad">Operating System</span> <span style="color:var(--gold)">(AOS)</span></h1>
-    <p class="lead rv" style="--d:2">เปลี่ยนจาก <b class="amber">"คลินิกจ้างคนประจำกินเงินเดือน"</b> สู่ <b style="color:var(--white)">"Plug-and-Play Hub Infrastructure"</b> ควบคุมด้วย AI และ SOP 100%</p>
+    <div class="eb rv" style="--d:0">BJH Bangkok · Operating System</div>
+    <h1 class="t1 rv" style="--d:1">The Decoupled<br><span class="grad">Aesthetic Hub</span><br><span style="color:var(--gold)">(AOS)</span></h1>
+    <p class="lead rv" style="--d:2">เปลี่ยนจาก <b class="amber">"คลินิกจ้างคนประจำกินเงินเดือน"</b> สู่ <b style="color:var(--white)">"Plug-and-Play Hub Infrastructure"</b> ควบคุมคุณภาพด้วย AI และ SOP 100%</p>
     <div class="rv" style="--d:3"><button class="start" id="startBtn"><i class="fa-solid fa-play"></i>Start Presentation</button></div>
   </div>
   <!-- ✏️ PHOTO: Clinic Interior -->
@@ -267,43 +284,35 @@ ul.ck.x li i{color:var(--amber)}
   <div class="ph r" style="width:30%"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80" alt="Clinic front desk"><div class="ov"></div></div>
   <div class="pad" style="left:110px;top:84px;width:1300px">
     <div class="eb rv" style="--d:0"><b>02</b>The Core Problem</div>
-    <h2 class="t2 rv" style="--d:1">รากเหง้าของปัญหา: <span class="amber">4 จุดอ่อนเชิงโครงสร้าง</span>ของ Traditional Clinic</h2>
+    <h2 class="t2 rv" style="--d:1"><span class="amber">4 ปัญหาคลาสสิก</span>ที่ฉุดรั้งคลินิกความงาม</h2>
   </div>
-  <div class="pad" style="left:110px;top:320px;width:1300px;display:grid;grid-template-columns:1fr 1fr;gap:22px">
-    <div class="gc hv rv" style="--d:2;padding:32px 32px;display:flex;gap:24px"><span class="warn"><i class="fa-solid fa-person-walking-arrow-right"></i></span><div><div class="lbl amber">01</div><div class="h3">High Turnover</div><div class="p">พนักงานเข้า-ออกบ่อย งานบริการสะดุด ขาดความต่อเนื่อง</div></div></div>
-    <div class="gc hv rv" style="--d:3;padding:32px 32px;display:flex;gap:24px"><span class="warn" style="animation-delay:.4s"><i class="fa-solid fa-hourglass-half"></i></span><div><div class="lbl amber">02</div><div class="h3">The Training Bottleneck</div><div class="p">ผู้บริหาร/เจ้าของกลายเป็นคอขวด ต้องคอยสัมภาษณ์และสอนงานซ้ำซาก</div></div></div>
-    <div class="gc hv rv" style="--d:4;padding:32px 32px;display:flex;gap:24px"><span class="warn" style="animation-delay:.8s"><i class="fa-solid fa-brain"></i></span><div><div class="lbl amber">03</div><div class="h3">Knowledge Trapped in Heads</div><div class="p">SOP ผูกติดกับความจำและทักษะเฉพาะตัวของคน คนลาออกระบบพัง</div></div></div>
-    <div class="gc hv rv" style="--d:5;padding:32px 32px;display:flex;gap:24px"><span class="warn" style="animation-delay:1.2s"><i class="fa-solid fa-sack-dollar"></i></span><div><div class="lbl amber">04</div><div class="h3">Inflexible Fixed Payroll</div><div class="p">แบกต้นทุนคงที่สูงลิ่ว แม้ในวันที่ไม่มีเคสผ่าตัด</div></div></div>
+  <div class="pad" style="left:110px;top:330px;width:1300px;display:grid;grid-template-columns:1fr 1fr;gap:28px">
+    <div class="gc hv rv" style="--d:2;padding:40px 40px;display:flex;gap:28px"><span class="warn"><i class="fa-solid fa-person-walking-arrow-right"></i></span><div><div class="lbl amber">01</div><div class="h3">High Turnover Rate</div><div class="p">คนเข้า-ออกบ่อย <b style="color:var(--white)">งานบริการไม่ต่อเนื่อง</b></div></div></div>
+    <div class="gc hv rv" style="--d:3;padding:40px 40px;display:flex;gap:28px"><span class="warn" style="animation-delay:.4s"><i class="fa-solid fa-hourglass-half"></i></span><div><div class="lbl amber">02</div><div class="h3">The Training Bottleneck</div><div class="p">เจ้าของ/ผู้บริหาร<b style="color:var(--white)">เสียเวลาสัมภาษณ์และเทรนงานใหม่</b>ซ้ำซาก</div></div></div>
+    <div class="gc hv rv" style="--d:4;padding:40px 40px;display:flex;gap:28px"><span class="warn" style="animation-delay:.8s"><i class="fa-solid fa-brain"></i></span><div><div class="lbl amber">03</div><div class="h3">Knowledge Trapped in Heads</div><div class="p">SOP ผูกติดกับ<b style="color:var(--white)">ความจำส่วนบุคคล</b> คนออกระบบสะดุด</div></div></div>
+    <div class="gc hv rv" style="--d:5;padding:40px 40px;display:flex;gap:28px"><span class="warn" style="animation-delay:1.2s"><i class="fa-solid fa-sack-dollar"></i></span><div><div class="lbl amber">04</div><div class="h3">Inflexible Fixed Payroll</div><div class="p">แบก<b style="color:var(--white)">เงินเดือนประจำก้อนโต</b> แม้ในวันที่เคสเบาบาง</div></div></div>
   </div>
   <span class="credit">Photo · Unsplash</span>
 </section>
 
-<!-- 3 · MINDSET SHIFT -->
+<!-- 3 · PARADIGM SHIFT -->
 <section class="slide" data-k="cmp">
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>03</b>The Core Solution &amp; Mindset Shift</div>
-    <h2 class="t2 rv" style="--d:1">จาก <span style="color:var(--muted)">People-Dependent</span> สู่ <span class="grad">System-Driven</span></h2>
+    <div class="eb rv" style="--d:0"><b>03</b>The Paradigm Shift</div>
+    <h2 class="t2 rv" style="--d:1">"ถ้ายังต้องสอนงาน <span class="grad">แปลว่าระบบยังไม่ดีพอ</span>"</h2>
   </div>
-  <div class="pad gc rv" style="--d:2;left:110px;top:290px;width:1700px;padding:26px 36px;display:flex;align-items:center;gap:26px;border-color:rgba(245,158,11,.5);box-shadow:0 0 60px -24px rgba(245,158,11,.6)">
-    <i class="fa-solid fa-quote-left" style="font-size:44px;color:var(--amber)"></i>
-    <div><div class="lbl amber">กฎเหล็ก</div><div style="font-size:40px;font-weight:800;color:var(--white);line-height:1.3">"ถ้ายังต้องสอนงาน แปลว่าระบบยังไม่ดีพอ"</div></div>
-  </div>
-  <div class="pad rv" style="--d:3;left:110px;top:460px;display:flex;align-items:center;gap:24px">
-    <div class="toggle" id="tgl"><span data-v="old">People-Dependent</span><span data-v="aos" class="on">System-Driven</span></div>
+  <div class="pad rv" style="--d:2;left:110px;top:300px;display:flex;align-items:center;gap:24px">
+    <div class="toggle" id="tgl"><span data-v="old">Traditional Clinic</span><span data-v="aos" class="on">AOS Model</span></div>
     <span style="font-size:20px;color:var(--muted)"><i class="fa-regular fa-hand-pointer"></i>&nbsp; คลิกเพื่อสลับมุมมอง</span>
   </div>
-  <div class="pad" style="left:110px;right:110px;top:550px;display:flex;gap:26px">
-    <div class="gc cmpc rv" style="--d:4;padding:26px 34px" id="cOld">
-      <div class="lbl mu">People-Dependent · คลินิกแบบเดิม</div>
-      <div class="cr"><span class="k">บทบาทคน</span><i class="fa-solid fa-brain mu"></i>จำ ตัดสินใจ และแก้ปัญหาเอง</div>
-      <div class="cr"><span class="k">ความถูกต้อง</span><i class="fa-solid fa-user mu"></i>ขึ้นกับประสบการณ์ของแต่ละคน</div>
-      <div class="cr"><span class="k">โครงสร้าง</span><i class="fa-solid fa-people-group mu"></i>พนักงานประจำทุกตำแหน่ง</div>
+  <div class="pad" style="left:110px;right:110px;top:410px;display:flex;gap:34px">
+    <div class="gc cmpc rv" style="--d:3;padding:40px 44px" id="cOld">
+      <div class="lbl mu">Traditional Clinic</div>
+      <div class="lg" style="margin-top:20px"><ul class="ck x"><li><i class="fa-solid fa-xmark"></i><span><b>ผูกติดตัวคน</b></span></li><li><i class="fa-solid fa-xmark"></i><span>คนลาออก <b>งานสะดุด</b></span></li><li><i class="fa-solid fa-xmark"></i><span>แบก<b>เงินเดือนประจำ</b></span></li></ul></div>
     </div>
-    <div class="gc cmpc hi rv" style="--d:5;padding:26px 34px" id="cAos">
-      <div class="lbl">System-Driven · AOS</div>
-      <div class="cr"><span class="k">บทบาทคน</span><i class="fa-solid fa-hand-pointer" style="color:var(--cy2)"></i>กดปุ่ม และเดินตามขั้นตอนบนจอ</div>
-      <div class="cr"><span class="k">ความถูกต้อง</span><i class="fa-solid fa-shield-halved" style="color:var(--em2)"></i>Poka-Yoke บังคับให้ทำถูก 100%</div>
-      <div class="cr"><span class="k">โครงสร้าง</span><i class="fa-solid fa-user-shield" style="color:var(--gold)"></i>Core 3–5 คน + หน้างาน On-Demand</div>
+    <div class="gc cmpc hi rv" style="--d:4;padding:40px 44px" id="cAos">
+      <div class="lbl">AOS Model</div>
+      <div class="lg" style="margin-top:20px"><ul class="ck"><li><i class="fa-solid fa-check"></i><span><b>System-Driven</b></span></li><li><i class="fa-solid fa-check"></i><span>Core Management <b>เพียง 3–5 คน</b></span></li><li><i class="fa-solid fa-check"></i><span>หน้างานจ่ายแบบ <b>On-Demand</b> รายเคส/ชั่วโมง</span></li></ul></div>
     </div>
   </div>
 </section>
@@ -312,7 +321,7 @@ ul.ck.x li i{color:var(--amber)}
 <section class="slide">
   <div class="pad" style="left:110px;top:84px;width:1150px">
     <div class="eb rv" style="--d:0"><b>04</b>The 5-Stage Operating Engine</div>
-    <h2 class="t2 rv" style="--d:1">หลักการทำงาน 5 ขั้นตอน: <span class="grad">Lead สู่ Verified Payout</span></h2>
+    <h2 class="t2 rv" style="--d:1">วงจรอัตโนมัติ: <span class="grad">จาก Lead สู่ Auto Payout</span></h2>
   </div>
   <!-- ✏️ PHOTO: Medical Tablet / Digital Tech -->
   <div class="ph box rv" style="--d:2;right:110px;top:84px;width:520px;height:330px"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Doctor using a mobile device"><div class="ov"></div><span class="chip" style="position:absolute;left:18px;bottom:18px;z-index:2"><i class="fa-solid fa-gauge-high"></i>Hub Dashboard</span></div>
@@ -321,47 +330,70 @@ ul.ck.x li i{color:var(--amber)}
     <path d="M250 560 C420 560 440 660 605 660 S790 560 960 560 S1150 660 1315 660 S1500 560 1670 560" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6" stroke-linecap="round"/>
     <path d="M250 560 C420 560 440 660 605 660 S790 560 960 560 S1150 660 1315 660 S1500 560 1670 560" fill="none" stroke="#22D3EE" stroke-width="6" stroke-linecap="round" pathLength="1000" stroke-dasharray="90 910" stroke-dashoffset="1000" filter="url(#glz)" style="animation:flow 8s linear infinite"/>
   </svg>
-  <div class="pn rv" style="--d:3;left:250px;top:500px"><div class="disc" style="--t:0s"><i class="fa-solid fa-robot"></i></div><span class="s">STAGE 1</span><div class="h3">AI Engine</div><div class="p">กวาด Lead · Qualify · นัดหมาย · รับมัดจำ</div></div>
-  <div class="pn rv" style="--d:4;left:605px;top:600px"><div class="disc" style="--t:2s"><i class="fa-solid fa-table-cells-large"></i></div><span class="s">STAGE 2</span><div class="h3">Slot Allocation</div><div class="p">ปล่อยงานลงระบบตามตารางเวลา</div></div>
-  <div class="pn rv" style="--d:5;left:960px;top:500px"><div class="disc" style="--t:4s;border-color:var(--gold)"><i class="fa-solid fa-people-group"></i></div><span class="s" style="color:var(--gold)">STAGE 3</span><div class="h3">On-Demand Pool</div><div class="p">บุคลากรเข้าทำงานตาม Slot นัดหมาย</div></div>
+  <div class="pn rv" style="--d:3;left:250px;top:500px"><div class="disc" style="--t:0s"><i class="fa-solid fa-robot"></i></div><span class="s">STAGE 1</span><div class="h3">AI Engine</div><div class="p">กวาด Lead / Qualify / รับมัดจำ</div></div>
+  <div class="pn rv" style="--d:4;left:605px;top:600px"><div class="disc" style="--t:2s"><i class="fa-solid fa-table-cells-large"></i></div><span class="s">STAGE 2</span><div class="h3">Slot Allocation</div><div class="p">ปล่อยงานลงระบบตามช่วงเวลา</div></div>
+  <div class="pn rv" style="--d:5;left:960px;top:500px"><div class="disc" style="--t:4s;border-color:var(--gold)"><i class="fa-solid fa-people-group"></i></div><span class="s" style="color:var(--gold)">STAGE 3</span><div class="h3">On-Demand Pool</div><div class="p">Staff เข้ารับงานตาม Slot</div></div>
   <div class="pn rv" style="--d:6;left:1315px;top:600px"><div class="disc" style="--t:6s"><i class="fa-solid fa-list-check"></i></div><span class="s">STAGE 4</span><div class="h3">Smart Execution</div><div class="p">ทุกคนทำตาม Digital Step-by-Step SOP</div></div>
   <div class="pn rv" style="--d:7;left:1670px;top:500px"><div class="disc" style="--t:7.9s;border-color:var(--em2)"><i class="fa-solid fa-money-bill-transfer"></i></div><span class="s" style="color:var(--em2)">STAGE 5</span><div class="h3">Verification &amp; Payout</div><div class="p">ตรวจผ่านภาพถ่าย/ระบบ → ปลดล็อกจ่ายเงิน</div></div>
   <span class="credit">Photo · Unsplash</span>
 </section>
 
-<!-- 5 · 4 ROLES -->
+<!-- 5 · FRONT -->
 <section class="slide">
-  <div class="pad" style="left:110px;right:110px;top:84px;bottom:120px;display:flex;flex-direction:column;gap:34px">
-    <div class="rv" style="--d:0"><div class="eb"><b>05</b>Replaced Roles · 4 จุดบริการหลัก</div>
-      <h2 class="t2">4 บทบาทที่<span class="grad">ทดแทนได้ทันที</span> ไม่ต้องเทรนยาว</h2></div>
-    <div style="flex:1;display:flex;gap:20px">
-      <div class="gc hv role rv" style="--d:1"><div class="ico"><i class="fa-solid fa-tablet-screen-button"></i></div><div class="h3">Front Desk</div>
-        <ul class="ck"><li><i class="fa-solid fa-check"></i>Scriptless Reception: จอ Tablet บอกประโยคพูดทีละบรรทัด</li><li><i class="fa-solid fa-check"></i>สแกนประวัติ · เสิร์ฟน้ำรหัส A</li></ul>
-        <div class="src"><i class="fa-solid fa-ban"></i><span>ไม่ต้องจำโปรโมชัน</span></div></div>
-      <div class="gc hv role rv" style="--d:2"><div class="ico"><i class="fa-solid fa-handshake"></i></div><div class="h3">Sales Closer</div>
-        <ul class="ck"><li><i class="fa-solid fa-check"></i>AI Dossier สรุป Pain Point + สูตรปิด Option A/B</li><li><i class="fa-solid fa-check"></i>เซลส์ทำหน้าที่สร้างความมั่นใจ</li></ul>
-        <div class="src" style="color:var(--amber);background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.35)"><i class="fa-solid fa-scale-balanced"></i><span>Fair Allocation ตาม Conversion</span></div></div>
-      <div class="gc hv role rv" style="--d:3"><div class="ico"><i class="fa-solid fa-user-nurse"></i></div><div class="h3">OR Nurse Hub</div>
-        <ul class="ck"><li><i class="fa-solid fa-id-card"></i>พยาบาลเวรนอกที่มีใบประกอบวิชาชีพ</li><li><i class="fa-solid fa-check"></i>Pre-Set Modular Trays ไม่ต้องจำหมอ</li></ul>
-        <div class="src" style="color:var(--em2);background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.35)"><i class="fa-solid fa-camera"></i><span>จบเคส ส่งรูปนับกอซ/เครื่องมือ</span></div></div>
-      <div class="gc hv role rv" style="--d:4"><div class="ico"><i class="fa-solid fa-spray-can-sparkles"></i></div><div class="h3">Sanitization Crew</div>
-        <ul class="ck"><li><i class="fa-solid fa-bell"></i>Trigger "Turnover Room"</li><li><i class="fa-solid fa-check"></i>ทำความสะอาด 12 ขั้นตอน · เคลียร์ขยะถังแดง</li></ul>
-        <div class="src" style="color:var(--em2);background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.35)"><i class="fa-solid fa-camera"></i><span>ถ่ายรูปส่งระบบตรวจก่อนปล่อยห้อง</span></div></div>
-    </div>
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>05</b>Replaced Roles</div>
+    <h2 class="t2 rv" style="--d:1">จุดบริการหน้าบ้าน: <span class="grad">ทำงานได้ทันที</span> ไม่ต้องเทรนยาว</h2>
   </div>
+  <div class="pad" style="left:110px;right:110px;top:310px;height:560px;display:flex;gap:34px">
+    <div class="gc hv big2 rv" style="--d:2"><div class="hd"><div class="ico"><i class="fa-solid fa-tablet-screen-button"></i></div><div><div class="sub">SCRIPTLESS RECEPTION</div><div class="h3">Front Desk</div></div></div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i><span>สแกน <b>Face/QR</b> ประวัติดึงจาก AI ทันที</span></li><li><i class="fa-solid fa-check"></i><span>หน้าจอบอก<b>บทพูดต้อนรับ</b> + เสิร์ฟ<b>น้ำรหัส A</b></span></li><li><i class="fa-solid fa-check"></i><span><b>ไม่ต้องจำโปรโมชัน</b></span></li></ul>
+      <div class="src" style=""><i class="fa-solid fa-user-plus"></i>&nbsp; แหล่งคน: สาย Hospitality / แอร์โฮสเตสพักกะ · ทดสอบ Soft Skills 30 นาที</div></div>
+    <div class="gc hv big2 rv" style="--d:3"><div class="hd"><div class="ico"><i class="fa-solid fa-handshake"></i></div><div><div class="sub">AI-ASSISTED CLOSING</div><div class="h3">Sales Closer</div></div></div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i><span><b>AI Dossier</b> สรุป Pain Point · งบประมาณ · ตัวเลือก A/B</span></li><li><i class="fa-solid fa-check"></i><span>คอมมิชชัน <b>3–5% ต่อเคส</b> (ไม่มีเงินเดือนประจำ)</span></li></ul>
+      <div class="src" style="color:var(--amber);background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.35)"><i class="fa-solid fa-scale-balanced"></i>&nbsp; <b>Fair System:</b> ปิดหลุดเกณฑ์ AI โยก Slot ให้คน Rating สูงกว่า</div></div></div>
 </section>
 
-<!-- 6 · POKA-YOKE IN ACTION -->
-<section class="slide" data-k="poka">
-  <div class="ph full" style="opacity:.45"><img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=2000&q=80" alt="Operating theatre with instrument table"><div class="ov" style="background:linear-gradient(90deg,rgba(10,15,29,.97),rgba(10,15,29,.9) 55%,rgba(10,15,29,.8))"></div></div>
-  <div class="pad" style="left:110px;top:84px;width:1500px">
-    <div class="eb rv" style="--d:0"><b>06</b>Physical &amp; Digital Poka-Yoke in Action</div>
-    <h2 class="t2 rv" style="--d:1">กายภาพและระบบที่<span class="grad">ไม่ต้องใช้ความจำ</span> (Zero Memory)</h2>
+<!-- 6 · BACK -->
+<section class="slide">
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>06</b>Replaced Roles</div>
+    <h2 class="t2 rv" style="--d:1">จุดบริการหลังบ้าน: <span class="grad">มาตรฐานแม่นยำ</span> และการหมุนเวียนห้อง</h2>
   </div>
-  <div class="pad" style="left:110px;top:300px;width:1030px;display:flex;flex-direction:column;gap:18px">
-    <div class="lbl rv" style="--d:2">Physical Poka-Yoke · Modular Packs + Shadow Board</div>
-    <div class="gc rv" style="--d:2;padding:20px">
-      <svg viewBox="0 0 980 320" width="100%" height="320" aria-label="Sterile tray with shadow board">
+  <div class="pad" style="left:110px;right:110px;top:310px;height:560px;display:flex;gap:34px">
+    <div class="gc hv big2 rv" style="--d:2"><div class="hd"><div class="ico"><i class="fa-solid fa-user-nurse"></i></div><div><div class="sub">VERIFIED GIG NURSES</div><div class="h3">OR Nurse Hub</div></div></div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i><span>พยาบาลเวรนอก รพ.รัฐ/เอกชน <b>ผ่านคัดกรองใบประกอบวิชาชีพ</b></span></li><li><i class="fa-solid fa-check"></i><span><b>Pre-Set Modular Trays</b> แยกตามหัตถการ ไม่ต้องจำหมอ</span></li></ul>
+      <div class="src" style="color:var(--em2);background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.35)"><i class="fa-solid fa-camera"></i>&nbsp; <b>ค่าตอบแทนรายเคส:</b> ปลดล็อกหลังส่งรูปนับกอซและเครื่องมือครบ</div></div>
+    <div class="gc hv big2 rv" style="--d:3"><div class="hd"><div class="ico"><i class="fa-solid fa-spray-can-sparkles"></i></div><div><div class="sub">TURNOVER TRACKER</div><div class="h3">Sanitization Crew</div></div></div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i><span>แจ้งเตือนเข้าทำความสะอาด<b>ทันทีที่ OR ผ่าตัดเสร็จ</b></span></li><li><i class="fa-solid fa-check"></i><span><b>Checklist 12 ขั้นตอน</b> + เคลียร์ขยะติดเชื้อถังแดง</span></li></ul>
+      <div class="src" style="color:var(--em2);background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.35)"><i class="fa-solid fa-camera"></i>&nbsp; <b>Photo-Proof:</b> ถ่ายรูปส่ง AI ตรวจความสะอาดก่อนปล่อยห้อง</div></div></div>
+</section>
+
+<!-- 7 · ZERO -->
+<section class="slide">
+  <div class="ph full" style="opacity:.22"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80" alt="Hospitality"><div class="ov" style="background:linear-gradient(180deg,rgba(10,15,29,.9),rgba(10,15,29,.98))"></div></div>
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>07</b>Zero-Recruitment &amp; Zero-Training</div>
+    <h2 class="t2 rv" style="--d:1">คุณไม่ต้อง<span class="grad">วิ่งหาคน</span> และไม่ต้อง<span class="grad">ยืนสอนงาน</span>เอง</h2>
+  </div>
+  <div class="pad t7" style="left:110px;right:110px;top:320px;display:flex;gap:30px;align-items:stretch;height:500px">
+    <div class="gc hv rv" style="--d:2;flex:1;padding:36px 34px;display:flex;flex-direction:column;gap:18px"><div class="ico"><i class="fa-solid fa-file-signature"></i></div><div class="lbl">Zero-Recruitment</div><div class="h3" style="font-size:34px">1) B2B Agency SLAs</div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i><span>สัญญา <b style="color:var(--white)">Seekster · BeNeat · Nurse Hub</b></span></li><li><i class="fa-solid fa-check"></i><span>ขาด-ลา <b style="color:var(--white)">Agency ส่งคนแทนทันที</b></span></li></ul></div>
+    <div class="gc hv rv" style="--d:3;flex:1;padding:36px 34px;display:flex;flex-direction:column;gap:18px"><div class="ico"><i class="fa-solid fa-circle-play"></i></div><div class="lbl">Zero-Training</div><div class="h3" style="font-size:34px">2) Self-Serve Onboarding</div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i><span>วิดีโอสั้นรวม<b style="color:var(--white)">ไม่เกิน 30 นาที</b></span></li><li><i class="fa-solid fa-check"></i><span><b style="color:var(--white)">Quiz 5 ข้อ 100%</b></span></li><li><i class="fa-solid fa-check"></i><span><b style="color:var(--white)">Shadow Shift</b> ครึ่งวัน</span></li></ul></div>
+    <div class="gc hv rv" style="--d:4;flex:1;padding:36px 34px;display:flex;flex-direction:column;gap:18px"><div class="ico"><i class="fa-solid fa-shield-halved"></i></div><div class="lbl">Zero Memory</div><div class="h3" style="font-size:34px">3) Poka-Yoke SOP</div>
+      <ul class="ck"><li><i class="fa-solid fa-check"></i><span>สภาพแวดล้อม<b style="color:var(--white)">บังคับให้ทำถูก 100%</b></span></li><li><i class="fa-solid fa-check"></i><span><b style="color:var(--white)">ไม่ต้องใช้ทักษะความจำ</b></span></li></ul></div>
+  </div>
+  <span class="credit">Photo · Unsplash</span>
+</section>
+
+<!-- 8 · PHYSICAL -->
+<section class="slide">
+  <div class="ph full" style="opacity:.4"><img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=2000&q=80" alt="Operating theatre"><div class="ov" style="background:linear-gradient(90deg,rgba(10,15,29,.97),rgba(10,15,29,.88))"></div></div>
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>08</b>Physical Poka-Yoke</div>
+    <h2 class="t2 rv" style="--d:1">หน้างานกายภาพ: <span class="grad">คนไม่เคยทำก็ทำไม่ผิด</span> (Zero Memory)</h2>
+  </div>
+  <div class="pad gc rv" style="--d:2;left:260px;top:280px;width:1400px;padding:22px"><svg viewBox="0 0 980 320" width="100%" height="400" aria-label="Sterile tray with shadow board">
         <defs>
           <linearGradient id="st7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5E9EF"/><stop offset=".45" stop-color="#AEB7C4"/><stop offset=".55" stop-color="#C9D0DA"/><stop offset="1" stop-color="#8B95A3"/></linearGradient>
           <linearGradient id="in7" x1="0" x2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset=".5" stop-color="#9AA4B2"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient>
@@ -388,72 +420,64 @@ ul.ck.x li i{color:var(--amber)}
           <rect x="560" y="214" width="250" height="40" rx="20" fill="#F59E0B"/><text x="685" y="241" text-anchor="middle" fill="#2A1A02">⚠ ขาด 1 ชิ้น — เห็นทันที</text>
           <rect x="60" y="232" width="230" height="40" rx="20" fill="#10B981"/><text x="175" y="259" text-anchor="middle" fill="#03221D">✓ ทาบตรงจุด 100%</text>
         </g>
-      </svg>
-    </div>
-    <div class="rv" style="--d:3;display:flex;gap:16px">
-      <div class="kit" style="background:linear-gradient(150deg,#38BDF8,#0369A1);box-shadow:0 26px 50px -24px rgba(56,189,248,.9)"><span class="s">กล่องฟ้า</span><div class="n" style="font-size:27px">ตา</div></div>
-      <div class="kit" style="background:linear-gradient(150deg,#FDBA74,#EA580C);box-shadow:0 26px 50px -24px rgba(251,146,60,.9)"><span class="s">กล่องส้ม</span><div class="n" style="font-size:27px">จมูก</div></div>
-      <div class="kit" style="background:linear-gradient(150deg,#6EE7B7,#059669);box-shadow:0 26px 50px -24px rgba(16,185,129,.9)"><span class="s">กล่องเขียว</span><div class="n" style="font-size:27px">ดูดไขมัน</div></div>
-    </div>
+      </svg></div>
+  <div class="pad rv" style="--d:3;left:260px;top:750px;width:1400px;display:flex;gap:24px">
+    <div class="kit" style="padding:24px 28px;background:linear-gradient(150deg,#38BDF8,#0369A1);box-shadow:0 26px 50px -24px rgba(56,189,248,.9)"><span class="s">กล่องฟ้า</span><div class="n">ตา / ตาสองชั้น</div></div>
+    <div class="kit" style="padding:24px 28px;background:linear-gradient(150deg,#FDBA74,#EA580C);box-shadow:0 26px 50px -24px rgba(251,146,60,.9)"><span class="s">กล่องส้ม</span><div class="n">เสริมจมูก Open</div></div>
+    <div class="kit" style="padding:24px 28px;background:linear-gradient(150deg,#6EE7B7,#059669);box-shadow:0 26px 50px -24px rgba(16,185,129,.9)"><span class="s">กล่องเขียว</span><div class="n">ดูดไขมัน / ปรับรูปหน้า</div></div>
   </div>
-  <div class="pad" style="left:1200px;top:300px;width:610px;display:flex;flex-direction:column;gap:18px">
-    <div class="lbl rv" style="--d:2">Digital Poka-Yoke · Single-Action Screen</div>
-    <div class="tab rv" style="--d:3">
-      <div style="display:flex;justify-content:space-between;font-size:19px;color:var(--muted);margin-bottom:14px"><b style="color:var(--white)">Front · Welcome Guide</b><span id="taskCnt" class="num">0 / 4</span></div>
-      <div id="tasks" style="display:flex;flex-direction:column;gap:8px">
-        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>กล่าว: "สวัสดีค่ะคุณสมศรี เชิญห้องรับรอง 1 ค่ะ"</div>
-        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>นำน้ำดื่มรหัส A วางบนโต๊ะรับรอง</div>
-        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>สแกน QR ยืนยันประวัติเข้าระบบ</div>
-        <div class="task" style="font-size:22px"><span class="bx"><i class="fa-solid fa-check"></i></span>กดปุ่ม [แจ้งเตือน Closer เข้าพบ]</div>
+  <span class="credit">Photo · Unsplash</span>
+</section>
+
+<!-- 9 · DIGITAL -->
+<section class="slide" data-k="poka">
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>09</b>Digital Poka-Yoke</div>
+    <h2 class="t2 rv" style="--d:1">หน้าจอดิจิทัล: <span class="grad">ตัดการใช้ดุลยพินิจหน้างาน</span></h2>
+  </div>
+  <div class="pad gc rv" style="--d:2;left:110px;top:310px;width:820px;padding:40px 44px">
+    <div class="lbl" style="margin-bottom:26px">หลักการ Single-Action Screen</div>
+    <div class="pr"><span class="n">01</span><div><div class="h3">แสดงทีละคำสั่ง</div><div class="p">คนดูแค่บรรทัดเดียวที่ต้องทำตอนนี้</div></div></div>
+    <div class="pr"><span class="n">02</span><div><div class="h3">ไม่มีเมนูซับซ้อน</div><div class="p">ไม่มีทางเลือกให้ตัดสินใจผิด</div></div></div>
+    <div class="pr"><span class="n">03</span><div><div class="h3">บังคับ Check-off ก่อนส่งต่อ</div><div class="p">ข้ามขั้นไม่ได้ ระบบล็อกไว้</div></div></div>
+  </div>
+  <div class="pad" style="left:1010px;top:310px;width:800px">
+    <div class="tab rv" style="--d:3;padding:30px 32px">
+      <div style="display:flex;justify-content:space-between;font-size:21px;color:var(--muted);margin-bottom:18px"><b style="color:var(--white)">Front · Welcome Guide</b><span id="taskCnt" class="num">0 / 4</span></div>
+      <div id="tasks" style="display:flex;flex-direction:column;gap:10px">
+        <div class="task" style="font-size:26px;padding:20px 20px"><span class="bx"><i class="fa-solid fa-check"></i></span>อ่านบทต้อนรับบนจอ</div>
+        <div class="task" style="font-size:26px;padding:20px 20px"><span class="bx"><i class="fa-solid fa-check"></i></span>หยิบน้ำรหัส A</div>
+        <div class="task" style="font-size:26px;padding:20px 20px"><span class="bx"><i class="fa-solid fa-check"></i></span>สแกน QR ยืนยันประวัติ</div>
+        <div class="task" style="font-size:26px;padding:20px 20px"><span class="bx"><i class="fa-solid fa-check"></i></span>กดส่งต่อ Closer</div>
       </div>
-      <button id="taskBtn" style="margin-top:16px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;padding:20px;border-radius:18px;font-size:28px;font-weight:800;color:#03221D;background:linear-gradient(90deg,var(--em),var(--cy))"><i class="fa-solid fa-square-check"></i>Check-off</button>
-      <div style="text-align:center;margin-top:12px;font-size:18px;color:var(--muted)">ทำเสร็จกด Check-off ทีละข้อ · ตัดสิทธิ์ดุลยพินิจหน้างาน</div>
+      <button id="taskBtn" style="margin-top:20px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;padding:22px;border-radius:18px;font-size:30px;font-weight:800;color:#03221D;background:linear-gradient(90deg,var(--em),var(--cy))"><i class="fa-solid fa-square-check"></i>Check-off</button>
+      <div style="text-align:center;margin-top:14px;font-size:19px;color:var(--muted)">Interactive · แตะปุ่มเพื่อติ๊กทีละขั้น</div>
     </div>
   </div>
-  <span class="credit">Photo · Unsplash</span>
 </section>
 
-<!-- 7 · TALENT SUPPLY -->
-<section class="slide">
-  <div class="ph full" style="opacity:.22"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80" alt="Hospitality"><div class="ov" style="background:linear-gradient(180deg,rgba(10,15,29,.9),rgba(10,15,29,.98))"></div></div>
-  <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>07</b>The Talent Supply Engine</div>
-    <h2 class="t2 rv" style="--d:1">ขจัดคอขวด<span class="grad">การหาคนและสอนงาน</span>: Zero-Recruitment &amp; Zero-Training</h2>
-  </div>
-  <div class="pad t7" style="left:110px;right:110px;top:350px;display:flex;gap:26px;align-items:stretch;height:560px">
-    <div class="gc hv rv" style="--d:2;flex:1;padding:36px 34px;display:flex;flex-direction:column;gap:18px"><div class="ico"><i class="fa-solid fa-file-signature"></i></div><div class="lbl">Zero-Recruitment</div><div class="h3" style="font-size:34px">1) B2B Agency SLAs</div>
-      <ul class="ck"><li><i class="fa-solid fa-check"></i>โยนภาระการหาคนให้ Agency</li><li><i class="fa-solid fa-check"></i>จัดส่งคนตามสัญญา</li><li><i class="fa-solid fa-check"></i>ขาด-ลา ส่งคนแทนทันที</li></ul></div>
-    <div class="gc hv rv" style="--d:3;flex:1;padding:36px 34px;display:flex;flex-direction:column;gap:18px"><div class="ico"><i class="fa-solid fa-circle-play"></i></div><div class="lbl">Zero-Training</div><div class="h3" style="font-size:34px">2) Self-Serve Onboarding</div>
-      <ul class="ck"><li><i class="fa-solid fa-check"></i>วิดีโอ 30 นาที (คลิปสั้น 2–3 นาที)</li><li><i class="fa-solid fa-check"></i>Quiz 5 ข้อ ต้องผ่าน 100% ก่อนเริ่มงาน</li><li><i class="fa-solid fa-check"></i>Shadow Shift ครึ่งวัน</li></ul></div>
-    <div class="gc hv rv" style="--d:4;flex:1;padding:36px 34px;display:flex;flex-direction:column;gap:18px"><div class="ico"><i class="fa-solid fa-shield-halved"></i></div><div class="lbl">Zero Memory</div><div class="h3" style="font-size:34px">3) Poka-Yoke SOP</div>
-      <ul class="ck"><li><i class="fa-solid fa-check"></i>ออกแบบสภาพแวดล้อมให้ทำงานได้ทันที</li><li><i class="fa-solid fa-check"></i>ไม่ต้องใช้ความจำหรือประสบการณ์</li></ul></div>
-  </div>
-  <span class="credit">Photo · Unsplash</span>
-</section>
-
-<!-- 8 · SUSTAINABILITY & QC -->
+<!-- 10 · TALENT POOL -->
 <section class="slide">
   <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>08</b>Sustainability &amp; Quality Control</div>
-    <h2 class="t2 rv" style="--d:1">4 กลไกให้ระบบ<span class="grad">มีคนพร้อมและรักษามาตรฐาน</span>ตลอดเวลา</h2>
+    <div class="eb rv" style="--d:0"><b>10</b>Talent Pool Engine</div>
+    <h2 class="t2 rv" style="--d:1">ระบบที่ทำให้<span class="grad">มีคนพร้อมสลับหมุนเวียน</span>ตลอดเวลา</h2>
   </div>
-  <div class="pad" style="left:110px;right:110px;top:320px;bottom:140px;display:grid;grid-template-columns:1fr 1fr;gap:22px">
-    <div class="gc hv rv" style="--d:2;padding:28px 32px;display:flex;gap:24px;align-items:center"><div class="ico"><i class="fa-solid fa-graduation-cap"></i></div><div><div class="h3">BJH Academy</div><div class="p">Micro-Certification คอร์สสั้น 2–3 ชม. ก่อนเข้าสู่ Job Pool</div></div></div>
-    <div class="gc hv rv" style="--d:3;padding:28px 32px;display:flex;gap:24px;align-items:center"><div class="ico" style="background:linear-gradient(140deg,#FCD34D,#F59E0B);color:#2A1A02"><i class="fa-solid fa-bolt"></i></div><div style="flex:1"><div class="h3">Dynamic Surge Pricing</div><div class="p">ตัวคูณค่าจ้างดึงคนเข้ากะในวันที่เคสหนาแน่น</div></div><div style="font-size:46px;font-weight:800;color:var(--amber);white-space:nowrap">1.2x–1.5x</div></div>
-    <div class="gc hv rv" style="--d:4;padding:28px 32px;display:flex;gap:24px;align-items:center"><div class="ico gold"><i class="fa-solid fa-star"></i></div><div style="flex:1"><div class="h3">Doctor &amp; Peer Rating</div><div class="p">ประเมินทันทีหลังจบเคส ได้ Priority เลือก Slot ลูกค้า High-Ticket ก่อน</div></div><div style="font-size:46px;font-weight:800;color:var(--gold);white-space:nowrap">4.8★+</div></div>
-    <div class="gc hv rv" style="--d:5;padding:28px 32px;display:flex;gap:24px;align-items:center"><div class="ico"><i class="fa-solid fa-user-clock"></i></div><div><div class="h3">Standby Allowance</div><div class="p">คน Standby สำรอง 1 คน พร้อมเสียบแทนทันทีเมื่อมีเคสด่วนหรือคนเบี้ยวงาน</div></div></div>
+  <div class="pad" style="left:110px;right:110px;top:330px;bottom:140px;display:grid;grid-template-columns:1fr 1fr;gap:30px">
+    <div class="gc hv rv" style="--d:2;padding:36px 40px;display:flex;gap:28px;align-items:center"><div class="ico"><i class="fa-solid fa-graduation-cap"></i></div><div><div class="h3">BJH Academy</div><div class="p">Micro-Certification คอร์สสั้น <b style="color:var(--white)">2–3 ชม.</b> ผ่านการทดสอบถึงเข้าสู่ Job Pool</div></div></div>
+    <div class="gc hv rv" style="--d:3;padding:36px 40px;display:flex;gap:28px;align-items:center"><div class="ico" style="background:linear-gradient(140deg,#FCD34D,#F59E0B);color:#2A1A02"><i class="fa-solid fa-bolt"></i></div><div style="flex:1"><div class="h3">Dynamic Surge Pricing</div><div class="p">ปรับค่าจ้าง ดึงคนเข้ากะในวันที่เคสหนาแน่น</div></div><div style="font-size:46px;font-weight:800;color:var(--amber);white-space:nowrap">1.2x–1.5x</div></div>
+    <div class="gc hv rv" style="--d:4;padding:36px 40px;display:flex;gap:28px;align-items:center"><div class="ico gold"><i class="fa-solid fa-star"></i></div><div style="flex:1"><div class="h3">Doctor &amp; Peer Rating</div><div class="p">ประเมินหลังจบเคส ได้ <b style="color:var(--white)">Priority รับ Slot High-Ticket</b></div></div><div style="font-size:46px;font-weight:800;color:var(--gold);white-space:nowrap">4.8★+</div></div>
+    <div class="gc hv rv" style="--d:5;padding:36px 40px;display:flex;gap:28px;align-items:center"><div class="ico"><i class="fa-solid fa-user-clock"></i></div><div><div class="h3">Standby Allowance</div><div class="p">จ่ายค่าตัวสแตนด์บายฉุกเฉิน <b style="color:var(--white)">1 คน/รอบ</b> เสียบแทนทันทีหากมีคนขาด</div></div></div>
   </div>
 </section>
 
-<!-- 9 · WORKFLOW & ACTION PLAN -->
+<!-- 11 · JOURNEY -->
 <section class="slide" data-k="journey">
-  <div class="pad" style="left:110px;top:70px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>09</b>End-to-End Workflow &amp; Immediate Action Plan</div>
-    <h2 class="t2 rv" style="--d:1;font-size:50px">Customer Journey 5 ขั้น + <span class="grad">แผนเริ่มสัปดาห์นี้</span></h2>
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>11</b>End-to-End Customer Journey Map</div>
+    <h2 class="t2 rv" style="--d:1">Workflow ผสานระหว่าง <span class="grad">AI และ On-Demand Staff</span></h2>
   </div>
-  <div class="pad rv" style="--d:2;left:110px;top:250px;width:1700px"><div class="gc" style="padding:0">
-    <table class="jtab" id="jtab">
-      <thead><tr><th style="width:32%">ขั้นตอน Customer Journey</th><th style="width:26%">ผู้ขับเคลื่อน</th><th>การทำงานในระบบ</th></tr></thead>
+  <div class="pad rv jbig" style="--d:2;left:110px;right:110px;top:300px"><div class="gc" style="padding:0"><table class="jtab" id="jtab">
+      <thead><tr><th style="width:32%">ขั้นตอน Customer Journey</th><th style="width:26%">ผู้ขับเคลื่อน</th><th>ระบบเบื้องหลัง</th></tr></thead>
       <tbody>
         <tr><td><div class="st"><b>1</b>Lead &amp; Booking</div></td><td><span class="actor ai"><i class="fa-solid fa-robot"></i>AI Agent</span></td><td>ปิดนัดหมาย · เก็บมัดจำ · สรุป Persona</td></tr>
         <tr><td><div class="st"><b>2</b>Arrival &amp; Welcome</div></td><td><span class="actor od"><i class="fa-solid fa-user"></i>Front On-Demand</span></td><td>สแกน QR · เสิร์ฟ Welcome Drink ตามมาตรฐานบนจอ</td></tr>
@@ -461,13 +485,28 @@ ul.ck.x li i{color:var(--amber)}
         <tr><td><div class="st"><b>4</b>Operation (OR)</div></td><td><span class="actor dr"><i class="fa-solid fa-user-doctor"></i>On-Demand OR + แพทย์</span></td><td>หมอมาถึงตรงเวลา · จัดเครื่องมือตาม Modular Sheet</td></tr>
         <tr><td><div class="st"><b>5</b>Turnover &amp; Reset</div></td><td><span class="actor od"><i class="fa-solid fa-spray-can-sparkles"></i>Cleaning Crew</span></td><td>ทำความสะอาด 12 ขั้นตอน · ถ่ายรูปปลดล็อกห้อง</td></tr>
       </tbody>
-    </table>
-  </div></div>
-  <div class="pad" style="left:110px;right:110px;top:745px;display:flex;align-items:stretch;gap:18px">
-    <div class="gc rv" style="--d:3;flex:0 0 330px;padding:20px 24px;display:flex;flex-direction:column;justify-content:center;border-color:rgba(245,158,11,.5)"><div class="lbl amber">Risk-Free Pilot</div><div class="h3" style="font-size:27px">เริ่มสัปดาห์นี้</div></div>
-    <div class="gc hv rv" style="--d:4;flex:1;padding:20px 24px"><span class="lbl">Step 1</span><div class="h3" style="font-size:25px">Pilot แม่บ้าน หรือ Front 2 สัปดาห์</div><div class="p" style="font-size:20px">ความเสี่ยงต่ำสุด · Non-Clinical Risk</div></div>
-    <div class="gc hv rv" style="--d:5;flex:1;padding:20px 24px"><span class="lbl">Step 2</span><div class="h3" style="font-size:25px">ถ่ายคลิปมือถือ 5 คลิป</div><div class="p" style="font-size:20px">เป็นคลัง SOP กลาง</div></div>
-    <div class="gc hv rv" style="--d:6;flex:1;padding:20px 24px"><span class="lbl">Step 3</span><div class="h3" style="font-size:25px">แปลงทุกขั้นเป็น Checkbox</div><div class="p" style="font-size:20px">ตัดการตัดสินใจส่วนบุคคล</div></div>
+    </table></div></div>
+</section>
+
+<!-- 12 · RISK & PILOT -->
+<section class="slide">
+  <svg class="particles" id="pt1b" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="orb" style="width:600px;height:600px;left:1300px;top:-120px;background:radial-gradient(circle,rgba(6,182,212,.3),transparent 70%)"></div>
+  <div class="pad" style="left:110px;top:84px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>12</b>Strategic Risk Isolation &amp; Pilot Plan</div>
+    <h2 class="t2 rv" style="--d:1">แผนเริ่มต้นสัปดาห์นี้ และ<span class="grad">การควบคุมความเสี่ยง</span></h2>
+  </div>
+  <div class="pad gc rv" style="--d:2;left:110px;top:300px;width:820px;padding:40px 44px;border-color:rgba(245,158,11,.45)">
+    <div class="lbl amber" style="margin-bottom:26px">Risk Analysis · ทำไมเริ่มที่แม่บ้าน / Front Desk ก่อน?</div>
+    <div class="pr"><span class="n" style="color:var(--amber)"><i class="fa-solid fa-shield-heart"></i></span><div><div class="h3">Non-Clinical Risk</div><div class="p">ไม่กระทบเคสผ่าตัด</div></div></div>
+    <div class="pr"><span class="n" style="color:var(--amber)"><i class="fa-solid fa-users"></i></span><div><div class="h3">หาคนง่าย</div><div class="p">มี Agency SLA ส่งคนแทนได้ทันที</div></div></div>
+    <div class="pr"><span class="n" style="color:var(--amber)"><i class="fa-solid fa-sliders"></i></span><div><div class="h3">คุมง่าย</div><div class="p">ขั้นตอนชัด วัดผลได้ใน 2 สัปดาห์</div></div></div>
+  </div>
+  <div class="pad" style="left:1010px;right:110px;top:300px;display:flex;flex-direction:column;gap:24px">
+    <div class="lbl rv" style="--d:3">3 ขั้นตอนเริ่มทันที</div>
+    <div class="gc hv rv" style="--d:4;padding:30px 36px;display:flex;gap:26px;align-items:center"><span style="font-size:54px;font-weight:800;line-height:1" class="grad">1</span><div><div class="h3">Pilot แม่บ้าน / Front</div><div class="p">2 สัปดาห์แรก</div></div></div>
+    <div class="gc hv rv" style="--d:5;padding:30px 36px;display:flex;gap:26px;align-items:center"><span style="font-size:54px;font-weight:800;line-height:1" class="grad">2</span><div><div class="h3">อัดวิดีโอมือถือ 5 คลิป</div><div class="p">เป็นคลังกลาง</div></div></div>
+    <div class="gc hv rv" style="--d:6;padding:30px 36px;display:flex;gap:26px;align-items:center"><span style="font-size:54px;font-weight:800;line-height:1" class="grad">3</span><div><div class="h3">แปลงขั้นตอนเป็น Checkbox</div><div class="p">บนแท็บเล็ต</div></div></div>
   </div>
 </section>
 
@@ -490,7 +529,7 @@ ul.ck.x li i{color:var(--amber)}
   function fit(){ const s=Math.min(innerWidth/1920,innerHeight/1080); deck.style.transform='translate(-50%,-50%) scale('+s+')'; }
   addEventListener('resize',fit); fit();
 
-  ['pt1'].forEach(id=>{ const svg=document.getElementById(id), ns='http://www.w3.org/2000/svg'; if(!svg) return;
+  ['pt1','pt1b'].forEach(id=>{ const svg=document.getElementById(id), ns='http://www.w3.org/2000/svg'; if(!svg) return;
     for(let x=60;x<1920;x+=64) for(let y=60;y<1080;y+=64){ if(Math.random()<.6) continue;
       const c=document.createElementNS(ns,'circle'); c.setAttribute('cx',x+(Math.random()*18-9)); c.setAttribute('cy',y+(Math.random()*18-9));
       c.setAttribute('r',Math.random()<.15?2.6:1.5); c.setAttribute('fill',Math.random()<.35?'#22D3EE':'#34D399');
