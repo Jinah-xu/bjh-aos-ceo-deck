@@ -457,6 +457,42 @@ ul.ck.x li i{color:var(--amber)}
 .c-next{background:#22D3EE;color:#03221D;animation:livep 1.8s ease-out infinite}.c-fix{background:rgba(245,158,11,.15);color:var(--amber)}.c-out{background:rgba(255,255,255,.08);color:var(--muted)}
 .ins7{display:flex;align-items:center;gap:26px;padding:24px 34px;border-radius:22px;background:linear-gradient(90deg,rgba(16,185,129,.16),rgba(6,182,212,.12));border:1px solid rgba(52,211,153,.5)}
 .ins7 .t{font-size:24px;color:var(--white);line-height:1.5}
+
+/* ===== 3A / 3B ===== */
+.vw{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:center;padding:20px 28px;border-radius:20px;background:rgba(17,24,39,.75);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.vw .k{font-size:17px;font-weight:800;letter-spacing:0;color:var(--cy2)}
+.vw .h{font-size:22px;font-weight:700;color:var(--white);line-height:1.35;margin-top:4px}
+.vw .big{font-size:52px;font-weight:800;line-height:1;color:#34D399;font-variant-numeric:tabular-nums}
+.vw .big small{font-size:20px;font-weight:700;color:var(--muted);margin-left:8px}
+.bar2{height:22px;border-radius:12px;overflow:hidden;display:flex;background:repeating-linear-gradient(135deg,rgba(245,158,11,.4) 0 10px,rgba(245,158,11,.2) 10px 20px);margin-top:12px}
+.bar2 i{display:block;height:100%;width:0;background:linear-gradient(90deg,#047857,#34D399);transition:width 1.5s cubic-bezier(.2,.8,.2,1) .5s}
+.slide.active .bar2 i{width:var(--w)}
+.lg2{display:flex;justify-content:space-between;margin-top:8px;font-size:18px;font-weight:700}
+.lg2 .f{color:var(--amber)}.lg2 .v{color:#34D399}
+.imp{padding:30px 32px;border-radius:24px;background:rgba(17,24,39,.75);border:1px solid rgba(52,211,153,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;flex-direction:column;gap:18px}
+.dayc{display:flex;align-items:flex-end;gap:16px;height:200px;padding:0 10px;border-bottom:2px solid rgba(255,255,255,.2)}
+.dayc .c{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:8px}
+.dayc .bx{width:100%;max-width:120px;border-radius:12px 12px 4px 4px;height:0;transition:height 1.4s cubic-bezier(.2,.8,.2,1) .6s}
+.dayc .val{font-size:28px;font-weight:800;color:var(--white);white-space:nowrap}
+.dayx{display:flex;gap:16px;padding:0 10px;font-size:18px;font-weight:700;text-align:center}
+.dayx div{flex:1}
+.offbar{display:flex;align-items:center;gap:24px;padding:20px 30px;border-radius:20px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.5)}
+.offbar .t{font-size:21px;line-height:1.5;color:var(--body)}
+.offbar .t b{color:var(--white)}
+.offbar .tot{margin-left:auto;text-align:right;white-space:nowrap}
+.offbar .tot b{display:block;font-size:40px;font-weight:800;color:var(--amber);line-height:1}
+.offbar .tot span{font-size:16px;color:var(--muted)}
+.dg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.dc7{display:flex;flex-direction:column;gap:10px;padding:22px 22px;border-radius:20px;background:rgba(17,24,39,.75);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:transform .3s,border-color .3s,box-shadow .3s}
+.dc7:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.55)}
+.dc7.var{border-top:4px solid #34D399}.dc7.fix{border-top:4px solid var(--amber)}.dc7.hyb{border-top:4px solid var(--gold)}.dc7.nx{border-color:rgba(34,211,238,.6);border-top:4px solid #22D3EE;box-shadow:0 0 40px -14px rgba(34,211,238,.7)}.dc7.out{border-top:4px solid #64748B}
+.dc7 .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.dc7 .nm{font-size:23px;font-weight:800;color:var(--white)}
+.dc7 .ct{font-size:17px;color:var(--muted);font-weight:700}
+.dc7 .r{font-size:17px;line-height:1.45;color:var(--body)}
+.dc7 .r b{color:var(--white)}
+.dc7 .r .lab{display:block;font-size:15px;font-weight:800;letter-spacing:0;color:var(--muted)}
+.dc7 .chip7{font-size:15px;padding:5px 12px;width:max-content;margin-top:auto}
 @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-iteration-count:1!important} }
 </style>
 </head>
@@ -557,42 +593,68 @@ flow{to{stroke-dashoffset:-32}}
   <span class="credit">Photo · Unsplash</span>
 </section>
 
-<!-- 3 · BJH TODAY -->
-<section class="slide">
-  <div class="pad" style="left:110px;top:84px;width:1700px">
-    <div class="eb rv live" style="--d:0"><i></i><b>03</b>BJH Today <span class="th" style="color:var(--muted);font-weight:600">· ข้อมูล ณ 19 ต.ค. 2569</span></div>
-    <h2 class="t2 rv" style="--d:1">เราเริ่มเปลี่ยนแล้ว: <span class="grad">หมอ + Front เป็น Plug &amp; Play 100%</span></h2>
+<!-- 3 · COST REALITY -->
+<section class="slide" data-k="day">
+  <div class="pad" style="left:110px;top:80px;width:1700px">
+    <div class="eb rv live" style="--d:0"><i></i><b>03</b>BJH Cost Reality <span class="th" style="color:var(--muted);font-weight:600">· ต.ค. 2569</span></div>
+    <h2 class="t2 rv" style="--d:1;font-size:52px">โครงสร้างต้นทุนจริงเดือนตุลาคม: <span style="color:var(--amber)">Fixed</span> vs <span style="color:#34D399">Variable</span></h2>
+    <p class="rv" style="--d:2;font-size:21px;color:var(--muted);margin-top:10px">อ้างอิงข้อมูลจริงจากระบบลงเวลาและบัญชีรายวัน ณ 19 ต.ค. 2569 (19 วันแรกของเดือน)</p>
   </div>
-  <div class="pad gc rv" style="--d:2;left:110px;top:300px;width:760px;padding:34px 36px">
-    <div class="lbl th">สัดส่วนต้นทุนบุคลากรปัจจุบัน / เดือน</div>
-    <div class="split7" style="margin-top:22px"><div class="v">Variable 70%</div><div class="f">Fixed 30%</div></div>
-    <div class="legend7"><span style="color:#34D399;font-weight:700">~1.1M · จ่ายตามงานจริง</span><span style="color:var(--amber);font-weight:700">~0.43M · จ่ายทุกเดือน</span></div>
-    <div style="margin-top:30px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px">
-      <div class="p" style="font-size:22px"><i class="fa-solid fa-user-doctor" style="color:#34D399;width:30px"></i>DF หมอ <b style="color:var(--white)">~844K/ด.</b> จ่ายตามเคส</div>
-      <div class="p" style="font-size:22px"><i class="fa-solid fa-bullhorn" style="color:var(--muted);width:30px"></i>ค่ายิงแอดตรง <b style="color:var(--white)">170K</b> · เอเจนซี 3 ทีมอยู่นอกระบบบัญชี</div>
+  <div class="pad" style="left:110px;top:300px;width:1060px;display:flex;flex-direction:column;gap:14px">
+    <div class="vw rv" style="--d:2"><div><div class="k">มุมมอง 1</div><div class="h">เงินเดือน vs ค่าแรงรายวัน<br><span style="font-size:17px;color:var(--muted);font-weight:600">25 วันลงเวลา</span></div></div>
+      <div><div style="display:flex;align-items:baseline;justify-content:space-between"><span class="big">6.6%<small>Variable</small></span><span style="font-size:17px;color:var(--muted)">เทียบ 19 วัน = <b style="color:var(--white)">10.3%</b></span></div>
+        <div class="bar2" style="--w:6.6%"><i></i></div><div class="lg2"><span class="v">Variable 19,200 บ. · 8 คน</span><span class="f">Fixed 272,000 บ. · 13 คน</span></div></div></div>
+    <div class="vw rv" style="--d:3"><div><div class="k">มุมมอง 2</div><div class="h">ต้นทุนบุคลากรรวม<br><span style="font-size:17px;color:var(--muted);font-weight:600">รวม DF หมอ + คอม/ค่ามือ</span></div></div>
+      <div><div style="display:flex;align-items:baseline;justify-content:space-between"><span class="big">56.9%<small>Variable</small></span><span style="font-size:17px;color:var(--muted)">DF 300K + คอม/ค่ามือ 40.3K + รายวัน 19.2K</span></div>
+        <div class="bar2" style="--w:56.9%"><i></i></div><div class="lg2"><span class="v">Variable 359,497 บ.</span><span class="f">Fixed 272,000 บ.</span></div></div></div>
+    <div class="vw rv" style="--d:4"><div><div class="k">มุมมอง 3</div><div class="h">สัดส่วนวันทำงานจริง</div></div>
+      <div><div style="display:flex;align-items:baseline;justify-content:space-between"><span class="big">14.5%<small>วันรายวัน</small></span><span style="font-size:17px;color:var(--muted)">หน้าบ้านแตะ <b style="color:var(--white)">21%</b></span></div>
+        <div class="bar2" style="--w:14.5%"><i></i></div><div class="lg2"><span class="v">รายวัน 25 วัน</span><span class="f">ประจำ 147 วัน</span></div></div></div>
+  </div>
+  <div class="pad imp rv" style="--d:3;left:1210px;right:110px;top:300px">
+    <div class="lbl"><span>Financial Impact</span> <span class="th">· ต้นทุนเฉลี่ยต่อวันทำงาน</span></div>
+    <div class="dayc">
+      <div class="c"><span class="val" style="color:var(--amber)">1,850</span><span class="bx" data-h="185" style="background:repeating-linear-gradient(135deg,rgba(245,158,11,.6) 0 10px,rgba(245,158,11,.35) 10px 20px)"></span></div>
+      <div class="c"><span class="val" style="color:#34D399">600–1,000</span><span class="bx" data-h="100" style="background:linear-gradient(180deg,#34D399,#047857);box-shadow:0 0 30px -8px rgba(52,211,153,.8)"></span></div>
     </div>
+    <div class="dayx"><div style="color:var(--amber)">ประจำ<br><span style="font-size:15px;color:var(--muted);font-weight:600">บาท / วันทำงาน</span></div><div style="color:#34D399">Part-time<br><span style="font-size:15px;color:var(--muted);font-weight:600">บาท / วันทำงาน</span></div></div>
+    <div style="padding:16px 18px;border-radius:14px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.4);font-size:19px;line-height:1.5;color:var(--body)"><i class="fa-solid fa-lightbulb" style="color:var(--amber)"></i> Part-time 6 คนลงครบทั้งเดือน ค่าแรงรวม <b style="color:var(--white)">~72,400 บ.</b></div>
   </div>
-  <div class="pad rv" style="--d:3;left:920px;right:110px;top:288px">
-    <table class="st7">
-      <tr><td>หมอ · 7 คน</td><td>Part-time 100% · จ่ายตามเคส</td><td><span class="chip7 c-done"><i class="fa-solid fa-check"></i>Variable 100%</span></td></tr>
-      <tr><td>Front · 3 คน</td><td>Part-time 100% · 600 บ./วัน</td><td><span class="chip7 c-done"><i class="fa-solid fa-check"></i>Variable 100%</span></td></tr>
-      <tr><td>BT · 2 คน</td><td>ประจำ 38K + ค่ามือ 60 บ./บริการ</td><td><span class="chip7 c-hyb">Hybrid</span></td></tr>
-      <tr class="next"><td>OR · 3 คน</td><td>ประจำ 2 (Fixed 40K) + PT 1 (1,000 บ./วัน)</td><td><span class="chip7 c-next"><i class="fa-solid fa-arrow-right"></i>ก้าวต่อไป</span></td></tr>
-      <tr class="next"><td>Sale-OR · 3 คน</td><td>ประจำ 2 (Fixed 53K) + PT 1 (1,000 บ./วัน) + คอม 3%</td><td><span class="chip7 c-next"><i class="fa-solid fa-arrow-right"></i>ก้าวต่อไป</span></td></tr>
-      <tr><td>Marketing</td><td>ประจำ 0 · เอเจนซี 3 ทีม</td><td><span class="chip7 c-out">Outsource</span></td></tr>
-      <tr><td>Admin / IT · 7 คน</td><td>141K + รายจ่ายประจำนอกทะเบียน 154K</td><td><span class="chip7 c-fix">Fixed</span></td></tr>
-    </table>
+  <div class="pad offbar rv" style="--d:5;left:110px;right:110px;top:830px">
+    <i class="fa-solid fa-triangle-exclamation" style="font-size:32px;color:var(--amber)"></i>
+    <div class="t"><b>Fixed นอกทะเบียน HR ~154,349 บ./เดือน</b> · แม่บ้าน 24.7K · ครู 33.9K · หมอแขวน 13K · พ่อบ้าน 13K · เงินเดือนนอกระบบอีก 4 คน</div>
+    <div class="tot"><b>~426,000</b><span>Fixed Cost รวมจริง / เดือน</span></div>
   </div>
-  <div class="pad ins7 rv" style="--d:4;left:110px;right:110px;top:840px">
-    <i class="fa-solid fa-lightbulb" style="font-size:34px;color:var(--amber)"></i>
-    <div class="t"><b>Key Insight:</b> หมอ + Front เปลี่ยนเป็น Variable สำเร็จแล้ว · <b style="color:#22D3EE">ก้าวต่อไปคือ OR และ Sale-OR เข้าระบบรายเคส</b> เพื่อลด Fixed Cost ที่เหลือ ~4.3 แสน/เดือน</div>
+</section>
+
+<!-- 3B · HEADCOUNT -->
+<section class="slide">
+  <div class="pad" style="left:110px;top:80px;width:1700px">
+    <div class="eb rv" style="--d:0"><b>04</b>Departmental Headcount</div>
+    <h2 class="t2 rv" style="--d:1;font-size:52px">ไส้ในกำลังคนรายแผนก: ใครเป็น <span style="color:var(--amber)">Fixed</span> ใครเป็น <span style="color:#34D399">Variable</span>?</h2>
+    <p class="rv" style="--d:2;font-size:21px;color:var(--muted);margin-top:10px">21 คนในทะเบียน + หมอ 7 คน · แยก OR และ Sale-OR</p>
+  </div>
+  <div class="pad dg" style="left:110px;right:110px;top:290px">
+    <div class="dc7 var rv" style="--d:2"><div class="top"><span class="nm">หมอ</span><span class="ct">7 คน</span></div><div class="r"><span class="lab">สถานะ</span>Part-time 100% · ไม่มีหมอประจำ</div><div class="r"><span class="lab">ต้นทุน</span>DF ตามเคส (40% ของบิล) · ต.ค. <b>300,000 บ.</b></div><span class="chip7 c-done"><i class="fa-solid fa-check"></i>Variable 100%</span></div>
+    <div class="dc7 var rv" style="--d:3"><div class="top"><span class="nm">Front Desk</span><span class="ct">3 คน</span></div><div class="r"><span class="lab">สถานะ</span>Part-time 100% (อิ้งค์ · เอม · ครีม) · ทีมประจำเดิม 6 คนลาออกหมด</div><div class="r"><span class="lab">ต้นทุน</span><span style="white-space:nowrap">600 บ./วัน</span> · 15 วัน = <b>8,400 บ.</b></div><span class="chip7 c-done"><i class="fa-solid fa-check"></i>Variable 100%</span></div>
+    <div class="dc7 hyb rv" style="--d:4"><div class="top"><span class="nm">Beauty Therapist</span><span class="ct">2 คน</span></div><div class="r"><span class="lab">สถานะ</span>ประจำ 2 (สิชา 20K · อี้ 18K)</div><div class="r"><span class="lab">ต้นทุน</span>Fixed <b>38,000 บ.</b> + ค่ามือ 60 บ./บริการ · <span style="white-space:nowrap">ตัดไหม 20 บ.</span> (~4–5K/คน)</div><span class="chip7 c-hyb">Hybrid</span></div>
+    <div class="dc7 nx rv" style="--d:5"><div class="top"><span class="nm">OR</span><span class="ct">3 คน</span></div><div class="r"><span class="lab">สถานะ</span>ประจำ 2 (ปังปอน 20K · เอิร์ธ 20K) + PT 1 (พอมแพม <span style="white-space:nowrap">1,000 บ./วัน</span>)</div><div class="r"><span class="lab">ต้นทุน</span>Fixed <b>40,000 บ.</b> + รายวัน 7 วัน = 7,000 บ.</div><span class="chip7 c-next"><i class="fa-solid fa-arrow-right"></i>ก้าวต่อไป</span></div>
+    <div class="dc7 nx rv" style="--d:6"><div class="top"><span class="nm">Sale-OR</span><span class="ct">3 คน</span></div><div class="r"><span class="lab">สถานะ</span>ประจำ 2 (พีท 20K · มุก2 33K) + PT 1 (ตั้ง <span style="white-space:nowrap">1,000 บ./วัน</span>) + โบว์ (ยังไม่ระบุ)</div><div class="r"><span class="lab">ต้นทุน</span>Fixed <b>53,000 บ.</b> + คอม 3% (ต.ค. <span style="white-space:nowrap">22,197 บ.</span>)</div><span class="chip7 c-next"><i class="fa-solid fa-arrow-right"></i>ก้าวต่อไป</span></div>
+    <div class="dc7 out rv" style="--d:7"><div class="top"><span class="nm">Marketing</span><span class="ct">0 คน</span></div><div class="r"><span class="lab">สถานะ</span>ประจำลาออกหมด · เอเจนซี 3 ทีมนอกระบบบัญชี</div><div class="r"><span class="lab">ต้นทุน</span>Facebook ~145K + TikTok/Vapi ~7K = <b><span style="white-space:nowrap">171,895 บ.</span></b></div><span class="chip7 c-out">Outsource / Direct Ads</span></div>
+    <div class="dc7 fix rv" style="--d:8"><div class="top"><span class="nm">Admin &amp; IT</span><span class="ct">7 + 1 PT</span></div><div class="r"><span class="lab">สถานะ</span>Admin 3 (52K) + IT 4 (89K) + แอนนี่ PT <span style="white-space:nowrap">800 บ./วัน</span></div><div class="r"><span class="lab">ต้นทุน</span>Fixed <b>141,000 บ.</b> · ตัวแบก Fixed หลักของออฟฟิศ</div><span class="chip7 c-fix">Fixed</span></div>
+    <div class="dc7 rv" style="--d:9;border-color:rgba(52,211,153,.45);background:linear-gradient(160deg,rgba(16,185,129,.14),rgba(17,24,39,.75));justify-content:center">
+      <div class="lbl th" style="color:#34D399">รวม Fixed ในทะเบียน</div><div style="font-size:46px;font-weight:800;color:var(--amber);line-height:1.1">272,000 บ.</div><div class="r">BT 38K + OR 40K + Sale-OR 53K + Admin/IT 141K · 13 คน</div></div>
+  </div>
+  <div class="pad ins7 rv" style="--d:10;left:110px;right:110px;top:880px;padding:20px 30px">
+    <i class="fa-solid fa-chess-knight" style="font-size:30px;color:#22D3EE"></i>
+    <div class="t" style="font-size:22px"><b>Key Strategy:</b> หมอ และ Front เป็น Variable 100% แล้ว · <b style="color:#22D3EE">เป้าหมายถัดไป ปลดล็อก OR และ Sale-OR เข้าระบบรายเคส</b> ลด Fixed ก้อนใหญ่ <b style="color:#34D399">93,000 บ./เดือน</b></div>
   </div>
 </section>
 
 <!-- 3 · CORE MONITORS -->
 <section class="slide">
   <div class="pad" style="left:110px;top:90px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>04</b>The 3–4 Core Monitors &amp; Role of AI</div>
+    <div class="eb rv" style="--d:0"><b>05</b>The 3–4 Core Monitors &amp; Role of AI</div>
     <h2 class="t2 rv" style="--d:1">คนประจำแค่ <span class="grad">3–4 คน</span> · ที่เหลือมาเฉพาะวันที่มีเคส</h2>
   </div>
   <div class="pad" style="left:110px;right:110px;top:285px">
@@ -616,7 +678,7 @@ flow{to{stroke-dashoffset:-32}}
 <section class="slide">
   <div class="ph r" style="width:28%"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=80" alt="Facial treatment"><div class="ov"></div></div>
   <div class="pad" style="left:110px;top:90px;width:1500px">
-    <div class="eb rv" style="--d:0"><b>05</b>Customer Retention</div>
+    <div class="eb rv" style="--d:0"><b>06</b>Customer Retention</div>
     <h2 class="t2 rv" style="--d:1">ลูกค้าซื้อ<span class="grad">คอร์สทรีตเมนต์ / เลเซอร์</span> ดูแลอย่างไร?</h2>
   </div>
   <div class="pad qbox rv" style="--d:2;left:110px;top:290px;width:1360px"><i class="fa-solid fa-circle-question"></i><div><div class="lbl th amber">คำถามที่ต้องตอบ</div><div class="h3">ลูกค้าคอร์สต้องการ "คนคุ้นหน้า" และความต่อเนื่อง</div></div></div>
@@ -633,7 +695,7 @@ flow{to{stroke-dashoffset:-32}}
 <!-- 5 · CHECKLIST -->
 <section class="slide" data-k="steps">
   <div class="pad" style="left:110px;top:90px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>06</b>The Checklist Execution</div>
+    <div class="eb rv" style="--d:0"><b>07</b>The Checklist Execution</div>
     <h2 class="t2 rv" style="--d:1">หน้างานที่<span class="grad">ไม่ต้องใช้ความจำ</span></h2>
   </div>
   <div class="pad" style="left:110px;right:110px;top:300px;display:flex;gap:30px">
@@ -666,7 +728,7 @@ flow{to{stroke-dashoffset:-32}}
 <!-- 6 · QUALITY -->
 <section class="slide">
   <div class="pad" style="left:110px;top:90px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>07</b>Quality Control Mechanism</div>
+    <div class="eb rv" style="--d:0"><b>08</b>Quality Control Mechanism</div>
     <h2 class="t2 rv" style="--d:1"><span class="grad">4 เกราะ</span>คุมคุณภาพฟรีแลนซ์</h2>
   </div>
   <div class="pad shd4" style="left:110px;right:110px;top:310px;display:flex;gap:24px">
@@ -693,7 +755,7 @@ flow{to{stroke-dashoffset:-32}}
 <!-- 7 · ACTION PLAN -->
 <section class="slide">
   <div class="pad" style="left:110px;top:90px;width:1700px">
-    <div class="eb rv" style="--d:0"><b>08</b>Action Plan &amp; 3-Phase Timeline</div>
+    <div class="eb rv" style="--d:0"><b>09</b>Action Plan &amp; 3-Phase Timeline</div>
     <h2 class="t2 rv" style="--d:1">แผน 3 เฟส <span class="grad">ภายใน 3 เดือน</span></h2>
   </div>
   <div class="pad tl6" style="left:110px;right:110px;top:290px">
@@ -734,7 +796,7 @@ flow{to{stroke-dashoffset:-32}}
   <div class="dots" id="dots"></div>
   <button class="nv" id="prev" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i>Prev</button>
   <button class="nv" id="next" aria-label="Next slide">Next<i class="fa-solid fa-arrow-right"></i></button>
-  <span class="c num" id="cnt">01 / 09</span>
+  <span class="c num" id="cnt">01 / 10</span>
 </div>
 <div class="prog" id="prog"></div>
 </div></div>
@@ -764,6 +826,7 @@ flow{to{stroke-dashoffset:-32}}
     document.getElementById('cnt').textContent=String(cur+1).padStart(2,'0')+' / '+String(N).padStart(2,'0');
     document.getElementById('prog').style.width=((cur+1)/N*100)+'%';
     steps(s,s.dataset.k==='steps');
+    document.querySelectorAll('.dayc .bx').forEach(x=>x.style.height='0'); if(s.dataset.k==='day') setTimeout(()=>s.querySelectorAll('.dayc .bx').forEach(x=>x.style.height=x.dataset.h+'px'),300);
     try{history.replaceState(null,'','#'+(cur+1))}catch(e){}
   }
   document.getElementById('next').onclick=()=>go(cur+1);
